@@ -148,6 +148,11 @@ Select a backup for restoration from the list, click [Restore], and it goes to t
 ![Restoration 002](http://static.toastoven.net/prod_rds_mssql/restore_002.png)
 
 Select type of a newly created database instance and set up, and press [Restore Database Instances] at the bottom to restore the database instance. 
+Database instance type, storage type, storage size, port, parameter group, and database security group are automatically selected.  
+
+> [Caution]
+> If the parameter group at the time of backup does not exist, default group is selected.  
+> Only database security group that exists during backup is automatically selected. 
 
 ![Restoration 003](http://static.toastoven.net/prod_rds_mssql/restore_003.png)
 

@@ -2,7 +2,7 @@
 
 ## Backups
 
-It is available to prepare for restoring database of a database instance. RDS for SQL Servers helps to back up the entire database instance, not an individual database. 
+It is available to prepare for restoring database of a database instance. RDS for SQL Servers execute backups in the consecutive order.  
 Backups can be manually created at a time of choice or automatically created by setting backup retention period. 
 Restoration is available to a particular time by using manually created backups, or to a point of time during backup retention period. 
 
@@ -18,6 +18,10 @@ Auto backup files are deleted along with database instance deletion, while manua
 ### Auto Backup
 
 By setting up the backup retention period for more than a day, auto backup is enabled and executed during specified backup execution period. Unless the backup execution time is specified, daily auto backup shall be executed when there is the minimum workload. By specifying backup time, auto backup is executed within 15 minutes from the specified time. Auto backups can be saved for up to 30 days. When the backup retention period setting is N/A, auto backup is disabled, deleting all auto backup files saved from backup storage. With the auto backup disabled, restoration to a point of time during backup retention period becomes unavailable, while restoration to a particular time with manual backup only is available.   
+
+> [Caution]
+> If auto backup is activated, the recovery model for database must be `Full`.
+> With the `Simple` or `Bulk Logged` model, normal operation is not ensured for backup or recovery. 
 
 ### Manual Backup
 
@@ -35,6 +39,11 @@ RDS for SQL Server helps to restore to a backup moment by using backup files, or
 
 With manual or auto backups, database instance can be restored. Restoration time depends on the backup size, from a few minutes, up to dozones of minutes. It is recommended to apply the same type of backup database instance and parameter group for restoration. 
 
+> [Caution]
+> If a database instance has many databases, each in big size, backup time might be different for each.  
+> Since backup is executed for each database one by one, recovery is not ensured for all databases from a certain backup time.   
+
 ### Point-in-Time Restoration during Backup Retention Period 
 
 If auto backup is enabled for a database instance, it is available to restore data to a time point during retention period. To enable a point-in-time restoration, log backup is required. RDS for SQL Server executes auto log backups at every 5 minutes, and stores them at a backup storage. 
+

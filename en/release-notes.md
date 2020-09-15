@@ -1,7 +1,7 @@
-## Database > RDS for MS-SQL > 릴리스 노트
+## Database > RDS for MS-SQL > Release Notes
 
-### 2020. 07. 14.
+### July 14, 2020
 
-#### 알파 서비스 출시
+#### Release of Alpha Service 
 
-* TOAST Cloud Relational Database Service for SQL Server (RDS for MS-SQL)는 Microsoft SQL Server를 클라우드 환경에서 제공하는 서비스입니다.
+* TOAST Cloud Relational Database Service for SQL Server (RDS for MS-SQL) provides Microsoft SQL Server in the cloud environment. 
