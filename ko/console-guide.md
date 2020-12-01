@@ -9,7 +9,7 @@ DB 인스턴스 탭에서는 DB 인스턴스의 생성, 수정, 삭제 등의 �
 DB 인스턴스를 생성하려면 먼저 DB 인스턴스 리스트 화면 좌측 상단의 [DB 인스턴스 생성] 버튼을 클릭하여 DB 인스턴스 생성 화면으로 이동합니다.
 생성하고자 하는 DB 인스턴스의 사양, 정보, 네트워크, 플로팅 IP, DB 보안 그룹, 백업 설정을 입력한 후 [DB 인스턴스 생성] 버튼을 클릭하여 DB 인스턴스 생성 요청을 합니다.
 
-![DB 인스턴스 생성 001](http://static.toastoven.net/prod_rds_mssql/db_instance_create_001.png)
+![DB 인스턴스 생성 001](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_create_001_kr.png)
 
 * ❶ Compute & Network 서비스에서 생성한 VPC 서브넷을 선택할 수 있습니다.
 * ❷ DB 보안 그룹이 없을 경우, [DB 보안 그룹 생성] 버튼을 클릭하여 즉시 생성, 적용할 수 있습니다.
@@ -27,34 +27,44 @@ DB 인스턴스의 간략한 정보 목록을 조회할 수 있습니다.
 * ❶ DB 인스턴스 이름 및 UUID 로 검색할 수 있습니다.
 * ❷ 조건 버튼 클릭 시, 가용성 영역과 DB 인스턴스 상태로 검색 결과를 필터링할 수 있습니다.
 
-![DB 인스턴스 리스트 > 조건 001](http://static.toastoven.net/prod_rds_mssql/db_instance_list_cond_001.png)
+![DB 인스턴스 리스트 > 조건 001](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_list_cond_001_kr.png)
 
 * ❸ DB 인스턴스 선택 시, DB 인스턴스 상태에 따라 활성화됩니다.
 * ❹ 현재 목록을 갱신하거나, 50개 이상의 DB 인스턴스가 있을 경우, 페이지 이동을 할 수 있습니다.
 * ❺ 현재 CPU 사용량과 활성 세션 개수를 나타냅니다. 해당 값은 매 1분마다 갱신됩니다.
 * ❻ DB 인스턴스의 상태를 나타냅니다. 상태에 따라 서로 다른 상태 값 및 색상이 노출됩니다. DB 인스턴스가 작업 중이면 스피너가 노출됩니다.
 
+### DB 인스턴스 재시작
+
+DB 인스턴스의 Microsoft SQL Server 프로세스를 재시작할 수 있습니다. DB 인스턴스가 고가용성 구성을 사용하면, 장애 조치를 이용해 재시작할 수 있습니다.
+
+![DB 인스턴스 목록 > 재시작 001](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_restart_001_kr.png)
+
+* ❶ DB 인스턴스를 재시작하면, Microsoft SQL Server 프로세스를 재시작하게 됩니다. 만약 Microsoft SQL Server 프로세스의 재시작에 실패할 경우 DB 인스턴스 VM이 리부팅됩니다.
+* ❷ 고가용성 기능을 사용하는 경우 장애 조치를 이용해 재시작할 수도 있습니다.
+
 ### DB 인스턴스 수정
 
 사용 가능 상태의 DB 인스턴스는 웹콘솔을 통해 손쉽게 주요 설정을 변경할 수 있습니다.
 
-![DB 인스턴스 리스트 002](http://static.toastoven.net/prod_rds_mssql/db_instance_list_002.png)
+![DB 인스턴스 리스트 002](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_list_002_kr.png)
 
 * ❶ 수정하고자 하는 DB 인스턴스를 목록에서 선택 후, 우측 상단의 수정 버튼을 클릭합니다.
 
 변경하고자 하는 설정을 변경 후, 페이지 하단의 [수정] 버튼을 클릭하여 DB 인스턴스를 수정합니다.
 DB 인스턴스 수정 요청에 성공하면, 자동으로 DB 인스턴스 리스트로 이동합니다. DB 인스턴스 수정에는 몇 분에서 몇십 분이 소요됩니다.
 
-![DB 인스턴스 수정 001](http://static.toastoven.net/prod_rds_mssql/db_instance_modify_001.png)
+![DB 인스턴스 수정 001](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_modify_001_kr.png)
 
 * ❶ 가용성 영역은 변경할 수 업습니다.
 * ❷ DB 인스턴스 타입 변경 시, 데이터베이스가 재시작됩니다.
 * ❸ 스토리지 타입은 변경할 수 업습니다.
 * ❹ 한번 증가시킨 스토리지 크기는 다시 줄일 수 없습니다.
-* ❺ 사용자 ID 는 변경할 수 없습니다.
-* ❻ 비밀번호를 입력하지 않으면, 변경되지 않습니다.
-* ❼ 포트 변경 시, 데이터베이스가 재시작됩니다.
-* ❽ VPC 는 변경할 수 없습니다.
+* ❺ 백업 보관 기간이 1일 이상이어야 고가용성 기능을 사용할 수 있습니다.
+* ❻ 사용자 ID 는 변경할 수 없습니다.
+* ❼ 비밀번호를 입력하지 않으면, 변경되지 않습니다.
+* ❽ 포트 변경 시, 데이터베이스가 재시작됩니다.
+* ❾ VPC 는 변경할 수 없습니다.
 
 ### DB 인스턴스 상세
 
@@ -65,12 +75,18 @@ DB 인스턴스를 선택하면 화면 하단에 상세 보기 패널이 노출�
 
 선택한 DB 인스턴스의 기본정보를 확인할 수 있습니다.
 
-![DB 인스턴스 상세 > 기본 정보 001](http://static.toastoven.net/prod_rds_mssql/db_instance_detail_inst_001.png)
+![DB 인스턴스 상세 > 기본 정보 001](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_kr.png)
 
 * ❶ [변경] 버튼 클릭 시, DB 인스턴스의 이름을 변경할 수 있습니다.
 * ❷ [복사] 버튼 클릭 시, DB 인스턴스의 아이디를 클립보드로 복사합니다.
-* ❸ DB 인스턴스에 접속할 수 있는 아이피 정보가 노출됩니다. 플로팅 IP 사용 시, 133 으로 시작하는 아이피가 추가로 노출되며, DB 보안 그룹 설정에 따라 외부에서 접속할 수 있습니다.
-* ❹ 적용된 DB 보안 그룹을 확인할 수 있습니다. DB 보안 그룹 이름 위에 마우스 커서를 올려놓으면, 보안 그룹 규칙을 볼 수 있습니다.
+* ❸ DB 인스턴스에 접속할 수 있는 도메인이 노출됩니다. 도메인을 클릭하면 도메인의 타입과 아이피 정보를 볼 수 있습니다.
+
+![DB 인스턴스 상세 > 기본 정보 001 도메인](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_domain_kr.png)
+
+* ❹ [복사] 버튼 클릭 시, 도메인 정보를 클립보드로 복사합니다.
+* ❺ 적용된 DB 보안 그룹을 확인할 수 있습니다. DB 보안 그룹 이름 위에 마우스 커서를 올려놓으면, 보안 그룹 규칙을 볼 수 있습니다.
+
+![DB 인스턴스 상세 > 기본 정보 001 보안 규칙](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_dsg_kr.png)
 
 #### 모니터링
 
@@ -108,7 +124,7 @@ DB 인스턴스를 선택하면 화면 하단에 상세 보기 패널이 노출�
 * ❹ 선택된 백업을 이용하여 DB 인스턴스를 복원합니다.
 * ❺ 선택된 백업을 삭제합니다. 수동 백업만 삭제할 수 있습니다.
 * ❻ 수동 백업 파일을 생성합니다.
-* ❼ 현재 목록을 갱신하거나, 50개 이상의 백업 파일이 있을 경우, 페이지 이동을 할 수 있습니다.
+* ❼ 현재 목록을 갱신하거나 50개 이상의 백업 파일이 있을 경우, 페이지 이동을 할 수 있습니다. 
 
 ## 백업
 
