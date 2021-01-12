@@ -16,3 +16,13 @@ RDS for MS-SQLは安定的に自動化された管理、バックアップなど
 EXEC [master].[dbo].[rdsp_alter_database_name] N'FOO', N'BAR'
 GO
 ```
+
+### データベース削除
+
+データベースを削除するには一般的なDROP構文の代わりに、別途の保存プロシージャ(Stored Procedure)を呼び出す必要があります。
+下記は`FOO`データベースを削除する例です。
+
+```sql
+EXEC [master].[dbo].[rdsp_drop_database] N'FOO'
+GO
+```
