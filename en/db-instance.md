@@ -37,6 +37,7 @@ To create a database instance, an appropriate type must be selected depending on
 | m2 | Configures balance between CPU and memory.   |
 | c2 | Has higher performance setting for CPU. |
 | r2 | Available when momory takes more volume than other reources|
+| x1 | A type that supports high performance CPUs and memory. Used for services and applications that require high performance. |
 
 It is easy to change the type of already-created database instance via web console.
 
@@ -53,3 +54,6 @@ It is easy to change the size of already-created storage via web console.
 > [Caution]
 > Changing already-created storage size requires minutes of downtime since database instance must be closed. 
 > The type of already-created storage cannot be changed. 
+
+* The failover time is impacted by the recovery process; the larger the transaction, the longer the time.
+* Auto failover action will be paused while changing a DB instance.
