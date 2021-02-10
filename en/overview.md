@@ -1,6 +1,6 @@
 ## Database > RDS for MS-SQL > Overview
 
-TOAST Cloud Relational Database Service for SQL Server (RDS for MS-SQL) provides Microsoft SQL Server under the cloud environment. 
+NHN Cloud Relational Database Service for SQL Server (RDS for MS-SQL) provides Microsoft SQL Server under the cloud environment. 
 No complicated setting is required to use highly available Microsoft SQL Server.
 
 ## Main Features 
