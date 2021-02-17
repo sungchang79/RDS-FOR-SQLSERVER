@@ -120,7 +120,7 @@ After selecting a specific DB instance from the list, click the [Back up to obje
 ![DB Instance Details > Back Up To Object Storage](http://static.toastoven.net/prod_rds_mssql/20210209/output/db_instance_backup_to_obs_modal.png)
 
 * ❶ Enter the Tenant ID of the object storage where the backup file will be stored. This can be checked in the API endpoint settings in the object storage service web console.
-* ❷ Enter the TOAST account (e-mail) of the object storage where the backup will be stored.
+* ❷ Enter the NHN Cloud account (e-mail) of the object storage where the backup will be stored.
 * ❸ Enter the API password of the object storage where the backup will be stored.
 * ❹ Enter the container name of the object storage where the backup will be stored.
 * ❺ Enter the file path of the backup file to be stored in the container.
