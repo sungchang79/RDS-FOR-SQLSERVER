@@ -13,4 +13,4 @@
 
 #### Release of Alpha Service 
 
-* NHNs Cloud Relational Database Service for SQL Server (RDS for MS-SQL) provides Microsoft SQL Server in the cloud environment. 
+* TOAST Relational Database Service for SQL Server (RDS for MS-SQL) provides Microsoft SQL Server in the cloud environment. 
