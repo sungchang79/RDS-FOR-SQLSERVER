@@ -73,6 +73,7 @@
 #### 알파 서비스 출시
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 * TOAST Cloud Relational Database Service for SQL Server (RDS for MS-SQL)는 Microsoft SQL Server를 클라우드 환경에서 제공하는 서비스입니다.
 
 ### 2020. 08. 11.
@@ -87,4 +88,7 @@
 * 서브넷이 존재하지 않을 경우, DB 인스턴스 생성 페이지 접근 시 오류 페이지로 이동되는 현상 수정
 =======
 * NHN Cloud Relational Database Service for SQL Server (RDS for MS-SQL)는 Microsoft SQL Server를 클라우드 환경에서 제공하는 서비스입니다.
+>>>>>>> alpha
+=======
+* TOAST Relational Database Service for SQL Server (RDS for MS-SQL)는 Microsoft SQL Server를 클라우드 환경에서 제공하는 서비스입니다.
 >>>>>>> alpha

@@ -55,5 +55,34 @@ It is easy to change the size of already-created storage via web console.
 > Changing already-created storage size requires minutes of downtime since database instance must be closed. 
 > The type of already-created storage cannot be changed. 
 
+## High-availability DB instance
+
+High-ability DB instance increases availability and data durability, and provides fault-tolerant database. RDS for MS-SQL uses the mirroring function of the Microsoft SQL Server, consisting of a primary server, a secondary server, and an event monitor server, to offer high availability. The primary and secondary servers are created in different availability areas.
+
+### Failover action
+
+A failover action automatically takes place when the primary server becomes unavailable due to an unexpected failure. Upon failover, the failed primary server is halted to prevent split brain and the secondary server takes over the primary server. Applications do not have to be adjusted for this change, as the A record of the internal and external domains that are used to connect is automatically switched from the primary server to the secondary server. When failover is complete, high availability DB instances will disappear and the rest of DB instances are separated into two groups: the failed DB instances and the DB instances promoted due to the failure. The promoted DB instances inherit all the configurations of existing DB instances except backups. The promoted DB instances will not perform backed up immediately after the promotion. This is to prevent any system load after the failover action. The DB instances with failover completed can be restarted by pressing the [Restart] button.
+
+### Manual failover action
+
+A high availability DB instance can be manually restarted after the failover action to deal with failover. When restarting a DB instance using failover, manual failover is performed and the roles of the primary and secondary servers are switched. During failover, both primary and secondary servers will restart their Microsoft SQL Server process and their internal and external domain IPs will be changed. Connection to those servers may fail from a couple of seconds to a couple of minutes until the domains are successfully changed.
+
+### Cautions and constraints
+
+- You can use the high-availability DB instance only if the storage backup period is at least 1 day.
+- High-availability configuration of different regions is not supported.
+- You cannot use a secondary server for high-availability for read load balancing.
+- A mirroring configuration is proceeded anew when you change the name of a high-availability instance database, and the process takes a certain amount of time. You may experience performance degradation during the mirroring configuration, and the failover action may not be executed properly when a failure occurs.
+- Database of high-availability DB instances only supports Full Recovery Model. When change of recovery model is detected, it will be changed back to the Full Recovery Model.
+- DB instances with completed failover may fail to operate or operate properly due to issues such as data loss on the account of failures.
+- As the high availability feature is based on domains, if a Compute & Network service instance for a user is in a network environment where it cannot reach any DNS server, the relevant instance cannot access the DB instance through a domain and normal access will be blocked when a failover occurs.
+- When a new database is created in a DB instance, it may take at least 5 minutes up to dozens of minutes for the database to be mirrored.
+  - If a failover occurs before the mirroring is complete, the failover of the database won't be properly done.
+- All databases of high-availability DB instances operate in the same server. When a failure occurs on a specific database, all databases will fail over.
+- Failover is not performed if there is no mirrored database.
+- User, login, and permission of the primary server will be duplicated to the secondary server.
+  - Duplication takes at least 10 seconds up to dozens of minutes.
+  - When a failure occurs before the copying process is complete, the corrections will be lost.
+- SQL Server Agent jobs cannot be duplicated. When failover is complete, it needs to be created again in the promoted DB instance.
 * The failover time is impacted by the recovery process; the larger the transaction, the longer the time.
 * Auto failover action will be paused while changing a DB instance.
