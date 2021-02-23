@@ -1,41 +1,72 @@
-## Database > RDS for SQL Server > 백업 및 복원
+## Database > RDS for SQL Server > Backup and Restoration
 
-## 백업
+## Backups
 
-DB 인스턴스의 데이터베이스를 복구할 수 있도록 미리 준비할 수 있습니다. RDS for SQL Server 는 개별 데이터베이스가 아닌 DB 인스턴스 전체를 백업합니다.
-원하는 시점에 수동으로 백업을 생성하거나 백업 보관 기간을 설정하여 자동으로 백업을 생성할 수 있습니다.
-수동으로 생성한 백업을 이용하여 특정 시각으로 복원을 하거나, 백업 보관 기간 중 어느 한 시점으로 복원을 할 수 있습니다.
+It is available to prepare for restoring database of a database instance. RDS for SQL Servers execute backups in the consecutive order.  
+Backups can be manually created at a time of choice or automatically created by setting backup retention period. 
+Restoration is available to a particular time by using manually created backups, or to a point of time during backup retention period. 
 
-> [주의]
-> 백업이 실행되는 동안에는 백업으로 인한 성능 저하가 발생 할 수 있습니다. 
-> 서비스에 영향을 주지 않기 위해서, 서비스의 부하가 적은 시간에 백업을 하는 것이 유리합니다.
+> [Caution]
+> While backup is underway, performance may be degraded due to such backup.  
+> To minimize the impact on service, backup is recommened while service workload is low.
 
-### 백업 스토리지
+### Backup Storage 
 
-RDS for SQL Server 는 모든 백업 파일을 별도의 백업 스토리지에 저장합니다. 백업 스토리지는 해당 리전의 모든 DB 인스턴스 스토리지 크기의 합만큼 무료로 제공되며, 초과분에 대해서는 별도로 과금됩니다.
-자동 백업 파일은 DB 인스턴스 삭제 시 모두 삭제되며, 수동 백업 파일은 사용자가 명시적으로 삭제하지 않는 한 백업 스토리지에 영구 저장됩니다.
+RDS for SQL Server helps to store all backup files at a backup storage. Backup storage is provided free of charges, as much as the sum of storage size of all database instances of a region, while the exceeding part shall be charged.  
+Auto backup files are deleted along with database instance deletion, while manual backup files are permanently saved at a backup storage, unless specified otherwise by user.  
 
-### 자동 백업
+### Auto Backup
 
-DB 인스턴스의 백업 보관 기간을 1일 이상으로 설정하면 자동 백업이 활성화되며, 지정된 백업 수행 시간에 자동 백업이 이루어집니다. 백업 수행 시간을 지정하지 않으면, 매일 임의의 부하가 몰리지 않는 시점에 자동 백업을 수행합니다. 백업 수행 시간을 지정하면, 지정된 시각으로부터 15분 사이에 자동 백업을 수행합니다. 자동 백업은 최대 30일까지 보관할 수 있습니다. 백업 보관 기간을 없음으로 설정하면 자동 백업이 비활성화되며, 저장된 모든 자동 백업 파일이 백업 스토리지에서 삭제됩니다. 자동 백업이 비활성화되면 백업 보관 기간 중 어느 한 시점으로 복원은 불가능하며, 수동 백업을 이용한 특정 시각으로 복원만 가능합니다.
+By setting up the backup retention period for more than a day, auto backup is enabled and executed during specified backup execution period. Unless the backup execution time is specified, daily auto backup shall be executed when there is the minimum workload. By specifying backup time, auto backup is executed within 15 minutes from the specified time. Auto backups can be saved for up to 30 days. When the backup retention period setting is N/A, auto backup is disabled, deleting all auto backup files saved from backup storage. With the auto backup disabled, restoration to a point of time during backup retention period becomes unavailable, while restoration to a particular time with manual backup only is available.   
 
-### 수동 백업
+> [Caution]
+>If auto backup is enabled, make sure to use the “Full” database recovery model.
+>If the “Simple” or “Bulk logged” model is used, it will be forced to use the “Full” recovery model and perform a full backup again from the beginning.
 
-자동 백업 활성화와 관련 없이 원하는 시각에 수동으로 백업을 수행할 수 있습니다. 수동 백업 생성 시 이름을 입력해야 하며, 명명 규칙은 다음과 같습니다.
+### Manual Backup
 
-* 백업 이름은 리전별로 고유해야 합니다.
-* 백업 이름은 4 ~ 100 사이의 알파벳, 숫자, - _ . 만 사용 가능합니다.
-* 백업 이름의 첫 번째 문자는 글자이어야 합니다.
+Regardless of auto backup enabling, a backup to a time of choice can be manually executed. To create a manual backup, it must be named to meet the following rules:   
 
-## 복원
+* Must be unique for each region.
+* Must be comprised of alphabets, numbers, -, _ , and . only, between 4 and 100 characters. 
+* Must start with a letter. 
 
-RDS for SQL Server 는 백업 파일을 이용하여 백업된 순간으로 복원을 하거나, 복원을 원하는 어느 한 시점을 선택하여 복원을 할수 있습니다. 복원을 하게 되면 기존 DB 인스턴스와 무관한, 신규 DB 인스턴스가 생성됩니다. 복원된 DB 인스턴스는 데이터베이스만 복원되므로, 파라미터 그룹과 보안 그룹을 새롭게 설정해야 합니다. 새로운 파라미터 그룹을 설정할수는 있으나, 백업할 당시의 파라미터 그룹을 사용하여 복원하는 것을 추천합니다.
+## Restoration
 
-### 백업을 이용한 복원
+RDS for SQL Server helps to restore to a backup moment by using backup files, or to a point in time. With restoration, a new database instance is created, which is irrelevant to an existing database instance. Since restored database instance regards to database only, a new setting of a parameter and a security group is required. Setting of a new parameter group is available, but it is recommended to restore with the parameter group from the backup time.    
 
-수동 혹은 자동 백업을 이용하여 DB 인스턴스를 복원할 수 있습니다. 복원에 걸리는 시간은 백업의 크기에 따라 다르며, 수분에서 수십 분이 소요됩니다. 
-복원할 DB 인스턴스의 타입과 파라미터 그룹은 백업할 당시의 DB 인스턴스와 동일하게 설정하는 것을 권장합니다.
+### Restoration with Backup
 
-### 백업 보관 기간 중 어느 한 시점으로 복원
+With manual or auto backups, database instance can be restored. Restoration time depends on the backup size, from a few minutes, up to dozones of minutes. It is recommended to apply the same type of backup database instance and parameter group for restoration. 
 
-DB 인스턴스의 자동 백업이 활성화되어 있다면, 보관 기관 중 어느 한 시점으로 복원이 가능합니다. 시점 복원을 하기 위해서는 별도의 로그 백업이 필요합니다. RDS for SQL Server 는 매 5분마다 자동으로 로그 백업을 수행한 후, 백업 스토리지에 저장합니다. 자동 백업을 활성화 한 시각부터, 가장 최근 로그 백업을 저장한 시점까지 복원이 가능합니다.
+> [Caution]
+> If a database instance has many databases, each in big size, backup time might be different for each.  
+> Since backup is executed for each database one by one, recovery is not ensured for all databases from a certain backup time.   
+
+### Point-in-Time Restoration during Backup Retention Period 
+
+If auto backup is enabled for a database instance, it is available to restore data to a time point during retention period. To enable a point-in-time restoration, log backup is required. RDS for SQL Server executes auto log backups at every 5 minutes, and stores them at a backup storage. If the auto backup is enabled, it detects the database created by user every 5 minutes and performs a full backup separately. Therefore, if users try to roll back to the time the DB was just created, the newly created DB won't be recovered properly. Using a reliable DB instance without separate modification, a point in time which as at least five minutes after the time of creation must be selected.
+
+## Exporting and importing backup using object storage
+
+Users can back up to their DB instance object storage or recover a backup file from the user object storage as a DB instance.
+
+### Backing up to object storage
+
+You can export a backup file of which backup is complete, or export the backup file as it makes a backup. The backup file is exported to a separate databases but they can be exported to any NHN Cloud object storage set to use the object storage REST API.
+When exporting at the same time as the backup process, both full and differential backups are supported.
+
+Before exporting a backup to the object storage, a container to save the backup file must be created. The web console's [Back up to object storage] feature can be used afterwards to export. 
+If the backup file exceeds 1GB in side, it is uploaded in multiple parts.
+
+### Recover from backup in object storage
+
+For only compatible Microsoft SQL Server backup files, object storage can be used to recover to the DB instance of RDS for MS-SQL.
+This can be done by uploading an external backup to the object storage of NHN Cloud set up to use REST API and using the web console's [Recover from backup in object storage] function.
+
+If the backup for recovery exceeds 5GB, it must be uploaded in multiple parts. For detailed instructions please refer to [Multi-part upload] (https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_53).
+Recovery is performed for each individual database, and can be performed onto an existing DB instance. If there is not enough space in the DB instance's storage, recovery may fail.
+
+> [Caution]
+> Since the “master” database is not recovered, the user login information in the recovered database is edited so that only users entered at the time of DB creation have access to it.
+> If recovered in a high availability DB instance, when “Whether to recover” is set to “Yes,” the high availability setup begins the moment the database recovery completes. If “Whether to recover” is set to "no" and an error occurs during the recovery, the database that was being recovered will be deleted. 

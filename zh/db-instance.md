@@ -1,55 +1,88 @@
-## Database > RDS for SQL Server > DB 인스턴스
+## Database > RDS for SQL Server > Database Instance
 
-DB 인스턴스는 가상 장비와 설치된 Microsoft SQL Server 를 아우르는 개념으로, RDS for SQL Server 에서 제공하는 Microsoft SQL Server 의 단위입니다.
-DB 인스턴스의 운영체제에 직접 접근할 수 없으며, 오직 DB 인스턴스 생성 시 입력하신 포트를 통해서 데이터베이스로만 접근 할 수 있습니다.
-DB 인스턴스는 고객이 부여하는 이름과 자동으로 부여되는 32바이트 아이디로 식별됩니다. 
-DB 인스턴스 이름은 아래와 같은 제약사항이 있습니다.
+Database instance encompasses virtual equipment and installed Microsoft SQL Server, serving as the unit of Microsoft SQL Server provided by RDS for SQL Server. 
+Direct access to a database instance is not allowed, but access is enabled only through the port entered when creating the database instance. 
+Database instances can be identified by user-specified name or automatically assigned 32-bit ID. 
+A database instance must be named, considering the following constraints: 
 
-* DB 인스턴스 이름은 리전별로 고유해야 합니다.
-* DB 인스턴스 이름은 4 ~ 100 사이의 알파벳, 숫자, - _ . 만 사용 가능합니다.
-* DB 인스턴스 이름의 첫 번째 문자는 글자이어야 합니다.
+* Must be unique for each region. 
+* Must be comprised of alphabets, numbers, -, _ ,and .only, between 4 and 100 characters.
+* Must start with a letter. 
 
-DB 인스턴스는 생성 시, 사용자 계정과 비밀번호를 설정해야 하며, 아래와 같은 제약사항이 있습니다.
+To create a database instance, user account and password setting is required, considering the following constraints: 
 
-* 사용자 계정은 4 ~ 16자 사이의 알파벳, 숫자만 입력 가능하며, 첫 번째 문자는 글자이어야 합니다.
-* 비밀번호는 8 ~ 128자 사이의 알파벳, 숫자, !, $, #, % 만 사용 가능합니다. 
-* 비밀번호에는 사용자의 계정 이름이 포함될 수 없습니다.
-* 비밀번호는 대문자, 소문자, 숫자, 특수문자 중 세 범주의 문자를 포함해야 합니다.
+* User account must be between 4 and 16 characters, comprised of alphabets and numbers only, starting with a letter. 
+* Password must be between 8 and 128, comprised of alphabets, numbers, !, $, #, and % only. 
+* Password cannot include user's account name. 
+* Password must include at least three categories out of capital letters, small-case letters, numbers, and special characters. 
 
-### 가용성 영역
+### Availability Area
 
-RDS for SQL Server 는 물리 하드웨어 문제로 생기는 장애에 대비하기 위해 전체 시스템을 여러 개의 가용성 영역으로 나누어 두었습니다. 한 가용성 영역 내에서 생기는 장애는 다른 가용성 영역에 영향을 주지 않으므로 서비스 전체의 가용성이 높아집니다. 서로 다른 가용성 영역에 흩어져서 생성된 DB 인스턴스끼리 네트워크 통신이 가능하며 이때 발생하는 네트워크 사용 비용은 부과되지 않습니다.
+RDS for SQL Server has many availability areas under one system so as to prepare against failure in physical hardware. A failure occurred within an availability area does not affect other availability areas, raising availability of the entire service. Database instances that are dispersed and created in different areas can communicate via network, with no charges.   
 
-> [주의]
-> 이미 생성한 DB 인스턴스의 가용성 영역은 변경할 수 없습니다.
+> [Caution]
+> The availability area of already-created database instance cannot be changed. 
 
-### Microsoft SQL Server 버전
+### Version of Microsoft SQL Server
 
-SQL Server 2016 Standard 버전만 지원합니다.
+Only the SQL Server 2016 Standard version is supported.   
 
-### DB 인스턴스 타입
+### Database Instance Type
 
-DB 인스턴스는 타입에 따라 서로 다른 CPU 코어 수와 메모리 용량을 가지고 있습니다.
-DB 인스턴스 생성 시, 데이터베이스 워크로드에 따라 알맞은 DB 인스턴스 타입을 선택해야 합니다.
+Each type of database instance has different CPU core count and memory volume. 
+To create a database instance, an appropriate type must be selected depending on the database workload. 
 
-| 타입    | 설명 |
+| Type    | Description |
 | ------- | -------------------------------------------------|
-| m2 | CPU와 메모리를 균형 있게 설정한 타입입니다. |
-| c2 | CPU의 성능을 높게 설정한 인스턴스 타입입니다. |
-| r2 | 다른 자원에 비해 메모리의 사용량이 많은 경우 사용할 수 있습니다. |
+| m2 | Configures balance between CPU and memory.   |
+| c2 | Has higher performance setting for CPU. |
+| r2 | Available when momory takes more volume than other reources|
+| x1 | A type that supports high performance CPUs and memory. Used for services and applications that require high performance. |
 
-이미 생성한 DB 인스턴스의 타입은 웹 콘솔을 통해 손쉽게 변경 가능합니다.
+It is easy to change the type of already-created database instance via web console.
 
-> [주의]
-> 이미 생성한 DB 인스턴스의 타입 변경 시, DB 인스턴스가 종료되므로 수분의 다운 타임이 발생합니다.
+> [Caution]
+> Changing already-created database instance type requires minutes of downtime since database instance must be closed. 
 
-### 스토리지 타입
+### Storage Type
 
-DB 인스턴스는 HDD, SSD 2가지 스토리지 타입을 지원합니다.
-스토리지 타입에 따라 성능과 가격이 다르므로, 데이터베이스 워크로드에 따라 알맞은 스토리지 타입을 선택해야 합니다.
-스토리지 타입은 최소 20GB ~ 2,000GB 까지 생성 할 수 있습니다.
-이미 생성한 스토리지의 크기는 웹 콘솔을 통해 손쉽게 변경 가능합니다.
+Database instances support two storage types: HDD or SSD. 
+Since each storage type provides different performance and pricing, an appropriate storage type must be selected depending on the database workload.  
+A storage type can be created from 20GB up to 2,000 GB. 
+It is easy to change the size of already-created storage via web console. 
 
-> [주의]
-> 이미 생성한 스토리지의 크기 변경 시, DB 인스턴스가 종료되므로 수분의 다운 타임이 발생합니다.
-> 이미 생성한 스토리지의 타입은 변경할 수 없습니다.
+> [Caution]
+> Changing already-created storage size requires minutes of downtime since database instance must be closed. 
+> The type of already-created storage cannot be changed. 
+
+## High-availability DB instance
+
+High-ability DB instance increases availability and data durability, and provides fault-tolerant database. RDS for MS-SQL uses the mirroring function of the Microsoft SQL Server, consisting of a primary server, a secondary server, and an event monitor server, to offer high availability. The primary and secondary servers are created in different availability areas.
+
+### Failover action
+
+A failover action automatically takes place when the primary server becomes unavailable due to an unexpected failure. Upon failover, the failed primary server is halted to prevent split brain and the secondary server takes over the primary server. Applications do not have to be adjusted for this change, as the A record of the internal and external domains that are used to connect is automatically switched from the primary server to the secondary server. When failover is complete, high availability DB instances will disappear and the rest of DB instances are separated into two groups: the failed DB instances and the DB instances promoted due to the failure. The promoted DB instances inherit all the configurations of existing DB instances except backups. The promoted DB instances will not perform backed up immediately after the promotion. This is to prevent any system load after the failover action. The DB instances with failover completed can be restarted by pressing the [Restart] button.
+
+### Manual failover action
+
+A high availability DB instance can be manually restarted after the failover action to deal with failover. When restarting a DB instance using failover, manual failover is performed and the roles of the primary and secondary servers are switched. During failover, both primary and secondary servers will restart their Microsoft SQL Server process and their internal and external domain IPs will be changed. Connection to those servers may fail from a couple of seconds to a couple of minutes until the domains are successfully changed.
+
+### Cautions and constraints
+
+- You can use the high-availability DB instance only if the storage backup period is at least 1 day.
+- High-availability configuration of different regions is not supported.
+- You cannot use a secondary server for high-availability for read load balancing.
+- A mirroring configuration is proceeded anew when you change the name of a high-availability instance database, and the process takes a certain amount of time. You may experience performance degradation during the mirroring configuration, and the failover action may not be executed properly when a failure occurs.
+- Database of high-availability DB instances only supports Full Recovery Model. When change of recovery model is detected, it will be changed back to the Full Recovery Model.
+- DB instances with completed failover may fail to operate or operate properly due to issues such as data loss on the account of failures.
+- As the high availability feature is based on domains, if a Compute & Network service instance for a user is in a network environment where it cannot reach any DNS server, the relevant instance cannot access the DB instance through a domain and normal access will be blocked when a failover occurs.
+- When a new database is created in a DB instance, it may take at least 5 minutes up to dozens of minutes for the database to be mirrored.
+  - If a failover occurs before the mirroring is complete, the failover of the database won't be properly done.
+- All databases of high-availability DB instances operate in the same server. When a failure occurs on a specific database, all databases will fail over.
+- Failover is not performed if there is no mirrored database.
+- User, login, and permission of the primary server will be duplicated to the secondary server.
+  - Duplication takes at least 10 seconds up to dozens of minutes.
+  - When a failure occurs before the copying process is complete, the corrections will be lost.
+- SQL Server Agent jobs cannot be duplicated. When failover is complete, it needs to be created again in the promoted DB instance.
+* The failover time is impacted by the recovery process; the larger the transaction, the longer the time.
+* Auto failover action will be paused while changing a DB instance.
