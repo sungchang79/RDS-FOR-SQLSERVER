@@ -1,16 +1,16 @@
-## Database > RDS for MS-SQL > 데이터베이스 사용
+## Database > RDS for MS-SQL > Enable Database
 
-RDS for MS-SQL는 안정적으로 자동화된 관리, 백업 등을 제공하기 위해 내부 관리용 데이터베이스를 사용하거나 몇 가지 사용자 권한을 제한하고 있습니다.
+RDS for MS-SQL uses database for internal control or restricts a few user authorities so as to provide automated management and backup at a stable manner. 
 
-### 관리용 데이터베이스
+### Database for Control 
 
-`rdsadmin`은 내부 관리용 데이터베이스로서, 사용자가 삭제하거나 접근할 수 없습니다.
-`rdsadmin`에는 관리용 테이블 및 저장 프로시저가 등록되어 있습니다.
+`rdsadmin` refers to database for internal control, which cannot be deleted or accessed by user.  
+`rdsadmin` includes a table and stored procedure for management. 
 
-### 데이터베이스 이름 변경
+### Name Change of Database 
 
-데이터베이스의 이름을 변경하려면 일반적인 ALTER 구문 대신, 별도의 저장 프로시저 (Stored Procedure) 를 호출해야 합니다.
-아래 예제는 `FOO` 데이터베이스의 이름을 `BAR`로 변경하는 예제입니다.
+To change name of a database, call a separate stored procedure, instead of a general ALTER statement.  
+See the below example to change database name from `FOO` to `BAR`.
 
 ```sql
 EXEC [master].[dbo].[rdsp_alter_database_name] N'FOO', N'BAR'

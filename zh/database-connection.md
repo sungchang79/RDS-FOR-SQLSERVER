@@ -1,34 +1,34 @@
-## Database > RDS for SQL Server > 데이터베이스 접속
+## Database > RDS for SQL Server > Database Access 
 
-DB 인스턴스의 운영체제에 직접 접근할 수 없으며, 오직 DB 인스턴스 생성 시 입력하신 포트를 통해서 데이터베이스로만 접근 할 수 있습니다.
+Access is not directly allowed to an operating system of a database instance but is available only via such port entered when creating a database instance. 
 
-## 데이터베이스 포트
+## Database Port 
 
-1150 ~ 65535 사이의 임의의 포트를 데이터베이스 포트로 지정할 수 있습니다.
+A random port between 1150 and 65535 can be specified as a database port.  
 
-> [주의]
-> 윈도우 서버의 커널, 서비스, 응용프로그램들이 사용하는 포트를 지정할 경우 데이터베이스가 정상적으로 구동되지 않을 수 있습니다.
-> 이미 생성한 DB 인스턴스의 데이터베이스 포트 변경 시, 데이터베이스가 재시작됩니다.
+> [Caution]
+> When a port for the kernel, service, or an application program of Windows server is specified, database may not run properly. 
+> When there is a change in the database port for a created database instance, database shall restart. 
 
-## VPC 서브넷
+## VPC Subnet 
 
-DB 인스턴스는 생성 시, 사용자의 Compute & Network 서비스의 VPC 서브넷을 선택해야 합니다.
-동일한 VPC 서브넷에 있는 DB 인스턴스와 Compute & Network 서비스의 인스턴스 간에는 네트워크 연결이 활성화됩니다.
-DB 인스턴스는 사용자의 VPC 서브넷 이외의 외부 네트워크와 단절되어 있습니다. 외부에서 연결을 원하면 플로팅 IP 를 붙여야 합니다.
+To create a database instance, choose VPC subnet of Compute & Network of the user.  
+Network connection is activated between a database instance within same VPC subnet and an instance of Compute & Network. 
+Database instance is disconnected from external networks, except user's VPC subnet. To allow external connection, it must be associated with a floating IP.  
 
-## DB 보안 그룹
+## DB Security Group 
 
-DB 보안 그룹은 DB 인스턴스를 다른 트래픽으로부터 보호할 목적으로 사용합니다. 지정한 트래픽은 허용하고, 나머지 트래픽은 차단하는 '포지티브 시큐리티 모델(positive security model)'을 사용합니다. 
-서비스를 처음 시작하면 기본 보안 그룹 하나가 생성되며, 유입되는 모든 트래픽을 차단합니다. 따라서 플로팅 IP 를 붙였다고 해서 바로 접속할 수 없으며, 필요한 정책을 설정해야만 접속할 수 있습니다.
-DB 보안 그룹은 플로팅 IP를 사용한 외부 접근과 사설 IP를 사용한 내부 접근 모두에 동일하게 적용됩니다.
-DB 인스턴스에는 다수의 보안 그룹을 설정할 수 있습니다. 추가로 보안 그룹을 생성하여 여러 개의 정책을 더하고 이를 인스턴스에 설정하면, 설정된 모든 보안 그룹의 정책들이 인스턴스에 적용됩니다.
+Database security group is enabled to protect database instances from other traffic. By adopting 'Positive Security Model', specific traffic is allowed while the other traffic are blocked.  
+At the start of a service, a default security group is created, to block all traffic inflow. Therefore, access is not allowed only with a floating IP, but policy setting is required. 
+Database security group is applied the same throughout the external access via floating IP and the internal access via private IP. 
+Many security groups can be set for a database instance. By creating further security groups along with many policies and setting them to an instance, policies of all security groups are applied to the instance.   
 
-| 항목        | 설명                                                         |
+| Item        | Description                                                         |
 | ----------- | ------------------------------------------------------------ |
-| 방향        | 수신은 인스턴스로 유입되는 방향을 의미합니다. 송신은 인스턴스에서 나가는 방향을 의미합니다. |
-| Ether Type  | EtherType IP의 버전을 의미합니다. IPv4, IPv6를 지정할 수 있습니다. |
-| 원격        | IP 주소 범위를 지정할 수 있습니다. 규칙의 방향이 '송신'이면 목적지가 원격이고, '수신'이면 출발지가 원격입니다. <br>정책의 방향에 따라 트래픽의 출발지나 목적지가 IP 주소나 범위인지를 비교합니다. |
-| 설명        | 보안 그룹 정책에 대한 설명을 추가할 수 있습니다.         |
+| Direction        | Inbound refers to inflow to an instance, while outbound means outflow from instance.  |
+| Ether Type  | Version of EtherType IP: specify IPv4 or IPv6.  |
+| Remote        | Range of an IP address can be specified. If the direction is 'Outbound', the destination is remote, but if it is 'Inbound', the departure is remote. <br> Depending on the policy direction, compare if the traffic departure or destination is IP address or range.  |
+| Description        | Description for a security group policy can be added.  |
 
-DB 보안 그룹의 포트는 데이터베이스의 포트로 고정되며, 데이터베이스 포트 변경 시 DB 보안 그룹의 정책도 자동으로 변경되어 적용됩니다.
-DB 보안 그룹의 방향은 수신만 설정할 수 있습니다.
+The port of a database security group is fixed as the port of database, and if database port is changed, the policy of database security group is also automatically changed and applied. 
+Only inbound setting is allowed for a database security group. 
