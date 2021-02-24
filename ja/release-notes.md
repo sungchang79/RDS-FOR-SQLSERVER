@@ -72,4 +72,4 @@
 
 #### アルファサービスリリース
 
-* NHN Cloud Relational Database Service for SQL Server (RDS for MS-SQL)はMicrosoft SQL Serverをクラウド環境で提供するサービスです。
+* TOAST Relational Database Service for SQL Server (RDS for MS-SQL)はMicrosoft SQL Serverをクラウド環境で提供するサービスです。
