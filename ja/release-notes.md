@@ -14,7 +14,7 @@
 
 #### バグ修正
 
-* 復旧モデルが`SIMPLE`のデータベースの手動バックアップが失敗する現象を修正
+* 復旧モデルが`SIMPLE` のデータベースの手動バックアップが失敗する現象を修正
 
 ### 2021. 01. 12.
 
@@ -78,4 +78,4 @@
 
 #### アルファサービスリリース
 
-* TOAST Relational Database Service for SQL Server (RDS for MS-SQL)はMicrosoft SQL Serverをクラウド環境で提供するサービスです。
+* NHN Cloud Relational Database Service for SQL Server (RDS for MS-SQL)はMicrosoft SQL Serverをクラウド環境で提供するサービスです。

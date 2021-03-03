@@ -1,5 +1,11 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### 2021. 03. 09.
+
+#### 버그 수정
+
+* 복구 모델이 `SIMPLE` 인 데이터베이스의 수동 백업을 이용해 고가용성 구성으로 복원하지 못하도록 검증 로직 추가
+
 ### February 9, 2021
 
 #### Feature Updates
