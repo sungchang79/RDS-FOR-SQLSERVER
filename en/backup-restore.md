@@ -51,8 +51,8 @@ If auto backup is enabled for a database instance, it is available to restore da
 
 Users can back up to their DB instance object storage or recover a backup file from the user object storage as a DB instance.
 
-> [주의]
-> 동일 리전의 오브젝트 스토리지에 백업을 내보내거나, 가져올 수 있습니다.
+> [Cautions]
+> You can export and import backups to and from object storages in the same region.
 
 ### Backing up to object storage
 
