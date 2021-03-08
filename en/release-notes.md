@@ -1,5 +1,11 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### March 9, 2021
+
+####  Bug Fixes
+
+* Added a verification logic to prevent the use of a manual backup of database of which recovery model is `SIMPLE` for restoration of high availability configuration
+
 ### February 9, 2021
 
 #### Feature Updates

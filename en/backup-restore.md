@@ -51,6 +51,9 @@ If auto backup is enabled for a database instance, it is available to restore da
 
 Users can back up to their DB instance object storage or recover a backup file from the user object storage as a DB instance.
 
+> [Cautions]
+> You can export and import backups to and from object storages in the same region.
+
 ### Backing up to object storage
 
 You can export a backup file of which backup is complete, or export the backup file as it makes a backup. The backup file is exported to a separate databases but they can be exported to any NHN Cloud object storage set to use the object storage REST API.
