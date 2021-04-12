@@ -1,5 +1,16 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### 2021. 04. 13.
+
+#### Features Development
+
+* Modified the system so that users can select multiple backups and delete them at once
+* Modified the system so that object storages can be restored with a different name
+
+#### Features Updates
+
+* Modified the system so that instances of which memory is less than 8GB cannot access the high availability feature
+
 ### March 9, 2021
 
 ####  Bug Fixes

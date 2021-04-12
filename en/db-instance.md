@@ -86,3 +86,5 @@ A high availability DB instance can be manually restarted after the failover act
 - SQL Server Agent jobs cannot be duplicated. When failover is complete, it needs to be created again in the promoted DB instance.
 * The failover time is impacted by the recovery process; the larger the transaction, the longer the time.
 * Auto failover action will be paused while changing a DB instance.
+* The auto failover feature will be temporarily disabled while changing a DB instance.
+* Instances of which memory is less than 8GB cannot use the high availability feature
