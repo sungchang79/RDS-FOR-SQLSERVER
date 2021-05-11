@@ -1,6 +1,11 @@
 ## Database > RDS for SQL Server > Database Access 
 
-Access is not directly allowed to an operating system of a database instance but is available only via such port entered when creating a database instance. 
+Access is not directly allowed to an operating system of a database instance but is available only via such port entered when creating a database instance.
+
+## 도메인
+
+DB 인스턴스를 생성하면 VPC 서브넷을 통해 접속 할 수 있는 내부 도메인이 발급됩니다. 플로팅 IP를 사용하면 외부에서 접속 할 수 있는 외부 도메인이 추가로 발급됩니다.
+도메인은 `xxxx.yyyy.sqlserver.rds.cloud.toast.com` 으로 구성됩니다. `xxxx` 자리에는 32자의 임의의 문자열이 위치하고, `yyyy` 자리에는 도메인 타입에 따라 내부 도메인이면 `internal`, 외부 도메인이면 `external` 이 위치합니다.
 
 ## Database Port 
 

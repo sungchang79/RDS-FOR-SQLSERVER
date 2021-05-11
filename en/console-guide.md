@@ -6,7 +6,8 @@ On Database Instances, you can create, modify, or delete database instances, or 
 
 ### Creating Database Instances 
 
-To crete a database instance, click [Create Database Instances] on top left of the list and go to page for database instance creation. Enter specifications, network, floating IP, database security group, and backup settings for the instance, click [Create Database Instances] and send a request for creation.   
+To crete a database instance, click [Create Database Instances] on top left of the list and go to page for database instance creation. 
+Enter specifications, network, floating IP, database security group, and backup settings for the instance, click [Create Database Instances] and send a request for creation.   
 
 ![Create Database Instances 001](http://static.toastoven.net/prod_rds_mssql/db_instance_create_001.png)
 
@@ -26,34 +27,44 @@ One page shows up to 50 database instances on the list.
 * ❶ Search is available by the name or UUID of a database instance. 
 * ❷ With a click on the condition, search results can be filtered by availability area or database instance status. 
 
-![List of Database Instances > Conditions 001](http://static.toastoven.net/prod_rds_mssql/db_instance_list_cond_001.png)
+![List of Database Instances > Conditions 001](http://static.toastoven.net/prod_rds_mssql/20200112/output/db_instance_list_cond_001_kr.png)
 
 * ❸ When selected, database instances may be enabled depending on the status. 
 * ❹ Pagination is available when the current list is updated or if there are more than 50 database instances.
 * ❺ Refers to the current CPU usage volume and the number of active sessions. 
-* ❻ Refers to the status of database instance. Each status shows different value and color of status. 
+* ❻ Refers to the status of database instance. Each status shows different value and color of status.
+
+### DB 인스턴스 재시작
+
+DB 인스턴스의 Microsoft SQL Server 프로세스를 재시작할 수 있습니다. DB 인스턴스가 고가용성 구성을 사용하면, 장애 조치를 이용해 재시작할 수 있습니다.
+
+![DB 인스턴스 목록 > 재시작 001](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_restart_001_kr.png)
+
+* ❶ DB 인스턴스를 재시작하면, Microsoft SQL Server 프로세스를 재시작하게 됩니다. 만약 Microsoft SQL Server 프로세스의 재시작에 실패할 경우 DB 인스턴스 VM이 리부팅됩니다.
+* ❷ 고가용성 기능을 사용하는 경우 장애 조치를 이용해 재시작할 수도 있습니다.
 
 ### Modifying Database Instances
 
 Available database instances can be easily modified in the setting via web console. 
 
-![List of Database Instances 002](http://static.toastoven.net/prod_rds_mssql/db_instance_list_002.png)
+![List of Database Instances 002](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_list_002_kr.png)
 
 * ❶ Select a database instance to modify from the list and click Modify on top right. 
 
 After setting is changed, click [Modify] at the bottom of the page to modify database instance.  
 Once request for modifying database instance is successfully made, you're moved to the list of database instances. It takes a few minutes, or up to a few dozens of minutes, to modify a database instance.  
 
-![Modify Database Instances 001](http://static.toastoven.net/prod_rds_mssql/db_instance_modify_001.png)
+![Modify Database Instances 001](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_modify_001_kr.png)
 
 * ❶ Unable to change the availability area. 
 * ❷ With the change of database instance type, database shall restart.  
 * ❸ Unable to change storage type. 
-* ❹ Unable to reduce storage size, once it is increased. 
-* ❺ Unable to change user ID.
-* ❻ Without password, change is unavailable. 
-* ❼ With the change of port, database shall restart. 
-* ❽ Unable to change VPC. 
+* ❹ Unable to reduce storage size, once it is increased.
+* ❺ 백업 보관 기간이 1일 이상이어야 고가용성 기능을 사용할 수 있습니다.
+* ❻ Unable to change user ID.
+* ❼ Without password, change is unavailable. 
+* ❽ With the change of port, database shall restart. 
+* ❾ Unable to change VPC. 
 
 ### Database Instance Details 
 
@@ -64,12 +75,21 @@ The View Details panel is comprised of five tabs, providing more data related to
 
 You may check basic information of a selected database instance. 
 
-![DB Instance Details > Basic Information 001](http://static.toastoven.net/prod_rds_mssql/db_instance_detail_inst_001.png)
+![DB Instance Details > Basic Information 001](http://static.toastoven.net/prod_rds_mssql/20200112/output/db_instance_detail_inst_001_kr.png)
 
 * ❶ Click [Change] to change name of a database instance. 
-* ❷ Click [Copy] to copy ID of database instance onto clipboard. 
-* ❸ Shows IP information allowing the access to database instances. For a floating IP, another IP starting with 133 is exposed, and external access may be available depending on the database security group setting.   
-* ❹ Check out the database security group which is now applied. Put a mouse cursor on the name of the security group and find out the rules of the group. 
+* ❷ Click [Copy] to copy ID of database instance onto clipboard.
+* ❸ DB 인스턴스에 접속할 수 있는 도메인이 노출됩니다. 도메인을 클릭하면 도메인의 타입과 아이피 정보를 볼 수 있습니다.
+
+![DB 인스턴스 상세 > 기본 정보 001 도메인](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_domain_kr.png)
+
+* ❹ [복사] 버튼 클릭 시, 도메인 정보를 클립보드로 복사합니다.
+* ❺ 고가용성 DB 인스턴스의 데이터베이스 복제 상태를 표시합니다.
+  * 데이터베이스 생성 후, 웹콘솔에 노출되기까지 일정 시간이 소요됩니다.
+  * `복제됨` 상태가 아닌 데이터베이스는 자동 장애 조치가 되지 않습니다.
+* ❻ 적용된 DB 보안 그룹을 확인할 수 있습니다. DB 보안 그룹 이름 위에 마우스 커서를 올려놓으면, 보안 그룹 규칙을 볼 수 있습니다.
+
+![DB 인스턴스 상세 > 기본 정보 001 보안 규칙](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_dsg_kr.png)
 
 #### Monitoring
 
@@ -238,7 +258,8 @@ To restore to a different point in time other than recent available time, select
 
 ![Restoration 006](http://static.toastoven.net/prod_rds_mssql/restore_006.png)
 
-Select type of a newly created database instance and set up, and press [Restore Database Instances]at the bottom to restore the database instance. It takes a few minutes, or up to a few dozens of minutes to restore a database instance. 
+Select type of a newly created database instance and set up, and press [Restore Database Instances]at the bottom to restore the database instance. 
+It takes a few minutes, or up to a few dozens of minutes to restore a database instance. 
 
 ## Events 
 
