@@ -9,6 +9,7 @@ A random port between 1150 and 65535 can be specified as a database port.
 > [Caution]
 > When a port for the kernel, service, or an application program of Windows server is specified, database may not run properly. 
 > When there is a change in the database port for a created database instance, database shall restart. 
+> The user's ISP may block a well-known port for security purposes. In such cases, the user cannot access NHN Cloud's RDS and must use a different port number.
 
 ## VPC Subnet 
 
