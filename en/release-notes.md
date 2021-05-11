@@ -1,5 +1,11 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### 2021. 05. 11.
+
+### Feature Updates
+
+* Added the checkbox that selects all backups
+
 ### 2021. 04. 13.
 
 #### Features Development
