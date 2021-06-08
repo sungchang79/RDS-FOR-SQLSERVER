@@ -46,24 +46,24 @@ It is easy to change the type of already-created database instance via web conso
 > [Caution]
 > Changing already-created database instance type requires minutes of downtime since database instance must be closed.
 
-### DB 인스턴스 상태
+### DB Instance Status
 
-DB 인스턴스의 상태는 아래와 같은 값들로 구성되며, 사용자의 행위와 현재 상태에 따라 변경됩니다.
+DB instance status consists of the following values, and it may change depending on the user's action and current status.
 
-| 상태    | 설명 |
+| Status    | Description |
 | ------- | -------------------------------------------------|
-| 사용 가능 | DB 인스턴스가 안정적이며, 여러 다른 행위를 할 수 있는 상태 |
-| 접속 실패 | 데이터베이스 접속이 안되는 상태 |
-| 스토리지 부족 | DB 인스턴스 스토리지의 여유 공간이 모자른 상태 |
-| 생성 중 | DB 인스턴스가 생성 중인 상태 |
-| 변경 중 | DB 인스턴스가 변경 중인 상태 |
-| 백업 중 | DB 인스턴스가 백업 중인 상태 |
-| 삭제 중 | DB 인스턴스가 삭제 중인 상태 |
-| 재부팅 중 | DB 인스턴스가 재부팅 중인 상태 |
-| 고가용성 구성 복구 중 | 고가용성 DB 인스턴스의 보조서버를 재구성하는 중 |
-| 장애 조치 중 | DB 인스턴스가 장애 조치 중인 상태 |
-| 장애 조치 완료 | DB 인스턴스가 자동 장애 조치가 완료되어 정지된 상태 |
-| 에러 | 알 수 없는 이유로 DB 인스턴스를 사용할 수 없는 상태 |
+| Available | The DB instance is stable capable of performing other actions |
+| Connection failed | Cannot access the database |
+| Not enough storage | DB instance storage does not have enough free space |
+| Creating | DB instance is being created |
+| Changing | DB instance is being changed |
+| Backing up | The backup of DB instance is being made |
+| Deleting | DB instance is being deleted |
+| Rebooting | DB instance is being rebooted |
+| Recovering high availability configuration | The secondary server for the high-availability DB instance is being reconfigured |
+| Failing over | Failover is in progress for the DB instance |
+| Failed over | The DB instance is successfully failed over and the process is stopped. |
+| Error | Cannot use the DB instance due to unknown reasons |
 
 ### Storage Type
 
