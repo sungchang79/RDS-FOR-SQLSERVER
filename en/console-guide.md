@@ -38,7 +38,7 @@ One page shows up to 50 database instances on the list.
 
 Microsoft SQL Server process for the DB instance can be restarted. DB instances can be restarted using failover while using the high availability feature.
 
-![List of Database Instances > Restarting 001](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_restart_001_kr.png)
+![List of Database Instances > Restart 001](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_restart_001_kr.png)
 
 * ❶ If the DB instance is restarted, it will restart the Microsoft SQL Server process. If the Microsoft SQL Server process fails to be restarted, the DB instance VM is rebooted.
 * ❷ With the high availability feature, failover can also be used to restart instances.
@@ -81,7 +81,7 @@ You may check basic information of a selected database instance.
 * ❷ Click [Copy] to copy ID of database instance onto clipboard.
 * ❸ A domain capable of accessing the DB instance gets exposed. You can click the domain to see the domain type and IP information.
 
-![DB Instance Details > Basic Information 001 도메인](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_domain_kr.png)
+![DB Instance Details > Basic Information 001 Domain](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_domain_kr.png)
 
 * ❹ Clicking the [Copy] button will copy the domain information into the clipboard.
 * ❺ Shows the database replication status of a high availability DB instance.
@@ -89,7 +89,7 @@ You may check basic information of a selected database instance.
   * Failover is not performed for databases of which status is not 'replicated'.
 * ❻ Shows the security group of the applied DB. Hover the cursor over a DB security group name to see its security group rules.
 
-![DB 인스턴스 상세 > 기본 정보 001 보안 규칙](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_dsg_kr.png)
+![DB Instance Details > Basic Information 001 Security Rules](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_dsg_kr.png)
 
 #### Monitoring
 
