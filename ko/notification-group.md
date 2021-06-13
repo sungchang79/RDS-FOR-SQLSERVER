@@ -14,20 +14,20 @@
 | MEMORY | 메모리 사용률 |
 | MEMORY | 메모리 Free |
 | MEMORY | 메모리 Used | 
-| SQLSERVER | Batch Requests/sec | 
+| SQLSERVER | Batch Requests/min | 
 | SQLSERVER | Buffer Cache Hit Ratio |
-| SQLSERVER | Checkpoint Pages/sec | 
-| SQLSERVER | SQL Compilations/sec | 
-| SQLSERVER | Errors/sec |
-| SQLSERVER | Full Scans/sec | 
-| SQLSERVER | Latch Waits/sec | 
-| SQLSERVER | Lazy Writes/sec |
-| SQLSERVER | Lock Waits/sec | 
-| SQLSERVER | Number of Deadlocks/sec | 
+| SQLSERVER | Checkpoint Pages/min | 
+| SQLSERVER | SQL Compilations/min | 
+| SQLSERVER | Errors/min |
+| SQLSERVER | Full Scans/min | 
+| SQLSERVER | Latch Waits/min | 
+| SQLSERVER | Lazy Writes/min |
+| SQLSERVER | Lock Waits/min | 
+| SQLSERVER | Number of Deadlocks/min | 
 | SQLSERVER | Page Life Expectancy | 
-| SQLSERVER | Page Lookups/sec | 
-| SQLSERVER | SQL Re-Compilations/sec | 
-| SQLSERVER | Transactions/sec |
+| SQLSERVER | Page Lookups/min | 
+| SQLSERVER | SQL Re-Compilations/min | 
+| SQLSERVER | Transactions/min |
 | SQLSERVER | User Connections |
 | SWAP | Swap Total | 
 | SWAP | Swap Used |
