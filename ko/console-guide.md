@@ -283,10 +283,11 @@ DB 인스턴스 복원에는 몇 분에서 몇십 분이 소요됩니다.
 이벤트 구독 목록 상단의 [이벤트 구독 등록] 버튼을 클릭하면 이벤트를 구독할 수 있는 팝업이 노출됩니다.
 구독할 이벤트 정보를 입력 후, 팝업 하단의 [생성] 버튼을 클릭하면 이벤트를 구독할 수 있습니다.
 
-![이벤트 구독 팝업 001](http://static.toastoven.net/prod_rds_mssql/event_subscription_001.png)
+![이벤트 구독 팝업 001](http://static.toastoven.net/prod_rds_mssql/event_subscription_create_001.png)
 
 * ❶ 이벤트 유형에 따라 이벤트 코드, 이벤트 소스를 좀더 세분화해서 선택할 수 있습니다.
-* ❷ 프로젝트의 멤버만 사용자 목록에 노출됩니다. 실명 인증을 한 멤버만 이름과 SMS 가 추가로 노출됩니다.
+* ❷ 이벤트 발생 시 알림을 보낼 사용자 그룹을 선택할 수 있습니다.
+    * 자동 완성 입력을 지원합니다.
 
 ![이벤트 구독 팝업 002](http://static.toastoven.net/prod_rds_mssql/event_subscription_002.png)
 
@@ -433,3 +434,75 @@ RDS for MS-SQL 는 기본 시스템 지표 및 기본 SQL 서버 지표, 2개의
 * ❶ 1번 영역을 마우스로 드래그 & 드랍하여 위치를 변경할 수 있습니다.
 * ❷ 우측 하단 영역을 마우스로 드래그 & 드랍하여 크기를 변경할 수 있습니다.
 * ❸ 추가된 차트를 제거할 수 있습니다.
+
+## 알림 그룹
+
+알림 그룹 탭에서는 알림 그룹의 생성 및 삭제가 가능합니다. 또한 알림 그룹에 감시 대상, 사용자 그룹, 감시 설정을 추가, 수정, 삭제할 수 있습니다.
+알림 그룹에 대한 자세한 설명은 [알림 그룹](./notification-group) 을 참고합니다.
+
+### 알림 그룹 생성
+
+알림 그룹 목록 상단의 [+ 그룹 만들기] 버튼을 클릭하면, 알림 그룹을 생성할 수 있는 팝업이 노출됩니다.
+
+![알림 그룹 목록 001](http://static.toastoven.net/prod_rds_mssql/notification_group_list_001.png)
+![알림 그룹 생성 001](http://static.toastoven.net/prod_rds_mssql/notification_group_create_001.png)
+* ❶ 알림 그룹의 활성화 여부를 선택할 수 있습니다.
+    * 사용 안 함 선택시 알림이 오지 않습니다.
+* ❷ 감시할 DB 인스턴스를 선택할 수 있습니다.
+    * ![알림 그룹 DB 인스턴스 001](http://static.toastoven.net/prod_rds_mssql/notification_group_db_instance_001.png)
+    * 자동 완성 입력을 지원합니다.
+    * 사용 가능, 접속 실패, 스토리지 부족 상태의 DB 인스턴스만 선택 가능합니다.
+    * 사용 가능, 접속 실패, 스토리지 부족 상태의 DB 인스턴스만 감시대상 DB 인스턴스에서 제거 가능합니다.
+* ❸ 이벤트 발생 시 알림을 보낼 사용자 그룹을 선택할 수 있습니다.
+    * ![알림 그룹 사용자 그룹 001](http://static.toastoven.net/prod_rds_mssql/notification_group_user_group_001.png)
+    * 자동 완성 입력을 지원합니다.
+
+팝업 하단의 [확인] 버튼을 클릭하여 알림 그룹을 생성합니다.
+
+### 알림 그룹 수정
+
+알림 그룹 목록에서 수정하고자 하는 알림 그룹의 우측 [편집] 버튼을 클릭합니다.
+![알림 그룹 목록 001](http://static.toastoven.net/prod_rds_mssql/notification_group_list_002.png)
+![알림 그룹 수정 001](http://static.toastoven.net/prod_rds_mssql/notification_group_modify_001.png)
+
+* 알림 그룹 생성과 동일하게 이름, 알림 유형, 활성화 여부, 감시대상 DB 인스턴스, 사용자 그룹을 수정할 수 있습니다.
+
+
+### 알림 그룹 감시 설정
+
+알림 그룹 목록에서 감시 설정하고자 하는 알림 그룹의 우측 [감시 설정] 버튼을 클릭합니다.
+
+![알림 그룹 감시 설정 001](http://static.toastoven.net/prod_rds_mssql/notification_group_metric_001.png)
+
+* ❶ [+ 감시 설정] 버튼을 클릭하면, 새로운 감시가 추가됩니다.
+    * ![알림 그룹 감시 설정 추가 001](http://static.toastoven.net/prod_rds_mssql/notification_group_metric_add_001.png)
+    * 임곗값은 0이상 100이하의 값을 지정할 수 있습니다.
+    * 지속 시간은 0이상 32,767이하의 값을 설정할 수 있습니다.
+* ❷ 버튼을 클릭하면, 기존의 감시 설정을 수정할 수 있습니다.
+* ❸ 버튼을 클릭하면, 감시 설정을 삭제할 수 있습니다.
+
+## 사용자 그룹
+
+사용자 그룹 탭에서는 사용자 그룹의 생성 및 삭제가 가능합니다. 또한 사용자 그룹의 사용자 목록을 추가, 수정, 삭제할 수 있습니다.
+
+### 사용자 그룹 생성
+
+사용자 그룹 목록 상단의 [+ 사용자 그룹 생성] 버튼을 클릭하면, 사용자 그룹을 생성할 수 있는 팝업이 노출됩니다.
+
+![사용자 그룹 목록 001](http://static.toastoven.net/prod_rds_mssql/user_group_list_001.png)
+![사용자 그룹 생성 001](http://static.toastoven.net/prod_rds_mssql/user_group_create_001.png)
+* ❶ 통보 대상을 추가, 삭제할 수 있습니다.
+    * ![사용자 그룹 생성 001](http://static.toastoven.net/prod_rds_mssql/user_group_user_list_001.png)
+    * 추가하고자 하는 사용자 우측 [추가] 버튼을 클릭하면 통보 대상에 추가할 수 있습니다.
+    * 삭제하고자 하는 사용자 이름 오른쪽 [x] 버튼을 클릭하면 통보 대상에서 제거할 수 있습니다.
+    * 프로젝트 멤버만 사용자 목록에 노출됩니다. 실명 인증을 한 멤버만 이름과 SMS가 추가로 노출됩니다.
+
+팝업 하단의 [확인] 버튼을 클릭하여 사용자 그룹을 생성합니다.
+
+### 사용자 그룹 수정
+
+사용자 그룹 목록에서 수정하고자 하는 사용자 그룹의 우측 [편집] 버튼을 클릭합니다.
+
+![사용자 그룹 수정 001](http://static.toastoven.net/prod_rds_mssql/user_group_modify_001.png)
+
+* 사용자 그룹 생성과 동일하게 이름, 통보 대상을 수정할 수 있습니다.

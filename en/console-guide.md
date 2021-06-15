@@ -34,14 +34,14 @@ One page shows up to 50 database instances on the list.
 * ❺ Refers to the current CPU usage volume and the number of active sessions. 
 * ❻ Refers to the status of database instance. Each status shows different value and color of status.
 
-### DB 인스턴스 재시작
+### Restarting DB Instance
 
-DB 인스턴스의 Microsoft SQL Server 프로세스를 재시작할 수 있습니다. DB 인스턴스가 고가용성 구성을 사용하면, 장애 조치를 이용해 재시작할 수 있습니다.
+Microsoft SQL Server process for the DB instance can be restarted. DB instances can be restarted using failover while using the high availability feature.
 
-![DB 인스턴스 목록 > 재시작 001](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_restart_001_kr.png)
+![List of Database Instances > Restart 001](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_restart_001_kr.png)
 
-* ❶ DB 인스턴스를 재시작하면, Microsoft SQL Server 프로세스를 재시작하게 됩니다. 만약 Microsoft SQL Server 프로세스의 재시작에 실패할 경우 DB 인스턴스 VM이 리부팅됩니다.
-* ❷ 고가용성 기능을 사용하는 경우 장애 조치를 이용해 재시작할 수도 있습니다.
+* ❶ If the DB instance is restarted, it will restart the Microsoft SQL Server process. If the Microsoft SQL Server process fails to be restarted, the DB instance VM is rebooted.
+* ❷ With the high availability feature, failover can also be used to restart instances.
 
 ### Modifying Database Instances
 
@@ -60,7 +60,7 @@ Once request for modifying database instance is successfully made, you're moved 
 * ❷ With the change of database instance type, database shall restart.  
 * ❸ Unable to change storage type. 
 * ❹ Unable to reduce storage size, once it is increased.
-* ❺ 백업 보관 기간이 1일 이상이어야 고가용성 기능을 사용할 수 있습니다.
+* ❺ In order to use high availability, the storage backup period must be at least 1 day.
 * ❻ Unable to change user ID.
 * ❼ Without password, change is unavailable. 
 * ❽ With the change of port, database shall restart. 
@@ -79,17 +79,17 @@ You may check basic information of a selected database instance.
 
 * ❶ Click [Change] to change name of a database instance. 
 * ❷ Click [Copy] to copy ID of database instance onto clipboard.
-* ❸ DB 인스턴스에 접속할 수 있는 도메인이 노출됩니다. 도메인을 클릭하면 도메인의 타입과 아이피 정보를 볼 수 있습니다.
+* ❸ A domain capable of accessing the DB instance gets exposed. You can click the domain to see the domain type and IP information.
 
-![DB 인스턴스 상세 > 기본 정보 001 도메인](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_domain_kr.png)
+![DB Instance Details > Basic Information 001 Domain](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_domain_kr.png)
 
-* ❹ [복사] 버튼 클릭 시, 도메인 정보를 클립보드로 복사합니다.
-* ❺ 고가용성 DB 인스턴스의 데이터베이스 복제 상태를 표시합니다.
-  * 데이터베이스 생성 후, 웹콘솔에 노출되기까지 일정 시간이 소요됩니다.
-  * `복제됨` 상태가 아닌 데이터베이스는 자동 장애 조치가 되지 않습니다.
-* ❻ 적용된 DB 보안 그룹을 확인할 수 있습니다. DB 보안 그룹 이름 위에 마우스 커서를 올려놓으면, 보안 그룹 규칙을 볼 수 있습니다.
+* ❹ Clicking the [Copy] button will copy the domain information into the clipboard.
+* ❺ Shows the database replication status of a high availability DB instance.
+  * It takes some time for the database to be exposed to the web console after its creation.
+  * Failover is not performed for databases of which status is not 'replicated'.
+* ❻ Shows the security group of the applied DB. Hover the cursor over a DB security group name to see its security group rules.
 
-![DB 인스턴스 상세 > 기본 정보 001 보안 규칙](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_dsg_kr.png)
+![DB Instance Details > Basic Information 001 Security Rules](http://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_dsg_kr.png)
 
 #### Monitoring
 
