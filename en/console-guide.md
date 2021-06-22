@@ -283,10 +283,11 @@ Check out events of recent occurrence. The 50 events that are exposed at one sho
 Click [Register Event Subscription] on top of the list of event subscription, and a popup shows to subscribe an events.
 Enter information of an event to subsribe, click [Create] at the bottom and you're subscribed to the event.  
 
-![Popup for Event Subscription 001](http://static.toastoven.net/prod_rds_mssql/event_subscription_001.png)
+![Popup for Event Subscription 001](http://static.toastoven.net/prod_rds_mssql/event_subscription_create_001.png)
 
 * ❶ Each event type can be subdivided into event codes and event sources.   
-* ❷ Only project members are exposed on the list of users. Those whose names are authenticated only show their names and SMS, further on the page.  
+* ❷ Select the user groups to be notified when the event occurs.
+    * Supports Autocomplete input.
 
 ![Popup for Event Subscription 002](http://static.toastoven.net/prod_rds_mssql/event_subscription_002.png)
 
@@ -432,4 +433,76 @@ Charts on a user layout are free to be modified in the layout or size.
 
 * ❶ Area 1 can be re-located with a drag & drop. 
 * ❷ To change the size, drag and drop the bottom right area.  
-* ❸ Charts can be removed. 
+* ❸ Added chart can be deleted.
+
+## Notification Group
+
+In the Notification Group tab, a notification group can be created and deleted. In addition, monitoring target, user group, and monitoring settings can be added, modified and deleted in the notification group.
+Refer to [notification group](./notification-group) for more details regarding notification group.
+
+### Create Notification Group
+
+Click the [+ Create Group] button at the top of the notification group list and a popup will be displayed to create a notification group.
+
+![notification group list 001](http://static.toastoven.net/prod_rds_mssql/notification_group_list_001.png)
+![create notification group 001](http://static.toastoven.net/prod_rds_mssql/notification_group_create_001.png)
+* ❶ Choose whether to enable or disable the notification group.
+    * Notifications will not be received when disabled.
+* ❷ Select the DB instance to monitor.
+    * ![notification group DB instance 001](http://static.toastoven.net/prod_rds_mssql/notification_group_db_instance_001.png)
+    * Supports Autocomplete input.
+    * Only DB instance that is available, failed connection, and have insufficient storage can be selected.
+    * Only DB instance that is available, failed connection, and have insufficient storage can be removed from the monitored DB instance.
+* ❸ Select the user groups to be notified when the event occurs.
+    * ![notification group user group 001](http://static.toastoven.net/prod_rds_mssql/notification_group_user_group_001.png)
+    * Supports Autocomplete input.
+
+Click the [OK] button at the bottom of the popup to create the notification group.
+
+### Modify Notification Group
+
+In the notification group list, click the [Edit] button at the right of the notification group to modify.
+![notification group list 001](http://static.toastoven.net/prod_rds_mssql/notification_group_list_002.png)
+![modify notification group 001](http://static.toastoven.net/prod_rds_mssql/notification_group_modify_001.png)
+
+* Same as creating a notification group, the name, notification type, whether to enable or disable, monitoring target DB instance, and user group can be modified.
+
+
+### Notification Group Monitoring Settings
+
+In the notification group list, click the [Monitoring Settings] button at the right of the notification group to set to monitor.
+
+![notification group monitoring setting 001](http://static.toastoven.net/prod_rds_mssql/notification_group_metric_001.png)
+
+* ❶ New monitoring settings can be added by clicking the [+ Monitoring Setting] button.
+    * ![add notification group monitoring setting 001](http://static.toastoven.net/prod_rds_mssql/notification_group_metric_add_001.png)
+    * The threshold can be set to a value between over 0 and below 100.
+    * The duration can be set to a value between over 0 and below 32,767.
+* ❷ Click the button to modify the default monitoring settings.
+* ❸ Click the button to delete the monitoring settings.
+
+## User Group
+
+In the User Group tab, a notification group can be created and deleted. In addition, the user list can be added, modified, and deleted in the user group.
+
+### Create User Group
+
+Click the [+ Create User Group] at the top of the user group list and a popup will be displayed to create a user group.
+
+![user group list 001](http://static.toastoven.net/prod_rds_mssql/user_group_list_001.png)
+![create user group 001](http://static.toastoven.net/prod_rds_mssql/user_group_create_001.png)
+* ❶ Add and delete notification target.
+    * ![create user group 001](http://static.toastoven.net/prod_rds_mssql/user_group_user_list_001.png)
+    * Click the [Add] button on the right of the user to add as a notification target.
+    * Click the [x] button on the right of the user’s name to remove it from the notification target.
+    * Only the project members are displayed on the user list. Only the users who completed verification have their name and SMS displayed in addition. 
+
+Click the [OK] button at the bottom of the popup to create a user group.
+
+### Modify User Group
+
+In the user group list, click the [Edit] button at the right of the user group to be modified.
+
+![modify user group 001](http://static.toastoven.net/prod_rds_mssql/user_group_modify_001.png)
+
+* Same as creating the user group, the name and notification target can be modified.
