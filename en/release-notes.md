@@ -1,5 +1,10 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### 2021. 06. 15.
+
+* Added the notification group feature
+* Added user group feature
+
 ### 2021. 05. 11.
 
 ### Feature Updates
