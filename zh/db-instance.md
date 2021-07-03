@@ -1,5 +1,7 @@
 ## Database > RDS for SQL Server > Database Instance
 
+## Database Instance
+
 Database instance encompasses virtual equipment and installed Microsoft SQL Server, serving as the unit of Microsoft SQL Server provided by RDS for SQL Server. 
 Direct access to a database instance is not allowed, but access is enabled only through the port entered when creating the database instance. 
 Database instances can be identified by user-specified name or automatically assigned 32-bit ID. 
@@ -42,7 +44,26 @@ To create a database instance, an appropriate type must be selected depending on
 It is easy to change the type of already-created database instance via web console.
 
 > [Caution]
-> Changing already-created database instance type requires minutes of downtime since database instance must be closed. 
+> Changing already-created database instance type requires minutes of downtime since database instance must be closed.
+
+### DB Instance Status
+
+DB instance status consists of the following values, and it may change depending on the user's action and current status.
+
+| Status    | Description |
+| ------- | -------------------------------------------------|
+| Available | The DB instance is stable capable of performing other actions |
+| Connection failed | Cannot access the database |
+| Not enough storage | DB instance storage does not have enough free space |
+| Creating | DB instance is being created |
+| Changing | DB instance is being changed |
+| Backing up | The backup of DB instance is being made |
+| Deleting | DB instance is being deleted |
+| Rebooting | DB instance is being rebooted |
+| Recovering high availability configuration | The secondary server for the high-availability DB instance is being reconfigured |
+| Failing over | Failover is in progress for the DB instance |
+| Failed over | The DB instance is successfully failed over and the process is stopped. |
+| Error | Cannot use the DB instance due to unknown reasons |
 
 ### Storage Type
 
@@ -57,11 +78,14 @@ It is easy to change the size of already-created storage via web console.
 
 ## High-availability DB instance
 
-High-ability DB instance increases availability and data durability, and provides fault-tolerant database. RDS for MS-SQL uses the mirroring function of the Microsoft SQL Server, consisting of a primary server, a secondary server, and an event monitor server, to offer high availability. The primary and secondary servers are created in different availability areas.
+High-ability DB instance increases availability and data durability, and provides fault-tolerant database. 
+RDS for MS-SQL uses the mirroring function of the Microsoft SQL Server, consisting of a primary server, a secondary server, and an event monitor server, to offer high availability. The primary and secondary servers are created in different availability areas.
 
 ### Failover action
 
-A failover action automatically takes place when the primary server becomes unavailable due to an unexpected failure. Upon failover, the failed primary server is halted to prevent split brain and the secondary server takes over the primary server. Applications do not have to be adjusted for this change, as the A record of the internal and external domains that are used to connect is automatically switched from the primary server to the secondary server. When failover is complete, high availability DB instances will disappear and the rest of DB instances are separated into two groups: the failed DB instances and the DB instances promoted due to the failure. The promoted DB instances inherit all the configurations of existing DB instances except backups. The promoted DB instances will not perform backed up immediately after the promotion. This is to prevent any system load after the failover action. The DB instances with failover completed can be restarted by pressing the [Restart] button.
+A failover action automatically takes place when the primary server becomes unavailable due to an unexpected failure. Upon failover, the failed primary server is halted to prevent split brain and the secondary server takes over the primary server. Applications do not have to be adjusted for this change, as the A record of the internal and external domains that are used to connect is automatically switched from the primary server to the secondary server. 
+When failover is complete, high availability DB instances will disappear and the rest of DB instances are separated into two groups: the failed DB instances and the DB instances promoted due to the failure. The promoted DB instances inherit all the configurations of existing DB instances except backups. The promoted DB instances will not perform backed up immediately after the promotion. This is to prevent any system load after the failover action. 
+The DB instances with failover completed can be restarted by pressing the [Restart] button.
 
 ### Manual failover action
 
@@ -83,6 +107,7 @@ A high availability DB instance can be manually restarted after the failover act
 - User, login, and permission of the primary server will be duplicated to the secondary server.
   - Duplication takes at least 10 seconds up to dozens of minutes.
   - When a failure occurs before the copying process is complete, the corrections will be lost.
-- SQL Server Agent jobs cannot be duplicated. When failover is complete, it needs to be created again in the promoted DB instance.
+* SQL Server Agent jobs cannot be duplicated. When failover is complete, it needs to be created again in the promoted DB instance.
 * The failover time is impacted by the recovery process; the larger the transaction, the longer the time.
-* Auto failover action will be paused while changing a DB instance.
+* The auto failover feature will be temporarily disabled while changing a DB instance.
+* Instances of which memory is less than 8GB cannot use the high availability feature

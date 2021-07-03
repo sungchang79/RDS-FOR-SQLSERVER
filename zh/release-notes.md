@@ -1,30 +1,57 @@
 ## Database > RDS for MS-SQL > Release Notes
 
-### 2021. 03. 09.
+### 2021. 06. 15.
 
-#### 버그 수정
+* Added the notification group feature
+* Added user group feature
 
-* 복구 모델이 `SIMPLE` 인 데이터베이스의 수동 백업을 이용해 고가용성 구성으로 복원하지 못하도록 검증 로직 추가
+### 2021. 05. 11.
+
+### Feature Updates
+
+* Added the checkbox that selects all backups
+
+### 2021. 04. 13.
+
+#### Features Development
+
+* Modified the system so that users can select multiple backups and delete them at once
+* Modified the system so that object storages can be restored with a different name
+
+#### Features Updates
+
+* Modified the system so that instances of which memory is less than 8GB cannot access the high availability feature
+
+### March 9, 2021
+
+####  Bug Fixes
+
+* Added a verification logic to prevent the use of a manual backup of database of which recovery model is `SIMPLE` for restoration of high availability configuration
 
 ### February 9, 2021
 
 #### Feature Updates
+
 * New instance type supported (x1 type)
 
 #### Bug Fixes
-* Fixed an issue where manual backup of a database of which recovery model is set to “SIMPLE” fails
+
+* Fixed an issue where manual backup of a database of which recovery model is set to `SIMPLE` fails
 
 ### January 12, 2021
 
 #### Feature Development
+
 - Added the Stored Procedure for deleting databases
 
 #### Feature Updates
+
 - Fixed the application to leave additional server events for creating instance
 - Fixed the application to display the instance type category in the same manner as in the Compute & Network service
 - Fixed the application to leave events on promoted primary servers when an auto failover occurs.
 
 #### Bug Fixes
+
 - Fixed a bug where an error would occur when restoring a previous backup after an auto failover.
 - Fixed a bug where the database of the web console would sometimes be exposed multiple times on a high availability DB instance.
 - Fixed a bug where an error would occur when restoring to the point in time right after creating instance
@@ -34,35 +61,43 @@
 ### December 15, 2020
 
 #### Feature Development
+
 - High-availability DB instance feature added
 
 ### October 13, 2020
 
 #### Bug Fixes
+
 - Fixed a bug of DB instance restoration failure where it is rolled back to the time it was created
 
 ### September 15, 2020
 
 #### Feature Updates
+
 - Updated UX for a more subdivided representation of DB instance status
 
 #### Bug Fixes
+
 - Fixed a bug of failure to roll back to a certain point of time right after a new database is created
 - Fixed a UI bug where the date insertion component failed to operate properly when Japanese was selected
 
 #### Other
+
 - Excluded c2.c2m2 instance from instances that can be generated
 
 ### August 11, 2020
 
 #### Feature Updates
+
 - Updated UX to use DB instance type and storage size of the original DB instance as default
 
 #### Bug Fixes
+
 - Fixed a bug that only allows restoration to 5 minutes before a desired time point.
 - Fixed a bug where attempts to access a DB instance creator page are led to an error page in the absence of a subnet.
 
 ### July 14, 2020
 
 #### Release of Alpha Service 
-* TOAST Relational Database Service for SQL Server (RDS for MS-SQL) provides Microsoft SQL Server in the cloud environment. 
+
+* TOAST Relational Database Service for SQL Server (RDS for MS-SQL) provides Microsoft SQL Server in the cloud environment.

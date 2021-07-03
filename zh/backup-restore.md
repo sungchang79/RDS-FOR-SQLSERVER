@@ -20,8 +20,8 @@ Auto backup files are deleted along with database instance deletion, while manua
 By setting up the backup retention period for more than a day, auto backup is enabled and executed during specified backup execution period. Unless the backup execution time is specified, daily auto backup shall be executed when there is the minimum workload. By specifying backup time, auto backup is executed within 15 minutes from the specified time. Auto backups can be saved for up to 30 days. When the backup retention period setting is N/A, auto backup is disabled, deleting all auto backup files saved from backup storage. With the auto backup disabled, restoration to a point of time during backup retention period becomes unavailable, while restoration to a particular time with manual backup only is available.   
 
 > [Caution]
->If auto backup is enabled, make sure to use the “Full” database recovery model.
->If the “Simple” or “Bulk logged” model is used, it will be forced to use the “Full” recovery model and perform a full backup again from the beginning.
+>If auto backup is enabled, make sure to use the `Full` database recovery model.
+>If the `Simple` or `Bulk logged` model is used, it will be forced to use the `Full` recovery model and perform a full backup again from the beginning.
 
 ### Manual Backup
 
@@ -37,7 +37,8 @@ RDS for SQL Server helps to restore to a backup moment by using backup files, or
 
 ### Restoration with Backup
 
-With manual or auto backups, database instance can be restored. Restoration time depends on the backup size, from a few minutes, up to dozones of minutes. It is recommended to apply the same type of backup database instance and parameter group for restoration. 
+With manual or auto backups, database instance can be restored. Restoration time depends on the backup size, from a few minutes, up to dozones of minutes .
+It is recommended to apply the same type of backup database instance and parameter group for restoration. 
 
 > [Caution]
 > If a database instance has many databases, each in big size, backup time might be different for each.  
@@ -45,14 +46,15 @@ With manual or auto backups, database instance can be restored. Restoration time
 
 ### Point-in-Time Restoration during Backup Retention Period 
 
-If auto backup is enabled for a database instance, it is available to restore data to a time point during retention period. To enable a point-in-time restoration, log backup is required. RDS for SQL Server executes auto log backups at every 5 minutes, and stores them at a backup storage. If the auto backup is enabled, it detects the database created by user every 5 minutes and performs a full backup separately. Therefore, if users try to roll back to the time the DB was just created, the newly created DB won't be recovered properly. Using a reliable DB instance without separate modification, a point in time which as at least five minutes after the time of creation must be selected.
+If auto backup is enabled for a database instance, it is available to restore data to a time point during retention period. To enable a point-in-time restoration, log backup is required. RDS for SQL Server executes auto log backups at every 5 minutes, and stores them at a backup storage. 
+If the auto backup is enabled, it detects the database created by user every 5 minutes and performs a full backup separately. Therefore, if users try to roll back to the time the DB was just created, the newly created DB won't be recovered properly. Using a reliable DB instance without separate modification, a point in time which as at least five minutes after the time of creation must be selected.
 
 ## Exporting and importing backup using object storage
 
 Users can back up to their DB instance object storage or recover a backup file from the user object storage as a DB instance.
 
-> [주의]
-> 동일 리전의 오브젝트 스토리지에 백업을 내보내거나, 가져올 수 있습니다.
+> [Cautions]
+> You can export and import backups to and from object storages in the same region.
 
 ### Backing up to object storage
 
@@ -71,5 +73,6 @@ If the backup for recovery exceeds 5GB, it must be uploaded in multiple parts. F
 Recovery is performed for each individual database, and can be performed onto an existing DB instance. If there is not enough space in the DB instance's storage, recovery may fail.
 
 > [Caution]
-> Since the “master” database is not recovered, the user login information in the recovered database is edited so that only users entered at the time of DB creation have access to it.
-> If recovered in a high availability DB instance, when “Whether to recover” is set to “Yes,” the high availability setup begins the moment the database recovery completes. If “Whether to recover” is set to "no" and an error occurs during the recovery, the database that was being recovered will be deleted. 
+> Since the `master` database is not recovered, the user login information in the recovered database is edited so that only users entered at the time of DB creation have access to it.
+
+If recovered in a high availability DB instance, when `Whether to recover` is set to `Yes,` the high availability setup begins the moment the database recovery completes. If `Whether to recover` is set to "no" and an error occurs during the recovery, the database that was being recovered will be deleted. 
