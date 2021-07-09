@@ -24,6 +24,9 @@ An event refers to an important incident incurred by RDS for SQL Server or user.
 | - | - | - |
 | DB_INSTANCE | DB_INSTANCE_CREATED | DB instance created |
 | DB_INSTANCE | DB_INSTANCE_CREATED_FAIL | Creating DB instance failed |
+| DB_INSTANCE | DB_INSTANCE_SERVER_CREATE_START | DB 인스턴스 서버 생성 시작 |
+| DB_INSTANCE | DB_INSTANCE_SERVER_CREATE_END | DB 인스턴스 서버 생성 종료 |
+| DB_INSTANCE | DB_INSTANCE_SERVER_CREATE_FAIL | DB 인스턴스 서버 생성 실패 |
 | DB_INSTANCE | DB_INSTANCE_BACKUP_START | Backup of DB instance started  |
 | DB_INSTANCE | DB_INSTANCE_BACKUP_END | DB instance backed up  |
 | DB_INSTANCE | DB_INSTANCE_BACKUP_FAIL | Backup of DB instance failed  |
@@ -41,6 +44,12 @@ An event refers to an important incident incurred by RDS for SQL Server or user.
 | DB_INSTANCE | DB_INSTANCE_REBOOT_START | DB instance restarted |
 | DB_INSTANCE | DB_INSTANCE_REBOOT_END | Restarting DB instance completed |
 | DB_INSTANCE | DB_INSTANCE_REBOOT_FAIL | Restarting DB instance failed  |
+| DB_INSTANCE | DB_INSTANCE_RECOVER_HA_START | DB 인스턴스 고가용성 구성 복구 시작 |
+| DB_INSTANCE | DB_INSTANCE_RECOVER_HA_END | DB 인스턴스 고가용성 구성 복구 완료 |
+| DB_INSTANCE | DB_INSTANCE_RECOVER_HA_FAIL | DB 인스턴스 고가용성 구성 복구 실패 |
+| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_START | DB 인스터스 고가용성 구성 변경 시작 |
+| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_END | DB 인스터스 고가용성 구성 변경 완료 |
+| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_FAIL | DB 인스터스 고가용성 구성 변경 실패 |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_PASSWORD_START | Changing DB instance password started |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_PASSWORD_END | Changing DB instance password completed |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_PASSWORD_FAIL | Changing DB instance password failed  |
@@ -62,6 +71,14 @@ An event refers to an important incident incurred by RDS for SQL Server or user.
 | DB_INSTANCE | DB_INSTANCE_CHANGE_BACKUP_CONFIG_START | Changing DB instance backup setting started |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_BACKUP_CONFIG_END | Changing DB instance backup setting completed |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_BACKUP_CONFIG_FAIL | Changing DB instance backup setting failed |
+| DB_INSTANCE | DB_INSTANCE_STATUS_CHANGED_TO_AVAILABLE | DB 인스턴스 상태 정상화 |
+| DB_INSTANCE | DB_INSTANCE_STATUS_CHANGED_TO_FAIL_TO_CONNECT | DB 인스턴스 접속 불가 |
+| DB_INSTANCE | DB_INSTANCE_STATUS_CHANGED_TO_STORAGE_FULL | DB 인스턴스 스토리지 부족 |
+| DB_INSTANCE | HA_AUTOMATIC_FAILOVER_START | 고가용성 DB 인스턴스 자동 장애 조치 시작 |
+| DB_INSTANCE | HA_AUTOMATIC_FAILOVER_END | 고가용성 DB 인스턴스 자동 장애 조치 완료 |
+| DB_INSTANCE | HA_AUTOMATIC_FAILOVER_FAIL | 고가용성 DB 인스턴스 자동 장애 조치 실패 |
+| DB_INSTANCE | HA_AUTOMATIC_PROMOTE_END | 고가용성 DB 인스턴스 승격 완료 |
+| DB_INSTANCE | HA_AUTOMATIC_PROMOTE_FAIL | 고가용성 DB 인스턴스 승격 실패 |
 | BACKUP | BACKUP_START | Backup started |
 | BACKUP | BACKUP_END | Backup completed |
 | BACKUP | BACKUP_DELETED | Backup deleted |

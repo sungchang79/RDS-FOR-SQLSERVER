@@ -16,3 +16,13 @@ See the below example to change database name from `FOO` to `BAR`.
 EXEC [master].[dbo].[rdsp_alter_database_name] N'FOO', N'BAR'
 GO
 ```
+
+### Deleting Database
+
+To delete a database, a separate (Stored Procedure) must be called instead of the common DROP syntax.
+The following is an example of deleting the `FOO` database.
+
+```sql
+EXEC [master].[dbo].[rdsp_drop_database] N'FOO'
+GO
+```
