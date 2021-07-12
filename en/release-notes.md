@@ -1,4 +1,14 @@
 ## Database > RDS for MS-SQL > Release Notes
+### 2021. 07. 13.
+
+#### More Features
+
+* Force restart feature added
+
+#### Bug Fixes
+
+* Fixed a bug in which a small amount of internet traffic is billed for connecting to the domain server in the instance without a floating IP
+* Fixed a bug in which the reset button in the event list doesn’t work
 
 ### 2021. 06. 15.
 
