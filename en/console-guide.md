@@ -29,10 +29,11 @@ One page shows up to 50 database instances on the list.
 
 ![List of Database Instances > Conditions 001](https://static.toastoven.net/prod_rds_mssql/20200112/output/db_instance_list_cond_001_kr.png)
 
-* ❸ When selected, database instances may be enabled depending on the status. 
-* ❹ Pagination is available when the current list is updated or if there are more than 50 database instances.
-* ❺ Refers to the current CPU usage volume and the number of active sessions. 
-* ❻ Refers to the status of database instance. Each status shows different value and color of status.
+* ❸ Frequently used tasks can be performed.
+* ❹ Not frequently used additional tasks can be performed.
+* ❺ Pages can be navigated when the current list is refreshed or there are 50 DB instances or more.
+* ❻ Current CPU usage and number of active sessions. The value is updated every minute.
+* ❼ The DB instance status. Different status values and colors appear depending on the status. A spinner appears if the DB instance is in operation.
 
 ### Restarting DB Instance
 
@@ -42,6 +43,22 @@ Microsoft SQL Server process for the DB instance can be restarted. DB instances 
 
 * ❶ If the DB instance is restarted, it will restart the Microsoft SQL Server process. If the Microsoft SQL Server process fails to be restarted, the DB instance VM is rebooted.
 * ❷ With the high availability feature, failover can also be used to restart instances.
+
+### Force restarting DB instance
+
+If the status of the DB instance is determined to be abnormal, it may restart regardless of the current operation.
+
+![Force restart DB instance 001](https://static.toastoven.net/prod_rds_mssql/20210713/output/db_instance_force_restart_001.png)
+
+* ❶ When the **force restart** button is clicked after selecting a DB instance, the **force restart** confirmation window appears.
+
+![Force restart DB instance 002](https://static.toastoven.net/prod_rds_mssql/20210713/output/db_instance_force_restart_002.png)
+
+* ❷  **When the force restart** button is clicked, the DB instance gets forced to restart.
+
+> [Caution]
+> If you force restart, all the tasks you are currently working on will be lost. Any active VMs will reboot.
+> After a force restart, the DB instance may not return to a normal state. In that case, please contact our Customer Center.
 
 ### Modifying Database Instances
 
@@ -211,13 +228,14 @@ Select the backup to be sent to object storage from the list and click the [Expo
 ![Backup List > Export Backup To Object Storage Popup](https://static.toastoven.net/prod_rds_mssql/20210209/output/backup_to_obs_modal.png)
 
 * ❶ Enter the Tenant ID of the object storage where the backup file will be stored. This can be checked in the API endpoint settings in the object storage service web console.
-* ❷ Enter the NHN Cloud account (e-mail) of the object storage where the backup will be stored.
+* ❷ Enter the NHN Cloud account (email) or the IAM member ID of the object storage to store the backup file.
 * ❸ Enter the API password of the object storage where the backup will be stored.
 * ❹ Enter the container name of the object storage where the backup will be stored.
 * ❺ Enter the file path of the backup file to be stored in the container.
   * The folder name can be up to 255 bytes, and the full path up to 1024 bytes.
   * Specific forms such as . or .. cannot be used and special characters (' " < > ; /) and spaces are not allowed.
 * ❻ Enter the name of the database to be backed up.
+* ❼ Select whether to use differential backup.
 
 ## Restoration
 
