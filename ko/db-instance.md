@@ -27,7 +27,13 @@ RDS for MS-SQL은 물리 하드웨어 문제로 생기는 장애에 대비하기
 
 ### Microsoft SQL Server 버전
 
-SQL Server 2016 Standard 버전만 지원합니다.
+아래 명시된 버전을 지원합니다.
+
+* SQL Server 2016 Standard (13.0.5850.14)
+* SQL Server 2017 Standard (14.0.3294.2)
+
+> [주의]
+> 버전별로 백업 파일이 호환되지 않아 백업 파일을 이용해 복원할 때, 다른 버전으로는 생성할 수 없습니다.
 
 ### DB 인스턴스 타입
 
