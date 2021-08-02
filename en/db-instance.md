@@ -27,7 +27,13 @@ RDS for SQL Server has many availability areas under one system so as to prepare
 
 ### Version of Microsoft SQL Server
 
-Only the SQL Server 2016 Standard version is supported.   
+The following versions are supported.
+
+* SQL Server 2016 Standard (13.0.5850.14)
+* SQL Server 2017 Standard (14.0.3294.2)
+
+> [Caution]
+> You cannot create a different version when restoring using a backup file since the backup files for each version are incompatible.
 
 ### Database Instance Type
 
