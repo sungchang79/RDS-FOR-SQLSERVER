@@ -1,5 +1,31 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### 2021. 08. 10.
+
+#### Feature Improvements
+
+* Modified to verify the integrity of the file by checking the checksum when uploading/downloading a file.
+* Fixed to return an error when the quota is insufficient by performing a quota check in advance when creating instances, changing types, and expanding storage.
+
+#### Bug Fixes
+
+* Fixed an issue where the database items in the web console were incorrectly synchronized when repeatedly creating and deleting databases in instances with high availability.
+* Fixed an issue where backups failed intermittently when repeatedly creating and deleting databases in instances with high availability.
+* Fixed an issue where it was impossible to restore when trying to restore to a specific point in time.
+* Fixed an issue where backups in use for restore could be deleted
+* Fixed an issue where the log could not be looked up in SQL Server 2017 Standard (14.0.3294.2)
+
+### 2021. 07. 13.
+
+#### More Features
+
+* Force restart feature added
+
+#### Bug Fixes
+
+* Fixed a bug in which a small amount of internet traffic is billed for connecting to the domain server in the instance without a floating IP
+* Fixed a bug in which the reset button in the event list doesn’t work
+
 ### 2021. 06. 15.
 
 * Added the notification group feature

@@ -1,5 +1,6 @@
 ## Database > RDS for MS-SQL > Release Notes
-### 2021. 07. 27.
+
+### 2021. 08. 10.
 
 #### Feature Improvements
 

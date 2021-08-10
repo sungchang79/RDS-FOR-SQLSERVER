@@ -49,6 +49,9 @@ It is recommended to apply the same type of backup database instance and paramet
 If auto backup is enabled for a database instance, it is available to restore data to a time point during retention period. To enable a point-in-time restoration, log backup is required. RDS for SQL Server executes auto log backups at every 5 minutes, and stores them at a backup storage. 
 If the auto backup is enabled, it detects the database created by user every 5 minutes and performs a full backup separately. Therefore, if users try to roll back to the time the DB was just created, the newly created DB won't be recovered properly. Using a reliable DB instance without separate modification, a point in time which as at least five minutes after the time of creation must be selected.
 
+> [Caution]
+> If a log backup cannot be executed due to an error during the backup, or if the log backup fails to save to the backup storage, automatic backup is performed again.
+
 ## Exporting and importing backup using object storage
 
 Users can back up to their DB instance object storage or recover a backup file from the user object storage as a DB instance.
