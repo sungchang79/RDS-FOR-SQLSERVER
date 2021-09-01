@@ -456,7 +456,7 @@ Charts on a user layout are free to be modified in the layout or size.
 ## Notification Group
 
 In the Notification Group tab, a notification group can be created and deleted. In addition, monitoring target, user group, and monitoring settings can be added, modified and deleted in the notification group.
-Refer to [notification group](./notification-group) for more details regarding notification group.
+Refer to [notification group](./monitoring) for more details regarding notification group.
 
 ### Create Notification Group
 

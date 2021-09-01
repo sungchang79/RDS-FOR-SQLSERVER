@@ -16,6 +16,63 @@ Server Dashboard helps to visualize performance indicators on a chart. Indicator
 
 Chart layout is made available as user needs, and many number of layouts can be created to meet management purposes.  
 
+### 레이아웃
+
+차트를 보기 위해서 레이아웃을 먼저 구성해야 합니다. 레아아웃은 여러 차트로 구성되며 각 차트의 위치와 크기를 저장합니다.
+RDS for MS-SQL은 **기본 시스템 지표**, **기본 SQL 서버 지표** 2개의 기본 레이아웃을 제공합니다. 기본 레이아웃은 사용자가 수정, 삭제할 수 없습니다.
+
+### 차트
+
+DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다. 성능 지표마다 각기 다른 형태의 차트로 구성되어 있습니다.
+기본적인 시스템 지표 이외에 SQL Server의 `sys.dm_os_performance_counters`에서 제공하는 성능 지표를 차트로 제공하고 있습니다.
+
+| 차트 | 지표 (단위) |
+| --- | --- |
+| CPU 사용률 | cpu used (%) |
+| CPU 상세 | cpu user (%)<br> cpu system (%) |
+| 메모리 사용량 | memory used (%) |
+| 메모리 상세 | memory used (bytes)<br> memory free (bytes) |
+| 스왑 사용률 | swap used (%) |
+| 스왑 사용량 | swap used (bytes)<br> swap total (bytes) |
+| 디스크 사용률 | storage used (%) |
+| 디스크 전송률 | disk read (bytes)<br> disk write (bytes) |
+| 네트워크 전송률 | nic incoming (bytes)<br> nic outgoing (bytes) |
+| 네트워크 전송률 (pps) | nic incoming (pps)<br> nic outgoing (pps) |
+| Batch requests/sec | Batch requests/sec (count) |
+| Buffer cache hit ratio | Buffer cache hit ratio (%) |
+| Checkpoint pages/sec | Checkpoint pages/sec (count) |
+| Errors/sec | Errors/sec (count) |
+| Full Scans/sec | Full Scans/sec (count) |
+| Latch Waits/sec | Latch Waits/sec (count) |
+| Lazy writes/sec | Lazy writes/sec (count) |
+| Lock Waits/sec | Lock Waits/sec (count) |
+| Number of Deadlocks/sec | Number of Deadlocks/sec (count) |
+| Page life expectancy | Page life expectancy (seconds) |
+| Page lookups/sec | Page lookups/sec (count) |
+| SQL Compilations/sec | SQL Compilations/sec (count) |
+| SQL Re-Compilations/sec | SQL Re-Compilations/sec (count) |
+| Transactions/sec | Transactions/sec (count) |
+| User Connections | User Connections (count) |
+
+## 알림 그룹
+
+알림 그룹을 통해 성능 지표에 대한 알림을 받을 수 있습니다.
+알림 그룹에 감시 대상 인스턴스와 알림을 통보받을 사용자 그룹을 지정합니다.
+감시 설정을 통해 알림을 받을 성능 지표의 임곗값과 조건을 설정합니다.
+설정된 지표가 감시 설정의 조건을 충족하면 연결된 사용자 그룹에 알림을 발송하게 됩니다.
+알림 그룹에 설정된 알림 유형에 따라 SMS 혹은 메일로 알림을 발송합니다.
+
+### 감시 설정
+
+감시 설정은 항목과 비교 방법, 임곗값, 지속 시간으로 구성됩니다. 감시 설정의 지속 시간은 중요한 요소입니다. 지속 시간은 감시 대상이 지정한 임계치에 도달한 후 그 상태가 지속되는 시간을 조건으로 지정할 때 사용합니다. 예를 들어, CPU 사용률의 임계치가 90% 이상이고 지속 시간이 5분이라면, 해당 알림 그룹과 연동된 서버의 CPU 사용률이 90% 이상인 상태가 5분 이상 지속되었을 때 사용자 그룹에 정의된 사용자들에게 알림을 보냅니다. 만약 CPU 사용률이 90% 이상이 되어도, 5분 이내에 90% 미만으로 떨어지면 알림이 발생하지 않습니다.
+
+## 사용자 그룹
+
+알림을 받을 사용자를 그룹으로 관리할 수 있습니다. 알림 대상은 반드시 프로젝트 멤버로 등록이 되어 있어야 합니다.
+사용자 그룹에 속한 사용자가 프로젝트 멤버에서 제외되면, 사용자 그룹에 속해 있다 하더라도 알림을 받을 수 없습니다.
+
+> [주의] 실명 인증을 하지 않아 휴대폰 정보가 없는 경우 SMS 알림을 받지 못합니다.
+
 ## Event
 
 An event refers to an important incident incurred by RDS for SQL Server or user. An event is comprised of a category, date of occurrence, original source and message. It can be queried on a web console and notified via email, SMS, or webshook on subscription. Each event category may include event occurrences, like follows:  
