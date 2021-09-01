@@ -8,7 +8,7 @@ Restoration is available to a particular time by using manually created backups,
 
 > [Caution]
 > While backup is underway, performance may be degraded due to such backup.  
-> To minimize the impact on service, backup is recommened while service workload is low.
+> To minimize the impact on service, backup is recommended while service workload is low.
 
 ### Backup Storage 
 

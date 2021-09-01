@@ -2,10 +2,10 @@
 
 ### 2021. 09. 14.
 
-#### 버그 수정
+#### Bug Fixes
 
-* 감시 서버 재구축 진행 중에 수동 백업을 진행할 수 있는 버그 수정
-* drop procedure로 database를 drop 하는 도중 MS-SQL 문제로 실패했음에도 drop 된 것처럼 동작하던 버그 수정
+* Fixed a bug where manual backup could be performed during the rebuilding of monitoring server.
+* Fixed a bug where the database operated as if dropping had succeeded even if it failed due to an MS-SQL issue while dropping the database with a drop procedure.
 
 ### 2021. 08. 10.
 
@@ -24,13 +24,12 @@
 
 ### 2021. 07. 13.
 
-#### More Features
+#### Added Features
 
 * Force restart feature added
 
 #### Bug Fixes
 
-* Fixed a bug in which a small amount of internet traffic is billed for connecting to the domain server in the instance without a floating IP
 * Fixed a bug in which the reset button in the event list doesn’t work
 
 ### 2021. 06. 15.

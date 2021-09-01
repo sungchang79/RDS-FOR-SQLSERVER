@@ -6,7 +6,7 @@ On Database Instances, you can create, modify, or delete database instances, or 
 
 ### Creating Database Instances 
 
-To crete a database instance, click [Create Database Instances] on top left of the list and go to page for database instance creation. 
+To create a database instance, click [Create Database Instances] on top left of the list and go to page for database instance creation. 
 Enter specifications, network, floating IP, database security group, and backup settings for the instance, click [Create Database Instances] and send a request for creation.   
 
 ![Create Database Instances 001](https://static.toastoven.net/prod_rds_mssql/db_instance_create_001.png)
@@ -110,7 +110,7 @@ You may check basic information of a selected database instance.
 
 #### Monitoring
 
-Find out relevant indicators of a selected database instance on a chart. For more detail usage, see [Server Dashboard](./console-guide#_20). 
+Find out relevant metrics of a selected database instance on a chart. For more detail usage, see [Server Dashboard](./console-guide#_20). 
 
 ![Database Instance Details > Monitoring 001](https://static.toastoven.net/prod_rds_mssql/db_instance_detail_mon_001.png)
 
@@ -299,7 +299,7 @@ Check out events of recent occurrence. The 50 events that are exposed at one sho
 ### Subscribing Events 
 
 Click [Register Event Subscription] on top of the list of event subscription, and a popup shows to subscribe an events.
-Enter information of an event to subsribe, click [Create] at the bottom and you're subscribed to the event.  
+Enter information of an event to subscribe, click [Create] at the bottom and you're subscribed to the event.  
 
 ![Popup for Event Subscription 001](https://static.toastoven.net/prod_rds_mssql/event_subscription_create_001.png)
 
@@ -315,7 +315,7 @@ Enter information of an event to subsribe, click [Create] at the bottom and you'
 
 * ❶ Supports autocomplete. 
     * Available event codes are filtered for a keyword. 
-    * Move up and down on your keyboard to select an event code, press Enter, and it is automataically completed. 
+    * Move up and down on your keyboard to select an event code, press Enter, and it is automatically completed. 
     * You may delete an event code, which has already been added, by pressing the backspace or clicking [x].
 * ❷ You may select an event code with a click of the mouse. 
 
@@ -384,7 +384,7 @@ For more details on database security groups, see [Database Access](./database-c
 
 ### Creating Database Security Groups
 
-On top of the list of dabase security groups, click [Create Database Security Groups], and a popup shows to create a database security group. 
+On top of the list of database security groups, click [Create Database Security Groups], and a popup shows to create a database security group. 
 
 ![List of Database Security Groups 001](https://static.toastoven.net/prod_rds_mssql/db_security_group_list_001.png)
 ![Create Database Security Groups 001](https://static.toastoven.net/prod_rds_mssql/db_security_group_create_001.png)
@@ -415,14 +415,14 @@ Select a database security group policy from the View Details panel to change or
 
 ## Server Dashboard
 
-On the Server Dashboard tab, check out performance indicators of a database instance on a chart.  
-RDS for SQL Server, by default, provides two layouts, such as basic system indicators and basic SQL server indicators. 
+On the Server Dashboard tab, check out performance metrics of a database instance on a chart.  
+RDS for SQL Server, by default, provides two layouts, such as basic system metrics and basic SQL server metrics. 
 Default layout cannot be deleted or changed. 
 
 ![Server Dashboard 001](https://static.toastoven.net/prod_rds_mssql/server_dashboard_list_001.png)
 
 * ❶ Shows created database instances on the list. By selecting a database instance, relevant charts become available. 
-* ❷ With layout changes, find out new indicators. 
+* ❷ With layout changes, find out new metrics. 
 * ❸ Set the chart query period based on the current time. 
 
 ### How to Use User Layouts 
