@@ -16,6 +16,63 @@ DBインスタンスの各種性能指標およびDBインスタンス、バッ�
 
 チャートは、任意のレイアウトで配置することができます。レイアウトを複数作成して目的に応じて管理できます。
 
+### レイアウト
+
+チャートを表示するためにレイアウトを先に構成する必要があります。レイアウトは複数のチャートで構成され、各チャートの位置とサイズを保存します。
+RDS for MS-SQLは**基本システム指標**、**基本SQLサーバー指標**の2つの基本レイアウトを提供します。基本レイアウトはユーザーが修正、削除できません。
+
+### チャート
+
+DBインスタンスの各種性能指標をチャート形式で確認できます。性能指標毎に異なる形のチャートで構成されています。
+基本的なシステム指標以外にSQL Serverの`sys.dm_os_performance_counters`で提供する性能指標をチャートで提供しています。
+
+| チャート | 指標(単位) |
+| --- | --- |
+| CPU使用率 | cpu used (%) |
+| CPU詳細 | cpu user (%)<br> cpu system (%) |
+| メモリ使用量 | memory used (%) |
+| メモリ詳細 | memory used (bytes)<br> memory free (bytes) |
+| スワップ使用率 | swap used (%) |
+| スワップ使用量 | swap used (bytes)<br> swap total (bytes) |
+| ディスク使用率 | storage used (%) |
+| ディスク転送率 | disk read (bytes)<br> disk write (bytes) |
+| ネットワーク転送率 | nic incoming (bytes)<br> nic outgoing (bytes) |
+| ネットワーク転送率(pps) | nic incoming (pps)<br> nic outgoing (pps) |
+| Batch requests/sec | Batch requests/sec (count) |
+| Buffer cache hit ratio | Buffer cache hit ratio (%) |
+| Checkpoint pages/sec | Checkpoint pages/sec (count) |
+| Errors/sec | Errors/sec (count) |
+| Full Scans/sec | Full Scans/sec (count) |
+| Latch Waits/sec | Latch Waits/sec (count) |
+| Lazy writes/sec | Lazy writes/sec (count) |
+| Lock Waits/sec | Lock Waits/sec (count) |
+| Number of Deadlocks/sec | Number of Deadlocks/sec (count) |
+| Page life expectancy | Page life expectancy (seconds) |
+| Page lookups/sec | Page lookups/sec (count) |
+| SQL Compilations/sec | SQL Compilations/sec (count) |
+| SQL Re-Compilations/sec | SQL Re-Compilations/sec (count) |
+| Transactions/sec | Transactions/sec (count) |
+| User Connections | User Connections (count) |
+
+## 通知グループ
+
+通知グループを利用して性能指標の通知を受け取ることができます。
+通知グループに監視対象インスタンスと通知を受け取るユーザーグループを指定します。
+監視設定を行い、通知を受け取る性能指標のしきい値と条件を設定します。
+設定された指標が監視設定の条件を満たすと接続されたユーザーグループに通知を送信します。
+通知グループに設定された通知タイプによってはSMSフックはメールで通知を送信します。
+
+### 監視設定
+
+監視設定は項目と比較方法、しきい値、持続時間で構成されます。監視設定の持続時間は重要な要素です。持続時間は監視対象が指定したしきい値に到達した後、その状態が持続する時間を条件に指定する時に使用します。例えば、CPU使用率のしきい値が90%以上で持続時間が5分の場合、該当通知グループと関連するサーバーのCPU使用率が90%以上の状態が5分以上持続した時、ユーザーグループに定義されたユーザー通知を送ります。CPU使用率が90%以上でも5分以内に90%未満に下がった場合は通知が発生しません。
+
+## ユーザーグループ
+
+通知を受け取るユーザーをグループで管理できます。通知対象は必ずプロジェクトメンバーに登録されている必要があります。
+ユーザーグループに属すユーザーがプロジェクトメンバーから除外された場合、ユーザーグループに属していても通知を受け取れません。
+
+> [注意]実名認証を行っておらず携帯電話情報がない場合、SMS通知を受け取れません。
+
 ## イベント
 
 イベントはRDS for MS-SQLまたはユーザーにより発生した重要事件を意味します。イベントは、イベントのタイプと発生日時、原本ソースとメッセージで構成されます。イベントはWebコンソールで照会可能です。購読することでメール、SMS、Webフックを通してイベント発生通知を受信することができます。イベントのタイプと発生可能なイベントは、下記の通りです。
