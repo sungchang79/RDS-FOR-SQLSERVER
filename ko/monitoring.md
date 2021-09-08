@@ -18,7 +18,7 @@ DB 인스턴스의 각종 성능 지표와 DB 인스턴스, 백업, 파라미터
 
 ### 레이아웃
 
-차트를 보기 위해서 레이아웃을 먼저 구성해야 합니다. 레아아웃은 여러 차트로 구성되며 각 차트의 위치와 크기를 저장합니다.
+차트를 보기 위해서 레이아웃을 먼저 구성해야 합니다. 레이아웃은 여러 차트로 구성되며 각 차트의 위치와 크기를 저장합니다.
 RDS for MS-SQL은 **기본 시스템 지표**, **기본 SQL 서버 지표** 2개의 기본 레이아웃을 제공합니다. 기본 레이아웃은 사용자가 수정, 삭제할 수 없습니다.
 
 ### 차트
@@ -104,9 +104,9 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 | DB_INSTANCE | DB_INSTANCE_RECOVER_HA_START | DB 인스턴스 고가용성 구성 복구 시작 |
 | DB_INSTANCE | DB_INSTANCE_RECOVER_HA_END | DB 인스턴스 고가용성 구성 복구 완료 |
 | DB_INSTANCE | DB_INSTANCE_RECOVER_HA_FAIL | DB 인스턴스 고가용성 구성 복구 실패 |
-| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_START | DB 인스터스 고가용성 구성 변경 시작 |
-| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_END | DB 인스터스 고가용성 구성 변경 완료 |
-| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_FAIL | DB 인스터스 고가용성 구성 변경 실패 |
+| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_START | DB 인스턴스 고가용성 구성 변경 시작 |
+| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_END | DB 인스턴스 고가용성 구성 변경 완료 |
+| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_FAIL | DB 인스턴스 고가용성 구성 변경 실패 |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_PASSWORD_START | DB 인스턴스 비밀번호 변경 시작 |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_PASSWORD_END | DB 인스턴스 비밀번호 변경 완료 |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_PASSWORD_FAIL | DB 인스턴스 비밀번호 변경 실패 |

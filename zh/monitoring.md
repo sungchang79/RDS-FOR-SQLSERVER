@@ -47,9 +47,9 @@ An event refers to an important incident incurred by RDS for SQL Server or user.
 | DB_INSTANCE | DB_INSTANCE_RECOVER_HA_START | DB 인스턴스 고가용성 구성 복구 시작 |
 | DB_INSTANCE | DB_INSTANCE_RECOVER_HA_END | DB 인스턴스 고가용성 구성 복구 완료 |
 | DB_INSTANCE | DB_INSTANCE_RECOVER_HA_FAIL | DB 인스턴스 고가용성 구성 복구 실패 |
-| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_START | DB 인스터스 고가용성 구성 변경 시작 |
-| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_END | DB 인스터스 고가용성 구성 변경 완료 |
-| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_FAIL | DB 인스터스 고가용성 구성 변경 실패 |
+| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_START | DB 인스턴스 고가용성 구성 변경 시작 |
+| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_END | DB 인스턴스 고가용성 구성 변경 완료 |
+| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_FAIL | DB 인스턴스 고가용성 구성 변경 실패 |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_PASSWORD_START | Changing DB instance password started |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_PASSWORD_END | Changing DB instance password completed |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_PASSWORD_FAIL | Changing DB instance password failed  |
