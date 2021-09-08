@@ -12,7 +12,7 @@ No complicated setting is required to use highly available Microsoft SQL Server.
 * Database configuration values managed by parameter groups can be easily and fast applied to many databases. 
 * It gets fast and easy to set security rules for database access.  
 * Server dashboard is available to identify database status at a glance.
-* Server dashboard provides graphs for instance and database indicators.
+* Server dashboard provides graphs for instance and database metrics.
 
 > [Caution]
 > RDS for MS-SQL is enabled only on activated Compute & Network service of the user. 

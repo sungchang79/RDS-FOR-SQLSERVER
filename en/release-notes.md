@@ -1,5 +1,12 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### 2021. 09. 14.
+
+#### Bug Fixes
+
+* Fixed a bug where manual backup could be performed during the rebuilding of monitoring server.
+* Fixed a bug where the database operated as if dropping had succeeded even if it failed due to an MS-SQL issue while dropping the database with a drop procedure.
+
 ### 2021. 08. 10.
 
 #### Feature Improvements
@@ -17,13 +24,12 @@
 
 ### 2021. 07. 13.
 
-#### More Features
+#### Added Features
 
 * Force restart feature added
 
 #### Bug Fixes
 
-* Fixed a bug in which a small amount of internet traffic is billed for connecting to the domain server in the instance without a floating IP
 * Fixed a bug in which the reset button in the event list doesn’t work
 
 ### 2021. 06. 15.
