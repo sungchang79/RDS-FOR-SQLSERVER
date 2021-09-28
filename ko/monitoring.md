@@ -29,15 +29,28 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 | 차트 | 지표 (단위) |
 | --- | --- |
 | CPU 사용률 | cpu used (%) |
-| CPU 상세 | cpu user (%)<br> cpu system (%) |
+| CPU 상세 | cpu user (%)<br> cpu system (%)<br>  |
 | 메모리 사용량 | memory used (%) |
 | 메모리 상세 | memory used (bytes)<br> memory free (bytes) |
+| 메모리 Page 상세 | pages (count)<br> page read (count)<br> page write (count) |
+| 메모리 Page Fault | page faults (count) |
+| 메모리 Poll Page | memory pool paged (bytes) <br> memory pool nonpaged (bytes) |
+| 메모리 Stanby Cache 상세 | core (bytes)<br> normal priority (bytes)<br> reserve (bytes) |
+| 메모리 Cache Fault | cache faults (count) |
+| 메모리 Transition Fault | transition faults (count) |
+| 메모리 Demand Zero Fault | zero faults (count) |
 | 스왑 사용률 | swap used (%) |
 | 스왑 사용량 | swap used (bytes)<br> swap total (bytes) |
 | 디스크 사용률 | storage used (%) |
 | 디스크 전송률 | disk read (bytes)<br> disk write (bytes) |
+| 디스크 Queue 길이 | queue length (count) |
+| 디스크 Free | disk free (bytes) |
+| 디스크 Time 상세 | disk time (%)<br> disk idle (%)<br> disk read (%)<br> disk write (%) |
+| 디스크 Split IO | split io (counts) |
 | 네트워크 전송률 | nic incoming (bytes)<br> nic outgoing (bytes) |
 | 네트워크 전송률 (pps) | nic incoming (pps)<br> nic outgoing (pps) |
+| 네트워크 Discarded Packet | nic incoming (pps)<br> nic outgoing (pps) |
+| 네트워크 Error Packet | nic incoming (pps)<br> nic outgoing (pps) |
 | Batch requests/sec | Batch requests/sec (count) |
 | Buffer cache hit ratio | Buffer cache hit ratio (%) |
 | Checkpoint pages/sec | Checkpoint pages/sec (count) |
@@ -53,6 +66,18 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 | SQL Re-Compilations/sec | SQL Re-Compilations/sec (count) |
 | Transactions/sec | Transactions/sec (count) |
 | User Connections | User Connections (count) |
+| 시스템 Context Switch | context switches (count) |
+| 시스템 프로세스 | processes (count) |
+| 시스템 콜 | system call (count) |
+| 시스템 업타임 | uptime |
+| 시스템 Thread | treads (count) |
+| 프로세스 Handle | sql server (count)<br> sql server vss (count) |
+| 프로세스 프로세서 시간 | sql server (%)<br> sql server vss (%) |
+| 프로세스 Thread | sql server (count)<br> sql server vss (count) |
+| 프로세스 Private 메모리 크기 | sql server (bytes)<br> sql server vss (bytes) |
+| 프로세스 Virtual 메모리 크기 | sql server (bytes)<br> sql server vss (bytes) |
+| 프로세스 Working Set 메모리 크기 | sql server (bytes)<br> sql server vss (bytes) |
+
 
 ## 알림 그룹
 
