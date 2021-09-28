@@ -29,7 +29,7 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 | 차트 | 지표 (단위) | 비고 |
 | --- | --- | --- |
 | CPU 사용률 | cpu used (%) | |
-| CPU 상세 | cpu user (%)<br> cpu system (%)<br> cpu | |
+| CPU 상세 | cpu user (%)<br> cpu system (%)<br> cpu interrupt (%)<br> cpu privileged (%)<br> cpu processor (%) | |
 | 메모리 사용량 | memory used (%) | |
 | 메모리 상세 | memory used (bytes)<br> memory free (bytes) | |
 | 메모리 Page 상세 | pages (count)<br> page read (count)<br> page write (count) | |
