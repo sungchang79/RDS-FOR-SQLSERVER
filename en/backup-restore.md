@@ -37,7 +37,7 @@ RDS for SQL Server helps to restore to a backup moment by using backup files, or
 
 ### Restoration with Backup
 
-With manual or auto backups, database instance can be restored. Restoration time depends on the backup size, from a few minutes, up to dozones of minutes .
+With manual or auto backups, database instance can be restored. Restoration time depends on the backup size, from a few minutes to tens of minutes.
 It is recommended to apply the same type of backup database instance and parameter group for restoration. 
 
 > [Caution]

@@ -25,7 +25,7 @@ One page shows up to 50 database instances on the list.
 ![List of Database Instances 001](https://static.toastoven.net/prod_rds_mssql/db_instance_list_001.png)
 
 * ❶ Search is available by the name or UUID of a database instance. 
-* ❷ With a click on the condition, search results can be filtered by availability area or database instance status. 
+* ❷ With a click on the condition, search results can be filtered by availability zone or database instance status. 
 
 ![List of Database Instances > Conditions 001](https://static.toastoven.net/prod_rds_mssql/20200112/output/db_instance_list_cond_001_kr.png)
 
@@ -73,7 +73,7 @@ Once request for modifying database instance is successfully made, you're moved 
 
 ![Modify Database Instances 001](https://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_modify_001_kr.png)
 
-* ❶ Unable to change the availability area. 
+* ❶ Unable to change the availability zone. 
 * ❷ With the change of database instance type, database shall restart.  
 * ❸ Unable to change storage type. 
 * ❹ Unable to reduce storage size, once it is increased.
