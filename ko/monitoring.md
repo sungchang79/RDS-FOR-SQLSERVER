@@ -35,7 +35,7 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 | 메모리 Page 상세 | pages (count)<br> page read (count)<br> page write (count) | |
 | 메모리 Page Fault | page faults (count) | |
 | 메모리 Poll Page | memory pool paged (bytes) <br> memory pool nonpaged (bytes) | |
-| 메모리 Stanby Cache 상세 | core (bytes)<br> normal priority (bytes)<br> reserve (bytes) | |
+| 메모리 Standby Cache 상세 | core (bytes)<br> normal priority (bytes)<br> reserve (bytes) | |
 | 메모리 Cache Fault | cache faults (count) | |
 | 메모리 Transition Fault | transition faults (count) | |
 | 메모리 Demand Zero Fault | zero faults (count) | |
@@ -47,8 +47,8 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 | 디스크 Free | disk free (bytes) | |
 | 디스크 Time 상세 | disk time (%)<br> disk idle (%)<br> disk read (%)<br> disk write (%) | |
 | 디스크 Split IO | split io (counts) | |
-| 네트워크 전송률 | nic incoming (bytes)<br> nic outgoing (bytes) | 윈도우에서 사용하는 기본적인 네트워크 전송이 발생합니다. |
-| 네트워크 전송률 (pps) | nic incoming (pps)<br> nic outgoing (pps) | 윈도우에서 사용하는 기본적인 네트워크 전송이 발생합니다. |
+| 네트워크 전송률 | nic incoming (bytes)<br> nic outgoing (bytes) | Windows에서 사용하는 기본적인 네트워크 전송이 발생합니다. |
+| 네트워크 전송률 (pps) | nic incoming (pps)<br> nic outgoing (pps) | Windows에서 사용하는 기본적인 네트워크 전송이 발생합니다. |
 | 네트워크 Discarded Packet | nic incoming (pps)<br> nic outgoing (pps) | |
 | 네트워크 Error Packet | nic incoming (pps)<br> nic outgoing (pps) | |
 | Batch requests/sec | Batch requests/sec (count) | |
@@ -69,7 +69,7 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 | 시스템 Context Switch | context switches (count) | |
 | 시스템 프로세스 | processes (count) | |
 | 시스템 콜 | system call (count) | |
-| 시스템 업타임 | uptime | |
+| 시스템 Up Time | uptime | |
 | 시스템 Thread | treads (count) | |
 | 프로세스 Handle | sql server (count)<br> sql server vss (count) | |
 | 프로세스 프로세서 시간 | sql server (%)<br> sql server vss (%) | |
