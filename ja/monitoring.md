@@ -26,33 +26,58 @@ RDS for MS-SQLは**基本システム指標**、**基本SQLサーバー指標**�
 DBインスタンスの各種性能指標をチャート形式で確認できます。性能指標毎に異なる形のチャートで構成されています。
 基本的なシステム指標以外にSQL Serverの`sys.dm_os_performance_counters`で提供する性能指標をチャートで提供しています。
 
-| チャート | 指標(単位) |
-| --- | --- |
-| CPU使用率 | cpu used (%) |
-| CPU詳細 | cpu user (%)<br> cpu system (%) |
-| メモリ使用量 | memory used (%) |
-| メモリ詳細 | memory used (bytes)<br> memory free (bytes) |
-| スワップ使用率 | swap used (%) |
-| スワップ使用量 | swap used (bytes)<br> swap total (bytes) |
-| ディスク使用率 | storage used (%) |
-| ディスク転送率 | disk read (bytes)<br> disk write (bytes) |
-| ネットワーク転送率 | nic incoming (bytes)<br> nic outgoing (bytes) |
-| ネットワーク転送率(pps) | nic incoming (pps)<br> nic outgoing (pps) |
-| Batch requests/sec | Batch requests/sec (count) |
-| Buffer cache hit ratio | Buffer cache hit ratio (%) |
-| Checkpoint pages/sec | Checkpoint pages/sec (count) |
-| Errors/sec | Errors/sec (count) |
-| Full Scans/sec | Full Scans/sec (count) |
-| Latch Waits/sec | Latch Waits/sec (count) |
-| Lazy writes/sec | Lazy writes/sec (count) |
-| Lock Waits/sec | Lock Waits/sec (count) |
-| Number of Deadlocks/sec | Number of Deadlocks/sec (count) |
-| Page life expectancy | Page life expectancy (seconds) |
-| Page lookups/sec | Page lookups/sec (count) |
-| SQL Compilations/sec | SQL Compilations/sec (count) |
-| SQL Re-Compilations/sec | SQL Re-Compilations/sec (count) |
-| Transactions/sec | Transactions/sec (count) |
-| User Connections | User Connections (count) |
+| チャート | 指標(単位) | 備考 |
+| --- | --- | --- |
+| CPU使用率 | cpu used (%) | |
+| CPU詳細 | cpu user (%)<br> cpu system (%)<br> cpu interrupt (%)<br> cpu privileged (%)<br> cpu processor (%) | |
+| メモリ使用量 | memory used (%) | |
+| メモリ詳細 | memory used (bytes)<br> memory free (bytes) | |
+| メモリPage詳細 | pages (count)<br> page read (count)<br> page write (count) | |
+| メモリPage Fault | page faults (count) | |
+| メモリPoll Page | memory pool paged (bytes) <br> memory pool nonpaged (bytes) | |
+| メモリStandby Cache詳細 | core (bytes)<br> normal priority (bytes)<br> reserve (bytes) | |
+| メモリCache Fault | cache faults (count) | |
+| メモリTransition Fault | transition faults (count) | |
+| メモリDemand Zero Fault | zero faults (count) | |
+| スワップ使用率 | swap used (%) | |
+| スワップ使用量 | swap used (bytes)<br> swap total (bytes) | |
+| ディスク使用率 | storage used (%) | |
+| ディスク転送率 | disk read (bytes)<br> disk write (bytes) | |
+| Disk Queue Length | queue length (count) | |
+| ディスクFree | disk free (bytes) | |
+| ディスクTime詳細 | disk time (%)<br> disk idle (%)<br> disk read (%)<br> disk write (%) | |
+| ディスクSplit IO | split io (counts) | |
+| ネットワーク転送率 | nic incoming (bytes)<br> nic outgoing (bytes) | Windowsで使用する基本的なネットワーク転送が発生します。 |
+| ネットワーク転送率(pps) | nic incoming (pps)<br> nic outgoing (pps) | Windowsで使用する基本的なネットワーク転送が発生します。 |
+| ネットワークDiscarded Packet | nic incoming (pps)<br> nic outgoing (pps) | |
+| ネットワークError Packet | nic incoming (pps)<br> nic outgoing (pps) | |
+| Batch requests/sec | Batch requests/sec (count) | |
+| Buffer cache hit ratio | Buffer cache hit ratio (%) | |
+| Checkpoint pages/sec | Checkpoint pages/sec (count) | |
+| Errors/sec | Errors/sec (count) | |
+| Full Scans/sec | Full Scans/sec (count) | |
+| Latch Waits/sec | Latch Waits/sec (count) | |
+| Lazy writes/sec | Lazy writes/sec (count) | |
+| Lock Waits/sec | Lock Waits/sec (count) | |
+| Number of Deadlocks/sec | Number of Deadlocks/sec (count) | |
+| Page life expectancy | Page life expectancy (seconds) | |
+| Page lookups/sec | Page lookups/sec (count) | |
+| SQL Compilations/sec | SQL Compilations/sec (count) | |
+| SQL Re-Compilations/sec | SQL Re-Compilations/sec (count) | |
+| Transactions/sec | Transactions/sec (count) | |
+| User Connections | User Connections (count) | |
+| システムContext Switch | context switches (count) | |
+| システムプロセス | processes (count) | |
+| システムコール | system call (count) | |
+| システムUp Time | uptime | |
+| システムThread | treads (count) | |
+| プロセスHandle | sql server (count)<br> sql server vss (count) | |
+| プロセスプロセッサー時間 | sql server (%)<br> sql server vss (%) | |
+| プロセスThread | sql server (count)<br> sql server vss (count) | |
+| プロセスPrivateメモリサイズ | sql server (bytes)<br> sql server vss (bytes) | |
+| プロセスVirtualメモリサイズ | sql server (bytes)<br> sql server vss (bytes) | |
+| プロセスWorking Setメモリサイズ | sql server (bytes)<br> sql server vss (bytes) | |
+
 
 ## 通知グループ
 
