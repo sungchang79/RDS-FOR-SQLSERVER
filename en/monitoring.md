@@ -26,33 +26,58 @@ RDS for MS-SQL provides two default layouts, **Basic system metrics** and **Basi
 You can view various performance metrics of DB instances in chart format. The format of chart is different for each performance metric.
 In addition to the basic system metrics, the performance metrics provided by `sys.dm_os_performance_counters` of SQL Server are provided as charts.
 
-| Chart | Metric (Unit) |
-| --- | --- |
-| CPU usage | cpu used (%) |
-| CPU details | cpu user (%)<br> cpu system (%) |
-| Memory usage | memory used (%) |
-| Memory details | memory used (bytes)<br> memory free (bytes) |
-| Swap usage | swap used (%) |
-| Swap usage amount | swap used (bytes)<br> swap total (bytes) |
-| Disk usage | storage used (%) |
-| Disk transfer rate | disk read (bytes)<br> disk write (bytes) |
-| Network transmission rate | nic incoming (bytes)<br> nic outgoing (bytes) |
-| Network transmission rate (pps) | nic incoming (pps)<br> nic outgoing (pps) |
-| Batch requests/sec | Batch requests/sec (count) |
-| Buffer cache hit ratio | Buffer cache hit ratio (%) |
-| Checkpoint pages/sec | Checkpoint pages/sec (count) |
-| Errors/sec | Errors/sec (count) |
-| Full Scans/sec | Full Scans/sec (count) |
-| Latch Waits/sec | Latch Waits/sec (count) |
-| Lazy writes/sec | Lazy writes/sec (count) |
-| Lock Waits/sec | Lock Waits/sec (count) |
-| Number of Deadlocks/sec | Number of Deadlocks/sec (count) |
-| Page life expectancy | Page life expectancy (seconds) |
-| Page lookups/sec | Page lookups/sec (count) |
-| SQL Compilations/sec | SQL Compilations/sec (count) |
-| SQL Re-Compilations/sec | SQL Re-Compilations/sec (count) |
-| Transactions/sec | Transactions/sec (count) |
-| User Connections | User Connections (count) |
+| Chart | Metric (Unit) | Note |
+| --- | --- | --- |
+| CPU Usage | cpu used (%) | |
+| CPU Details | cpu user (%)<br> cpu system (%)<br> cpu interrupt (%)<br> cpu privileged (%)<br> cpu processor (%) | |
+| Memory Usage | memory used (%) | |
+| Memory Details | memory used (bytes)<br> memory free (bytes) | |
+| Memory Page Details | pages (count)<br> page read (count)<br> page write (count) | |
+| Memory Page Fault | page faults (count) | |
+| Memory Pool Page | memory pool paged (bytes) <br> memory pool nonpaged (bytes) | |
+| Memory Standby Cache Details | core (bytes)<br> normal priority (bytes)<br> reserve (bytes) | |
+| Memory Cache Fault | cache faults (count) | |
+| Memory Transition Fault | transition faults (count) | |
+| Memory Demand Zero Fault | zero faults (count) | |
+| Swap Usage | swap used (%) | |
+| Swap Usage Amount | swap used (bytes)<br> swap total (bytes) | |
+| Disk Usage | storage used (%) | |
+| Disk Transfer Rate | disk read (bytes)<br> disk write (bytes) | |
+| Disk Queue Length | queue length (count) | |
+| Disk Free | disk free (bytes) | |
+| Disk Time Details | disk time (%)<br> disk idle (%)<br> disk read (%)<br> disk write (%) | |
+| Disk Split IO | split io (counts) | |
+| Network Transfer Rate | nic incoming (bytes)<br> nic outgoing (bytes) | The basic network data transfer used by Windows occurs. |
+| Network Transfer Rate (pps) | nic incoming (pps)<br> nic outgoing (pps) | The basic network data transfer used by Windows occurs. |
+| Network Discarded Packet | nic incoming (pps)<br> nic outgoing (pps) | |
+| Network Error Packet | nic incoming (pps)<br> nic outgoing (pps) | |
+| Batch requests/sec | Batch requests/sec (count) | |
+| Buffer cache hit ratio | Buffer cache hit ratio (%) | |
+| Checkpoint pages/sec | Checkpoint pages/sec (count) | |
+| Errors/sec | Errors/sec (count) | |
+| Full Scans/sec | Full Scans/sec (count) | |
+| Latch Waits/sec | Latch Waits/sec (count) | |
+| Lazy writes/sec | Lazy writes/sec (count) | |
+| Lock Waits/sec | Lock Waits/sec (count) | |
+| Number of Deadlocks/sec | Number of Deadlocks/sec (count) | |
+| Page Life Expectancy | Page life expectancy (seconds) | |
+| Page Lookups/sec | Page lookups/sec (count) | |
+| SQL Compilations/sec | SQL Compilations/sec (count) | |
+| SQL Re-Compilations/sec | SQL Re-Compilations/sec (count) | |
+| Transactions/sec | Transactions/sec (count) | |
+| User Connections | User Connections (count) | |
+| System Context Switch | context switches (count) | |
+| System Process | processes (count) | |
+| System Call | system call (count) | |
+| System Uptime | uptime | |
+| System Thread | treads (count) | |
+| Process Handle | sql server (count)<br> sql server vss (count) | |
+| Process Processor Time | sql server (%)<br> sql server vss (%) | |
+| Process Thread | sql server (count)<br> sql server vss (count) | |
+| Process Private Memory Size | sql server (bytes)<br> sql server vss (bytes) | |
+| Process Virtual Memory Size | sql server (bytes)<br> sql server vss (bytes) | |
+| Process Working Set Memory Size | sql server (bytes)<br> sql server vss (bytes) | |
+
 
 ## Notification Group
 
