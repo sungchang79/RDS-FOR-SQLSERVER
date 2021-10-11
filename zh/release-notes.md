@@ -1,6 +1,22 @@
 ## Database > RDS for MS-SQL > Release Notes
 
-### 2021. 08. 10.
+### October 12, 2021
+
+#### Feature Improvements
+
+* Changed the code so that, when a version error occurs while restoring from backup in object storage, the error is recorded in event log.
+* Added performance metrics collection items.
+* Modified the error message displayed when backup deletion fails, to indicate in detail which operation caused the failure.
+* Added a feature to perform scheduled hypervisor migration on the RDS for MS-SQL web console.
+
+### September 14, 2021
+
+#### Bug Fixes
+
+* Fixed a bug where manual backup could be performed during the rebuilding of monitoring server.
+* Fixed a bug where the database operated as if dropping had succeeded even if it failed due to an MS-SQL issue while dropping the database with a drop procedure.
+
+### August 10, 2021
 
 #### Feature Improvements
 
@@ -15,29 +31,28 @@
 * Fixed an issue where backups in use for restore could be deleted
 * Fixed an issue where the log could not be looked up in SQL Server 2017 Standard (14.0.3294.2)
 
-### 2021. 07. 13.
+### July 13, 2021
 
-#### More Features
+#### Added Features
 
 * Force restart feature added
 
 #### Bug Fixes
 
-* Fixed a bug in which a small amount of internet traffic is billed for connecting to the domain server in the instance without a floating IP
 * Fixed a bug in which the reset button in the event list doesn’t work
 
-### 2021. 06. 15.
+### June 15, 2021
 
 * Added the notification group feature
 * Added user group feature
 
-### 2021. 05. 11.
+### May 11, 2021
 
 ### Feature Updates
 
 * Added the checkbox that selects all backups
 
-### 2021. 04. 13.
+### April 13, 2021
 
 #### Features Development
 
@@ -88,7 +103,7 @@
 
 #### Feature Development
 
-- High-availability DB instance feature added
+- High availability DB instance feature added
 
 ### October 13, 2020
 

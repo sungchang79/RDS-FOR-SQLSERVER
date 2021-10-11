@@ -34,7 +34,7 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 | 메모리 상세 | memory used (bytes)<br> memory free (bytes) | |
 | 메모리 Page 상세 | pages (count)<br> page read (count)<br> page write (count) | |
 | 메모리 Page Fault | page faults (count) | |
-| 메모리 Poll Page | memory pool paged (bytes) <br> memory pool nonpaged (bytes) | |
+| 메모리 Pool Page | memory pool paged (bytes) <br> memory pool nonpaged (bytes) | |
 | 메모리 Standby Cache 상세 | core (bytes)<br> normal priority (bytes)<br> reserve (bytes) | |
 | 메모리 Cache Fault | cache faults (count) | |
 | 메모리 Transition Fault | transition faults (count) | |

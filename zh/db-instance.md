@@ -18,12 +18,12 @@ To create a database instance, user account and password setting is required, co
 * Password cannot include user's account name. 
 * Password must include at least three categories out of capital letters, small-case letters, numbers, and special characters. 
 
-### Availability Area
+### Availability Zone
 
-RDS for SQL Server has many availability areas under one system so as to prepare against failure in physical hardware. A failure occurred within an availability area does not affect other availability areas, raising availability of the entire service. Database instances that are dispersed and created in different areas can communicate via network, with no charges.   
+RDS for SQL Server has many availability zones under one system so as to prepare against failure in physical hardware. A failure that occurs within an availability zone does not affect other availability zones, raising availability of the entire service. Database instances that are dispersed and created in different availability zones can communicate via network, with no charges.   
 
 > [Caution]
-> The availability area of already-created database instance cannot be changed. 
+> The availability zone of already-created database instance cannot be changed. 
 
 ### Version of Microsoft SQL Server
 
@@ -44,7 +44,7 @@ To create a database instance, an appropriate type must be selected depending on
 | ------- | -------------------------------------------------|
 | m2 | Configures balance between CPU and memory.   |
 | c2 | Has higher performance setting for CPU. |
-| r2 | Available when momory takes more volume than other reources|
+| r2 | Available when memory takes more volume than other resources |
 | x1 | A type that supports high performance CPUs and memory. Used for services and applications that require high performance. |
 
 It is easy to change the type of already-created database instance via web console.
@@ -66,7 +66,7 @@ DB instance status consists of the following values, and it may change depending
 | Backing up | The backup of DB instance is being made |
 | Deleting | DB instance is being deleted |
 | Rebooting | DB instance is being rebooted |
-| Recovering high availability configuration | The secondary server for the high-availability DB instance is being reconfigured |
+| Recovering high availability configuration | The secondary server for the high availability DB instance is being reconfigured |
 | Failing over | Failover is in progress for the DB instance |
 | Failed over | The DB instance is successfully failed over and the process is stopped. |
 | Error | Cannot use the DB instance due to unknown reasons |
@@ -82,10 +82,10 @@ It is easy to change the size of already-created storage via web console.
 > Changing already-created storage size requires minutes of downtime since database instance must be closed. 
 > The type of already-created storage cannot be changed. 
 
-## High-availability DB instance
+## High Availability DB instance
 
-High-ability DB instance increases availability and data durability, and provides fault-tolerant database. 
-RDS for MS-SQL uses the mirroring function of the Microsoft SQL Server, consisting of a primary server, a secondary server, and an event monitor server, to offer high availability. The primary and secondary servers are created in different availability areas.
+A high availability DB instance increases availability and data durability, and provides fault-tolerant database. 
+RDS for MS-SQL uses the mirroring function of the Microsoft SQL Server, consisting of a primary server, a secondary server, and an event monitor server, to offer high availability. The primary and secondary servers are created in different availability zones.
 
 ### Failover action
 
@@ -99,21 +99,21 @@ A high availability DB instance can be manually restarted after the failover act
 
 ### Cautions and constraints
 
-- You can use the high-availability DB instance only if the storage backup period is at least 1 day.
-- High-availability configuration of different regions is not supported.
-- You cannot use a secondary server for high-availability for read load balancing.
-- A mirroring configuration is proceeded anew when you change the name of a high-availability instance database, and the process takes a certain amount of time. You may experience performance degradation during the mirroring configuration, and the failover action may not be executed properly when a failure occurs.
-- Database of high-availability DB instances only supports Full Recovery Model. When change of recovery model is detected, it will be changed back to the Full Recovery Model.
+- You can use the high availability DB instance only if the storage backup period is at least 1 day.
+- High availability configuration of different regions is not supported.
+- You cannot use a secondary server for high availability for read load balancing.
+- A mirroring configuration is proceeded anew when you change the name of a high availability instance's database, and the process takes a certain amount of time. You may experience performance degradation during the mirroring configuration, and the failover action may not be executed properly when a failure occurs.
+- Database of high availability DB instances only supports Full Recovery Model. When change of recovery model is detected, it will be changed back to the Full Recovery Model.
 - DB instances with completed failover may fail to operate or operate properly due to issues such as data loss on the account of failures.
 - As the high availability feature is based on domains, if a Compute & Network service instance for a user is in a network environment where it cannot reach any DNS server, the relevant instance cannot access the DB instance through a domain and normal access will be blocked when a failover occurs.
 - When a new database is created in a DB instance, it may take at least 5 minutes up to dozens of minutes for the database to be mirrored.
   - If a failover occurs before the mirroring is complete, the failover of the database won't be properly done.
-- All databases of high-availability DB instances operate in the same server. When a failure occurs on a specific database, all databases will fail over.
+- All databases of high availability DB instances operate in the same server. When a failure occurs on a specific database, all databases will fail over.
 - Failover is not performed if there is no mirrored database.
-- User, login, and permission of the primary server will be duplicated to the secondary server.
-  - Duplication takes at least 10 seconds up to dozens of minutes.
+- User, login, and permission of the primary server will be replicated to the secondary server.
+  - Replication takes at least 10 seconds up to dozens of minutes.
   - When a failure occurs before the copying process is complete, the corrections will be lost.
-* SQL Server Agent jobs cannot be duplicated. When failover is complete, it needs to be created again in the promoted DB instance.
+* SQL Server Agent jobs cannot be replicated. When failover is complete, it needs to be created again in the promoted DB instance.
 * The failover time is impacted by the recovery process; the larger the transaction, the longer the time.
 * The auto failover feature will be temporarily disabled while changing a DB instance.
 * Instances of which memory is less than 8GB cannot use the high availability feature

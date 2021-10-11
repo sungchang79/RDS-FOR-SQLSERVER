@@ -34,7 +34,7 @@ DBインスタンスの各種性能指標をチャート形式で確認できま
 | メモリ詳細 | memory used (bytes)<br> memory free (bytes) | |
 | メモリPage詳細 | pages (count)<br> page read (count)<br> page write (count) | |
 | メモリPage Fault | page faults (count) | |
-| メモリPoll Page | memory pool paged (bytes) <br> memory pool nonpaged (bytes) | |
+| メモリPool Page | memory pool paged (bytes) <br> memory pool nonpaged (bytes) | |
 | メモリStandby Cache詳細 | core (bytes)<br> normal priority (bytes)<br> reserve (bytes) | |
 | メモリCache Fault | cache faults (count) | |
 | メモリTransition Fault | transition faults (count) | |
