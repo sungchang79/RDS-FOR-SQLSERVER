@@ -48,7 +48,7 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 | 디스크 Time 상세 | disk time (%)<br> disk idle (%)<br> disk read (%)<br> disk write (%) | |
 | 디스크 Split IO | split io (counts) | |
 | 네트워크 전송량 | nic incoming (bytes)<br> nic outgoing (bytes) | Windows에서 사용하는 기본적인 네트워크 전송이 발생합니다. |
-| 네트워크 전송량 (pps) | nic incoming (pps)<br> nic outgoing (pps) | Windows에서 사용하는 기본적인 네트워크 전송이 발생합니다. |
+| 네트워크 전송률 (pps) | nic incoming (pps)<br> nic outgoing (pps) | Windows에서 사용하는 기본적인 네트워크 전송이 발생합니다. |
 | 네트워크 Discarded Packet | nic incoming (pps)<br> nic outgoing (pps) | |
 | 네트워크 Error Packet | nic incoming (pps)<br> nic outgoing (pps) | |
 | Batch requests/sec | Batch requests/sec (count) | |
