@@ -34,5 +34,5 @@
 | SWAP | Swap 사용률 | 
 | NETWORK | 네트워크 수신 전송량 (Bytes) | 
 | NETWORK | 네트워크 송신 전송량 (Bytes) |
-| NETWORK | 네트워크 수신 전송량 (pps) |
-| NETWORK | 네트워크 송신 전송량 (pps) |
+| NETWORK | 네트워크 수신 전송률 (pps) |
+| NETWORK | 네트워크 송신 전송률 (pps) |
