@@ -9,8 +9,8 @@
 | CPU | CPU System | 
 | CPU | CPU User |
 | DISK | 디스크 사용률 | 
-| DISK | 디스크 쓰기 전송률 |
-| DISK | 디스크 읽기 전송률 | 
+| DISK | 디스크 쓰기 전송량 |
+| DISK | 디스크 읽기 전송량 | 
 | MEMORY | 메모리 사용률 |
 | MEMORY | 메모리 Free |
 | MEMORY | 메모리 Used | 
@@ -32,7 +32,7 @@
 | SWAP | Swap Total | 
 | SWAP | Swap Used |
 | SWAP | Swap 사용률 | 
-| NETWORK | 네트워크 수신 전송률 (Bytes) | 
-| NETWORK | 네트워크 송신 전송률 (Bytes) |
+| NETWORK | 네트워크 수신 전송량 (Bytes) | 
+| NETWORK | 네트워크 송신 전송량 (Bytes) |
 | NETWORK | 네트워크 수신 전송률 (pps) |
 | NETWORK | 네트워크 송신 전송률 (pps) |

@@ -42,12 +42,12 @@ In addition to the basic system metrics, the performance metrics provided by `sy
 | Swap Usage | swap used (%) | |
 | Swap Usage Amount | swap used (bytes)<br> swap total (bytes) | |
 | Disk Usage | storage used (%) | |
-| Disk Transfer Rate | disk read (bytes)<br> disk write (bytes) | |
+| Disk Transfer | disk read (bytes)<br> disk write (bytes) | |
 | Disk Queue Length | queue length (count) | |
 | Disk Free | disk free (bytes) | |
 | Disk Time Details | disk time (%)<br> disk idle (%)<br> disk read (%)<br> disk write (%) | |
 | Disk Split IO | split io (counts) | |
-| Network Transfer Rate | nic incoming (bytes)<br> nic outgoing (bytes) | The basic network data transfer used by Windows occurs. |
+| Network Transfer | nic incoming (bytes)<br> nic outgoing (bytes) | The basic network data transfer used by Windows occurs. |
 | Network Transfer Rate (pps) | nic incoming (pps)<br> nic outgoing (pps) | The basic network data transfer used by Windows occurs. |
 | Network Discarded Packet | nic incoming (pps)<br> nic outgoing (pps) | |
 | Network Error Packet | nic incoming (pps)<br> nic outgoing (pps) | |

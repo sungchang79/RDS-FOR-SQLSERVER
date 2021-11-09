@@ -1,5 +1,19 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### November 9, 2021
+
+#### Added Features
+
+* Added a feature to send email and SMS notifications on scheduled hypervisor migrations
+
+#### Bug Fixes
+
+* Fixed an issue where CloudTrail's response body is truncated if it is long
+
+#### Others
+
+* Added billing for root volumes
+
 ### October 12, 2021
 
 #### Feature Improvements
@@ -122,7 +136,7 @@
 - Fixed a bug of failure to roll back to a certain point of time right after a new database is created
 - Fixed a UI bug where the date insertion component failed to operate properly when Japanese was selected
 
-#### Other
+#### Others
 
 - Excluded c2.c2m2 instance from instances that can be generated
 

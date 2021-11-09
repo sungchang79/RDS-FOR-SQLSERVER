@@ -524,3 +524,42 @@ In the user group list, click the [Edit] button at the right of the user group t
 ![modify user group 001](https://static.toastoven.net/prod_rds_mssql/user_group_modify_001.png)
 
 * Same as creating the user group, the name and notification target can be modified.
+
+## Appendix 1. DB Instance Migration Guide for Hypervisor Maintenance
+
+NHN Cloud periodically updates the hypervisor software of the DB instance to improve security and stability.
+DB instances running on a hypervisor that requires maintenance must be migrated to the hypervisor where maintenance has been completed.
+
+You can start DB instance migration from the NHN Cloud console.
+Follow the guide below to use the migration feature in the console.
+First, go to the project where the DB instance requiring maintenance is located.
+
+### 1. Check the DB instance that requires maintenance.
+
+A DB instance with a **Migrate** button next to its name is the instance that requires maintenance.
+
+![planned migration 001](https://static.toastoven.net/prod_rds_mssql/20211109/planned_migration_001.png)
+
+You can check the detailed maintenance schedule by hovering the mouse cursor over the **Migrate** button.
+
+![planned migration 002](https://static.toastoven.net/prod_rds_mssql/20211109/planned_migration_002.png)
+
+### 2. Stop applications connected to the DB instance that requires maintenance.
+
+Take appropriate measures not to affect services connected to the DB.
+If there is no way to do so without affecting the services, please contact the NHN Cloud Customer Center and we will guide you through the appropriate action.
+
+### 3. Request migration of the DB instance that requires maintenance.
+
+Click the **Migrate** button next to the DB instance that requires maintenance. When a confirmation window appears, click the **Migrate** button.
+
+![planned migration 003](https://static.toastoven.net/prod_rds_mssql/20211109/planned_migration_003.png)
+
+### 4. Wait for the DB instance migration to finish.
+
+If the status of DB instance does not change, try clicking the 'refresh' button.
+
+![planned migration 004](https://static.toastoven.net/prod_rds_mssql/20211109/planned_migration_004.png)
+
+No operations can be performed on the DB instance while migration is in progress.
+If the DB instance migration is not completed normally, it is automatically reported to the administrator, and NHN Cloud will contact you.

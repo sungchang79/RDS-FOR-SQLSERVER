@@ -42,12 +42,12 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 | 스왑 사용률 | swap used (%) | |
 | 스왑 사용량 | swap used (bytes)<br> swap total (bytes) | |
 | 디스크 사용률 | storage used (%) | |
-| 디스크 전송률 | disk read (bytes)<br> disk write (bytes) | |
+| 디스크 전송량 | disk read (bytes)<br> disk write (bytes) | |
 | 디스크 Queue 길이 | queue length (count) | |
 | 디스크 Free | disk free (bytes) | |
 | 디스크 Time 상세 | disk time (%)<br> disk idle (%)<br> disk read (%)<br> disk write (%) | |
 | 디스크 Split IO | split io (counts) | |
-| 네트워크 전송률 | nic incoming (bytes)<br> nic outgoing (bytes) | Windows에서 사용하는 기본적인 네트워크 전송이 발생합니다. |
+| 네트워크 전송량 | nic incoming (bytes)<br> nic outgoing (bytes) | Windows에서 사용하는 기본적인 네트워크 전송이 발생합니다. |
 | 네트워크 전송률 (pps) | nic incoming (pps)<br> nic outgoing (pps) | Windows에서 사용하는 기본적인 네트워크 전송이 발생합니다. |
 | 네트워크 Discarded Packet | nic incoming (pps)<br> nic outgoing (pps) | |
 | 네트워크 Error Packet | nic incoming (pps)<br> nic outgoing (pps) | |
