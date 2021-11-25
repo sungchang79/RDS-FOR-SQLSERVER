@@ -66,6 +66,7 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 | SQL Re-Compilations/sec | SQL Re-Compilations/sec (count) | |
 | Transactions/sec | Transactions/sec (count) | |
 | User Connections | User Connections (count) | |
+| Database Connection Status | Database Connection Status(0,1) | 접속 불가: 0, 접속 가능: 1 |
 | 시스템 Context Switch | context switches (count) | |
 | 시스템 프로세스 | processes (count) | |
 | 시스템 콜 | system call (count) | |
@@ -104,16 +105,21 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 
 | 이벤트 유형 | 이벤트 코드 | 이벤트 메시지 |
 | - | - | - |
-| DB_INSTANCE | DB_INSTANCE_CREATED | DB 인스턴스 생성 |
-| DB_INSTANCE | DB_INSTANCE_CREATED_FAIL | DB 인스턴스 생성 실패 |
+| DB_INSTANCE | DB_INSTANCE_CREATE_START | DB 인스턴스 생성 시작 |
+| DB_INSTANCE | DB_INSTANCE_CREATE_END | DB 인스턴스 생성 완료 |
+| DB_INSTANCE | DB_INSTANCE_CREATE_FAIL | DB 인스턴스 생성 실패 |
 | DB_INSTANCE | DB_INSTANCE_SERVER_CREATE_START | DB 인스턴스 서버 생성 시작 |
 | DB_INSTANCE | DB_INSTANCE_SERVER_CREATE_END | DB 인스턴스 서버 생성 종료 |
 | DB_INSTANCE | DB_INSTANCE_SERVER_CREATE_FAIL | DB 인스턴스 서버 생성 실패 |
 | DB_INSTANCE | DB_INSTANCE_BACKUP_START | DB 인스턴스 백업 시작 |
 | DB_INSTANCE | DB_INSTANCE_BACKUP_END | DB 인스턴스 백업 완료 |
 | DB_INSTANCE | DB_INSTANCE_BACKUP_FAIL | DB 인스턴스 백업 실패 |
-| DB_INSTANCE | DB_INSTANCE_DELETED | DB 인스턴스 백업 삭제 |
-| DB_INSTANCE | DB_INSTANCE_DELETED_FAIL | DB 인스턴스 백업 삭제 실패 |
+| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_START | DB 인스턴스 오브젝트 스토리지에 백업 시작 |
+| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_END | DB 인스턴스 오브젝트 스토리지에 백업 종료 |
+| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_FAIL | DB 인스턴스 오브젝트 스토리지에 백업 완료 |
+| DB_INSTANCE | DB_INSTANCE_LOG_BACKUP_FAIL | DB 인스턴스 로그 백업 실패 |
+| DB_INSTANCE | DB_INSTANCE_DELETED | DB 인스턴스 삭제 |
+| DB_INSTANCE | DB_INSTANCE_DELETED_FAIL | DB 인스턴스 삭제 실패 |
 | DB_INSTANCE | DB_INSTANCE_RESTORE_START | DB 인스턴스 복원 시작 |
 | DB_INSTANCE | DB_INSTANCE_RESTORE_END | DB 인스턴스 복원 완료 |
 | DB_INSTANCE | DB_INSTANCE_RESTORE_FAIL | DB 인스턴스 복원 실패 |
@@ -126,9 +132,19 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 | DB_INSTANCE | DB_INSTANCE_REBOOT_START | DB 인스턴스 재시작 시작 |
 | DB_INSTANCE | DB_INSTANCE_REBOOT_END | DB 인스턴스 재시작 완료 |
 | DB_INSTANCE | DB_INSTANCE_REBOOT_FAIL | DB 인스턴스 재시작 실패 |
+| DB_INSTANCE | DB_INSTANCE_FORCE_RESTART | DB 인스턴스 강제 재시작 |
 | DB_INSTANCE | DB_INSTANCE_RECOVER_HA_START | DB 인스턴스 고가용성 구성 복구 시작 |
 | DB_INSTANCE | DB_INSTANCE_RECOVER_HA_END | DB 인스턴스 고가용성 구성 복구 완료 |
 | DB_INSTANCE | DB_INSTANCE_RECOVER_HA_FAIL | DB 인스턴스 고가용성 구성 복구 실패 |
+| DB_INSTANCE | DB_INSTANCE_RECOVER_WITNESS_START | DB 인스턴스 감시 서버 복구 시작 |
+| DB_INSTANCE | DB_INSTANCE_RECOVER_WITNESS_END | DB 인스턴스 감시 서버 복구 완료 |
+| DB_INSTANCE | DB_INSTANCE_RECOVER_WITNESS_FAIL | DB 인스턴스 감시 서버 복구 실패 |
+| DB_INSTANCE | DB_INSTANCE_RESTORE_FROM_OBS_START | 오브젝트 스토리지로부터 백업 복원 시작 |
+| DB_INSTANCE | DB_INSTANCE_RESTORE_FROM_OBS_END | 오브젝트 스토리지로부터 백업 복원 완료 |
+| DB_INSTANCE | DB_INSTANCE_RESTORE_FROM_OBS_FAIL | 오브젝트 스토리지로부터 백업 복원 실패 |
+| DB_INSTANCE | DB_INSTANCE_HYPERVISOR_MIGRATION_START | 하이퍼바이저 마이그레이션 시작 |
+| DB_INSTANCE | DB_INSTANCE_HYPERVISOR_MIGRATION_END | 하이퍼바이저 마이그레이션 완료 |
+| DB_INSTANCE | DB_INSTANCE_HYPERVISOR_MIGRATION_FAIL | 하이퍼바이저 마이그레이션 실패 |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_HA_START | DB 인스턴스 고가용성 구성 변경 시작 |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_HA_END | DB 인스턴스 고가용성 구성 변경 완료 |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_HA_FAIL | DB 인스턴스 고가용성 구성 변경 실패 |
@@ -156,6 +172,7 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 | DB_INSTANCE | DB_INSTANCE_STATUS_CHANGED_TO_AVAILABLE | DB 인스턴스 상태 정상화 |
 | DB_INSTANCE | DB_INSTANCE_STATUS_CHANGED_TO_FAIL_TO_CONNECT | DB 인스턴스 접속 불가 |
 | DB_INSTANCE | DB_INSTANCE_STATUS_CHANGED_TO_STORAGE_FULL | DB 인스턴스 스토리지 부족 |
+| DB_INSTANCE | DB_INSTANCE_STATUS_CHANGED_TO_ERROR | DB 인스턴스 에러 |
 | DB_INSTANCE | HA_AUTOMATIC_FAILOVER_START | 고가용성 DB 인스턴스 자동 장애 조치 시작 |
 | DB_INSTANCE | HA_AUTOMATIC_FAILOVER_END | 고가용성 DB 인스턴스 자동 장애 조치 완료 |
 | DB_INSTANCE | HA_AUTOMATIC_FAILOVER_FAIL | 고가용성 DB 인스턴스 자동 장애 조치 실패 |
@@ -163,13 +180,18 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 | DB_INSTANCE | HA_AUTOMATIC_PROMOTE_FAIL | 고가용성 DB 인스턴스 승격 실패 |
 | BACKUP | BACKUP_START | 백업 시작 |
 | BACKUP | BACKUP_END | 백업 완료 |
+| BACKUP | BACKUP_FAIL | 백업 실패 |
 | BACKUP | BACKUP_DELETED | 백업 삭제 |
+| BACKUP | BACKUP_EXPORT_OBS_START | 오브젝트 스토리지로 백업 내보내기 시작 |
+| BACKUP | BACKUP_EXPORT_OBS_END | 오브젝트 스토리지로 백업 내보내기 종료 |
+| BACKUP | BACKUP_EXPORT_OBS_FAIL | 오브젝트 스토리지로 백업 내보내기 실패 |
 | PARAMETER_GROUP | PARAMETER_GROUP_CREATED | 파라미터 그룹 생성 |
 | PARAMETER_GROUP | PARAMETER_GROUP_MODIFIED | 파라미터 그룹 수정 |
 | PARAMETER_GROUP | PARAMETER_GROUP_DELETED | 파라미터 그룹 삭제 |
 | DB_SECURITY_GROUP | DB_SECURITY_GROUP_CREATED | DB 보안 그룹 생성 |
 | DB_SECURITY_GROUP | DB_SECURITY_GROUP_MODIFIED | DB 보안 그룹 수정 |
 | DB_SECURITY_GROUP | DB_SECURITY_GROUP_DELETED | DB 보안 그룹 삭제 |
+| NOTIFICATION_GROUP | NOTIFICATION_GROUP_EVENT_CREATED | DB 인스턴스 이벤트 발생 |
 
 ### 이벤트 구독
 
