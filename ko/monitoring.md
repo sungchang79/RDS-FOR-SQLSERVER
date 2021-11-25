@@ -66,7 +66,7 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 | SQL Re-Compilations/sec | SQL Re-Compilations/sec (count) | |
 | Transactions/sec | Transactions/sec (count) | |
 | User Connections | User Connections (count) | |
-| Database Connection Status | Database Connection Status(0,1) | 접속 불가: 0, 접속 가능: 1 |
+| Database Connection Status | Database Connection Status | 접속 불가: 0, 접속 가능: 1 |
 | 시스템 Context Switch | context switches (count) | |
 | 시스템 프로세스 | processes (count) | |
 | 시스템 콜 | system call (count) | |
