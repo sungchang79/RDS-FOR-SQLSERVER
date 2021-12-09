@@ -48,7 +48,7 @@ DBインスタンスの各種性能指標をチャート形式で確認できま
 | ディスクTime詳細 | disk time (%)<br> disk idle (%)<br> disk read (%)<br> disk write (%) | |
 | ディスクSplit IO | split io (counts) | |
 | ネットワーク転送量 | nic incoming (bytes)<br> nic outgoing (bytes) | Windowsで使用する基本的なネットワーク転送が発生します。 |
-| ネットワーク転送量(pps) | nic incoming (pps)<br> nic outgoing (pps) | Windowsで使用する基本的なネットワーク転送が発生します。 |
+| ネットワーク転送率(pps) | nic incoming (pps)<br> nic outgoing (pps) | Windowsで使用する基本的なネットワーク転送が発生します。 |
 | ネットワークDiscarded Packet | nic incoming (pps)<br> nic outgoing (pps) | |
 | ネットワークError Packet | nic incoming (pps)<br> nic outgoing (pps) | |
 | Batch requests/sec | Batch requests/sec (count) | |
