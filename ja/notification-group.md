@@ -9,8 +9,8 @@
 | CPU | CPU System | 
 | CPU | CPU User |
 | DISK | ディスク使用率 | 
-| DISK | ディスク書き込み転送率 |
-| DISK | ディスク読み込み転送率 | 
+| DISK | ディスク書き込み転送量 |
+| DISK | ディスク読み込み転送量 | 
 | MEMORY | メモリ使用率 |
 | MEMORY | メモリFree |
 | MEMORY | メモリUsed | 
@@ -32,7 +32,7 @@
 | SWAP | Swap Total | 
 | SWAP | Swap Used |
 | SWAP | Swap使用率 | 
-| NETWORK | ネットワーク受信転送率(Bytes) | 
-| NETWORK | ネットワーク送信転送率(Bytes) |
+| NETWORK | ネットワーク受信転送量(Bytes) | 
+| NETWORK | ネットワーク送信転送量(Bytes) |
 | NETWORK | ネットワーク受信転送率(pps) |
 | NETWORK | ネットワーク送信転送率(pps) |
