@@ -42,13 +42,13 @@ DBインスタンスの各種性能指標をチャート形式で確認できま
 | スワップ使用率 | swap used (%) | |
 | スワップ使用量 | swap used (bytes)<br> swap total (bytes) | |
 | ディスク使用率 | storage used (%) | |
-| ディスク転送率 | disk read (bytes)<br> disk write (bytes) | |
+| ディスク転送量 | disk read (bytes)<br> disk write (bytes) | |
 | Disk Queue Length | queue length (count) | |
 | ディスクFree | disk free (bytes) | |
 | ディスクTime詳細 | disk time (%)<br> disk idle (%)<br> disk read (%)<br> disk write (%) | |
 | ディスクSplit IO | split io (counts) | |
-| ネットワーク転送率 | nic incoming (bytes)<br> nic outgoing (bytes) | Windowsで使用する基本的なネットワーク転送が発生します。 |
-| ネットワーク転送率(pps) | nic incoming (pps)<br> nic outgoing (pps) | Windowsで使用する基本的なネットワーク転送が発生します。 |
+| ネットワーク転送量 | nic incoming (bytes)<br> nic outgoing (bytes) | Windowsで使用する基本的なネットワーク転送が発生します。 |
+| ネットワーク転送量(pps) | nic incoming (pps)<br> nic outgoing (pps) | Windowsで使用する基本的なネットワーク転送が発生します。 |
 | ネットワークDiscarded Packet | nic incoming (pps)<br> nic outgoing (pps) | |
 | ネットワークError Packet | nic incoming (pps)<br> nic outgoing (pps) | |
 | Batch requests/sec | Batch requests/sec (count) | |
