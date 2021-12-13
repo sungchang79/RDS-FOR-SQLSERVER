@@ -66,6 +66,7 @@ In addition to the basic system metrics, the performance metrics provided by `sy
 | SQL Re-Compilations/sec | SQL Re-Compilations/sec (count) | |
 | Transactions/sec | Transactions/sec (count) | |
 | User Connections | User Connections (count) | |
+| Database Connection Status | Database Connection Status | Connection unavailable: 0, Connection available: 1 |
 | System Context Switch | context switches (count) | |
 | System Process | processes (count) | |
 | System Call | system call (count) | |
@@ -100,35 +101,50 @@ If the users in the user group are excluded from the project members, they will 
 
 ## Event
 
-An event refers to an important incident incurred by RDS for SQL Server or user. An event is comprised of a category, date of occurrence, original source and message. It can be queried on a web console and notified via email, SMS, or webhook on subscription. Each event category may include event occurrences, like follows:
+An event refers to an important event caused by RDS for MS-SQL or by a user. An event consists of the event category, date and time of occurrence, original source, and message. Events can be viewed on the web console, and you can receive notification of event occurrences by email, SMS, or webhook through subscription. The event categories and possible events are as follows.
 
 | Event Category | Event Code | Event Message |
 | - | - | - |
-| DB_INSTANCE | DB_INSTANCE_CREATED | DB instance created |
-| DB_INSTANCE | DB_INSTANCE_CREATED_FAIL | Creating DB instance failed |
+| DB_INSTANCE | DB_INSTANCE_CREATE_START | Creating DB instance started |
+| DB_INSTANCE | DB_INSTANCE_CREATE_END | Creating DB instance completed |
+| DB_INSTANCE | DB_INSTANCE_CREATE_FAIL | Creating DB instance failed |
 | DB_INSTANCE | DB_INSTANCE_SERVER_CREATE_START | Creating DB instance server started |
 | DB_INSTANCE | DB_INSTANCE_SERVER_CREATE_END | Creating DB instance server finished |
 | DB_INSTANCE | DB_INSTANCE_SERVER_CREATE_FAIL | Creating DB instance server failed |
 | DB_INSTANCE | DB_INSTANCE_BACKUP_START | Backup of DB instance started |
 | DB_INSTANCE | DB_INSTANCE_BACKUP_END | Backup of DB instance completed |
 | DB_INSTANCE | DB_INSTANCE_BACKUP_FAIL | Backup of DB instance failed |
-| DB_INSTANCE | DB_INSTANCE_DELETED | Backup of DB instance deleted |
-| DB_INSTANCE | DB_INSTANCE_DELETED_FAIL | Deleting DB instance backup failed |
-| DB_INSTANCE | DB_INSTANCE_RESTORE_START | DB instance restoration started |
-| DB_INSTANCE | DB_INSTANCE_RESTORE_END | DB instance restored |
+| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_START | Backup of DB instance to object storage started |
+| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_END | Backup of DB instance to object storage finished |
+| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_FAIL | Backup of DB instance to object storage failed |
+| DB_INSTANCE | DB_INSTANCE_LOG_BACKUP_FAIL | Backup of DB instance log failed |
+| DB_INSTANCE | DB_INSTANCE_DELETED | DB instance deleted |
+| DB_INSTANCE | DB_INSTANCE_DELETED_FAIL | Deleting DB instance failed |
+| DB_INSTANCE | DB_INSTANCE_RESTORE_START | Restoring DB instance started |
+| DB_INSTANCE | DB_INSTANCE_RESTORE_END | Restoring DB instance completed |
 | DB_INSTANCE | DB_INSTANCE_RESTORE_FAIL | Restoring DB instance failed |
 | DB_INSTANCE | DB_INSTANCE_MODIFY_START | Modifying DB instance started |
-| DB_INSTANCE | DB_INSTANCE_MODIFY_END | DB instance modified |
+| DB_INSTANCE | DB_INSTANCE_MODIFY_END | Modifying DB instance completed |
 | DB_INSTANCE | DB_INSTANCE_MODIFY_FAIL | Modifying DB instance failed |
 | DB_INSTANCE | DB_INSTANCE_MODIFY_SECURITY_GROUP_START | Changing DB instance security group started |
-| DB_INSTANCE | DB_INSTANCE_MODIFY_SECURITY_GROUP_END | DB instance security group changed |
+| DB_INSTANCE | DB_INSTANCE_MODIFY_SECURITY_GROUP_END | Changing DB instance security group completed |
 | DB_INSTANCE | DB_INSTANCE_MODIFY_SECURITY_GROUP_FAIL | Changing DB instance security group failed |
-| DB_INSTANCE | DB_INSTANCE_REBOOT_START | DB instance restarted |
+| DB_INSTANCE | DB_INSTANCE_REBOOT_START | Restarting DB instance started |
 | DB_INSTANCE | DB_INSTANCE_REBOOT_END | Restarting DB instance completed |
 | DB_INSTANCE | DB_INSTANCE_REBOOT_FAIL | Restarting DB instance failed |
+| DB_INSTANCE | DB_INSTANCE_FORCE_RESTART | DB instance force restart |
 | DB_INSTANCE | DB_INSTANCE_RECOVER_HA_START | DB instance high availability configuration recovery started |
 | DB_INSTANCE | DB_INSTANCE_RECOVER_HA_END | DB instance high availability configuration recovery completed |
 | DB_INSTANCE | DB_INSTANCE_RECOVER_HA_FAIL | DB instance high availability configuration recovery failed |
+| DB_INSTANCE | DB_INSTANCE_RECOVER_WITNESS_START | DB instance monitoring server recovery started |
+| DB_INSTANCE | DB_INSTANCE_RECOVER_WITNESS_END | DB instance monitoring server recovery completed |
+| DB_INSTANCE | DB_INSTANCE_RECOVER_WITNESS_FAIL | DB instance monitoring server recovery failed |
+| DB_INSTANCE | DB_INSTANCE_RESTORE_FROM_OBS_START | Restoring backup from object storage started |
+| DB_INSTANCE | DB_INSTANCE_RESTORE_FROM_OBS_END | Restoring backup from object storage completed |
+| DB_INSTANCE | DB_INSTANCE_RESTORE_FROM_OBS_FAIL | Restoring backup from object storage failed |
+| DB_INSTANCE | DB_INSTANCE_HYPERVISOR_MIGRATION_START | Hypervisor migration started |
+| DB_INSTANCE | DB_INSTANCE_HYPERVISOR_MIGRATION_END | Hypervisor migration completed |
+| DB_INSTANCE | DB_INSTANCE_HYPERVISOR_MIGRATION_FAIL | Hypervisor migration failed |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_HA_START | DB instance high availability configuration change started |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_HA_END | DB instance high availability configuration change completed |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_HA_FAIL | DB instance high availability configuration change failed |
@@ -156,20 +172,26 @@ An event refers to an important incident incurred by RDS for SQL Server or user.
 | DB_INSTANCE | DB_INSTANCE_STATUS_CHANGED_TO_AVAILABLE | DB instance changed to available status |
 | DB_INSTANCE | DB_INSTANCE_STATUS_CHANGED_TO_FAIL_TO_CONNECT | Unable to connect to the DB instance |
 | DB_INSTANCE | DB_INSTANCE_STATUS_CHANGED_TO_STORAGE_FULL | Not enough DB instance storage |
-| DB_INSTANCE | HA_AUTOMATIC_FAILOVER_START | Started the auto failover of the high availability DB instance |
-| DB_INSTANCE | HA_AUTOMATIC_FAILOVER_END | Completed the auto failover of the high availability DB instance |
-| DB_INSTANCE | HA_AUTOMATIC_FAILOVER_FAIL | Failed to perform the auto failover of the high availability DB instance |
-| DB_INSTANCE | HA_AUTOMATIC_PROMOTE_END | Successfully promoted the high availability DB instance |
-| DB_INSTANCE | HA_AUTOMATIC_PROMOTE_FAIL | Failed to promote the high availability DB instance |
+| DB_INSTANCE | DB_INSTANCE_STATUS_CHANGED_TO_ERROR | DB instance error |
+| DB_INSTANCE | HA_AUTOMATIC_FAILOVER_START | High availability DB instance auto failover started |
+| DB_INSTANCE | HA_AUTOMATIC_FAILOVER_END | High availability DB instance auto failover completed |
+| DB_INSTANCE | HA_AUTOMATIC_FAILOVER_FAIL | High availability DB instance auto failover failed |
+| DB_INSTANCE | HA_AUTOMATIC_PROMOTE_END | Promoting high availability DB instance completed |
+| DB_INSTANCE | HA_AUTOMATIC_PROMOTE_FAIL | Promoting high availability DB instance failed |
 | BACKUP | BACKUP_START | Backup started |
 | BACKUP | BACKUP_END | Backup completed |
+| BACKUP | BACKUP_FAIL | Backup failed |
 | BACKUP | BACKUP_DELETED | Backup deleted |
+| BACKUP | BACKUP_EXPORT_OBS_START | Exporting backup to object storage started |
+| BACKUP | BACKUP_EXPORT_OBS_END | Exporting backup to object storage finished |
+| BACKUP | BACKUP_EXPORT_OBS_FAIL | Exporting backup to object storage failed |
 | PARAMETER_GROUP | PARAMETER_GROUP_CREATED | Parameter group created |
 | PARAMETER_GROUP | PARAMETER_GROUP_MODIFIED | Parameter group modified |
 | PARAMETER_GROUP | PARAMETER_GROUP_DELETED | Parameter group deleted |
 | DB_SECURITY_GROUP | DB_SECURITY_GROUP_CREATED | DB security group created |
 | DB_SECURITY_GROUP | DB_SECURITY_GROUP_MODIFIED | DB security group modified |
 | DB_SECURITY_GROUP | DB_SECURITY_GROUP_DELETED | DB security group deleted |
+| NOTIFICATION_GROUP | NOTIFICATION_GROUP_EVENT_CREATED | DB instance event occurred |
 
 ### Subscribing Events
 

@@ -1,5 +1,20 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### December 14, 2021
+
+#### Feature Improvements
+
+* Improved to display the name in addition to CIDR when selecting a subnet while creating an instance
+* Changed the data path of the master database to the data volume
+
+#### Bug Fixes
+
+* Fixed a bug where you could select an event code that cannot be subscribed to when registering or modifying an event subscription
+* Fixed a bug where unnecessary storage remained intermittently when deleting a DB instance
+* Fixed an issue where, after restarting a DB instance, the DB instance is intermittently changed to connection unavailable status
+* Fixed an issue where, when modifying a DB instance, the DB instance is temporarily changed to available status intermittently even though the task is not completed
+* Fixed an issue where the disk transfer rate was displayed incorrectly on the server dashboard
+
 ### November 9, 2021
 
 #### Added Features
