@@ -66,6 +66,7 @@ DBインスタンスの各種性能指標をチャート形式で確認できま
 | SQL Re-Compilations/sec | SQL Re-Compilations/sec (count) | |
 | Transactions/sec | Transactions/sec (count) | |
 | User Connections | User Connections (count) | |
+| Database Connection Status | Database Connection Status | 接続不可：0、接続可能：1 |
 | システムContext Switch | context switches (count) | |
 | システムプロセス | processes (count) | |
 | システムコール | system call (count) | |
@@ -104,16 +105,21 @@ DBインスタンスの各種性能指標をチャート形式で確認できま
 
 | イベントタイプ | イベントコード | イベントメッセージ |
 | - | - | - |
-| DB_INSTANCE | DB_INSTANCE_CREATED | DBインスタンス作成 |
-| DB_INSTANCE | DB_INSTANCE_CREATED_FAIL | DBインスタンス作成失敗 |
+| DB_INSTANCE | DB_INSTANCE_CREATE_START | DBインスタンスの作成開始 |
+| DB_INSTANCE | DB_INSTANCE_CREATE_END | DBインスタンスの作成完了 |
+| DB_INSTANCE | DB_INSTANCE_CREATE_FAIL | DBインスタンスの作成失敗 |
 | DB_INSTANCE | DB_INSTANCE_SERVER_CREATE_START | DBインスタンスサーバー作成開始 |
 | DB_INSTANCE | DB_INSTANCE_SERVER_CREATE_END | DBインスタンスサーバー作成終了 |
 | DB_INSTANCE | DB_INSTANCE_SERVER_CREATE_FAIL | DBインスタンスサーバー作成失敗 |
 | DB_INSTANCE | DB_INSTANCE_BACKUP_START | DBインスタンスバックアップ開始 |
 | DB_INSTANCE | DB_INSTANCE_BACKUP_END | DBインスタンスバックアップ完了 |
 | DB_INSTANCE | DB_INSTANCE_BACKUP_FAIL | DBインスタンスバックアップ失敗 |
-| DB_INSTANCE | DB_INSTANCE_DELETED | DBインスタンスバックアップ削除 |
-| DB_INSTANCE | DB_INSTANCE_DELETED_FAIL | DBインスタンスバックアップ削除失敗 |
+| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_START | オブジェクトストレージにDBインスタンスのバックアップ開始 |
+| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_END | オブジェクトストレージにDBインスタンスのバックアップ終了 |
+| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_FAIL | オブジェクトストレージにDBインスタンスのバックアップ完了 |
+| DB_INSTANCE | DB_INSTANCE_LOG_BACKUP_FAIL | DBインスタンスログのバックアップ失敗 |
+| DB_INSTANCE | DB_INSTANCE_DELETED | DBインスタンスの削除 |
+| DB_INSTANCE | DB_INSTANCE_DELETED_FAIL | DBインスタンスの削除失敗 |
 | DB_INSTANCE | DB_INSTANCE_RESTORE_START | DBインスタンス復元開始 |
 | DB_INSTANCE | DB_INSTANCE_RESTORE_END | DBインスタンス復元完了 |
 | DB_INSTANCE | DB_INSTANCE_RESTORE_FAIL | DBインスタンス復元失敗 |
@@ -126,12 +132,22 @@ DBインスタンスの各種性能指標をチャート形式で確認できま
 | DB_INSTANCE | DB_INSTANCE_REBOOT_START | DBインスタンス再起動開始 |
 | DB_INSTANCE | DB_INSTANCE_REBOOT_END | DBインスタンス再起動完了 |
 | DB_INSTANCE | DB_INSTANCE_REBOOT_FAIL | DBインスタンス再起動失敗 |
+| DB_INSTANCE | DB_INSTANCE_FORCE_RESTART | DBインスタンスの強制再起動 |
 | DB_INSTANCE | DB_INSTANCE_RECOVER_HA_START | DBインスタンス高可用性構成の復旧開始 |
 | DB_INSTANCE | DB_INSTANCE_RECOVER_HA_END | DBインスタンス高可用性構成の復旧完了 |
 | DB_INSTANCE | DB_INSTANCE_RECOVER_HA_FAIL | DBインスタンス高可用性構成の復旧失敗 |
+| DB_INSTANCE | DB_INSTANCE_RECOVER_WITNESS_START | DBインスタンスの監視サーバー復旧開始 |
+| DB_INSTANCE | DB_INSTANCE_RECOVER_WITNESS_END | DBインスタンスの監視サーバー復旧完了 |
+| DB_INSTANCE | DB_INSTANCE_RECOVER_WITNESS_FAIL | DBインスタンスの監視サーバー復旧失敗 |
+| DB_INSTANCE | DB_INSTANCE_RESTORE_FROM_OBS_START | オブジェクトストレージからバックアップ復元開始 |
+| DB_INSTANCE | DB_INSTANCE_RESTORE_FROM_OBS_END | オブジェクトストレージからバックアップ復元完了 |
+| DB_INSTANCE | DB_INSTANCE_RESTORE_FROM_OBS_FAIL | オブジェクトストレージからバックアップ復元失敗 |
+| DB_INSTANCE | DB_INSTANCE_HYPERVISOR_MIGRATION_START | ハイパーバイザマイグレーション開始 |
+| DB_INSTANCE | DB_INSTANCE_HYPERVISOR_MIGRATION_END | ハイパーバイザマイグレーション完了 |
+| DB_INSTANCE | DB_INSTANCE_HYPERVISOR_MIGRATION_FAIL | ハイパーバイザマイグレーション失敗 |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_HA_START | DBインスタンス高可用性構成の変更開始 |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_HA_END | DBインスタンス高可用性構成の変更完了 |
-| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_FAIL | DBインスタンス高可用性構の成変更失敗 |
+| DB_INSTANCE | DB_INSTANCE_CHANGE_HA_FAIL | DBインスタンス高可用性構成の変更失敗 |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_PASSWORD_START | DBインスタンスパスワード変更開始 |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_PASSWORD_END | DBインスタンスパスワード変更完了 |
 | DB_INSTANCE | DB_INSTANCE_CHANGE_PASSWORD_FAIL | DBインスタンスパスワード変更失敗 |
@@ -156,6 +172,7 @@ DBインスタンスの各種性能指標をチャート形式で確認できま
 | DB_INSTANCE | DB_INSTANCE_STATUS_CHANGED_TO_AVAILABLE | DBインスタンス状態正常化 |
 | DB_INSTANCE | DB_INSTANCE_STATUS_CHANGED_TO_FAIL_TO_CONNECT | DBインスタンス接続不可 |
 | DB_INSTANCE | DB_INSTANCE_STATUS_CHANGED_TO_STORAGE_FULL | DBインスタンスストレージ不足 |
+| DB_INSTANCE | DB_INSTANCE_STATUS_CHANGED_TO_ERROR | DBインスタンスエラー |
 | DB_INSTANCE | HA_AUTOMATIC_FAILOVER_START | 高可用性DBインスタンス自動フェイルオーバー開始 |
 | DB_INSTANCE | HA_AUTOMATIC_FAILOVER_END | 高可用性DBインスタンス自動フェイルオーバー完了 |
 | DB_INSTANCE | HA_AUTOMATIC_FAILOVER_FAIL | 高可用性DBインスタンス自動フェイルオーバー失敗 |
@@ -163,13 +180,18 @@ DBインスタンスの各種性能指標をチャート形式で確認できま
 | DB_INSTANCE | HA_AUTOMATIC_PROMOTE_FAIL | 高可用性DBインスタンス昇格失敗 |
 | BACKUP | BACKUP_START | バックアップ開始 |
 | BACKUP | BACKUP_END | バックアップ完了 |
+| BACKUP | BACKUP_FAIL | バックアップ失敗 |
 | BACKUP | BACKUP_DELETED | バックアップ削除 |
+| BACKUP | BACKUP_EXPORT_OBS_START | オブジェクトストレージにバックアップのエクスポート開始 |
+| BACKUP | BACKUP_EXPORT_OBS_END | オブジェクトストレージにバックアップのエクスポート終了 |
+| BACKUP | BACKUP_EXPORT_OBS_FAIL | オブジェクトストレージにバックアップのエクスポート失敗 |
 | PARAMETER_GROUP | PARAMETER_GROUP_CREATED | パラメータグループ作成 |
 | PARAMETER_GROUP | PARAMETER_GROUP_MODIFIED | パラメータグループ修正 |
 | PARAMETER_GROUP | PARAMETER_GROUP_DELETED | パラメータグループ削除 |
 | DB_SECURITY_GROUP | DB_SECURITY_GROUP_CREATED | DBセキュリティグループ作成 |
 | DB_SECURITY_GROUP | DB_SECURITY_GROUP_MODIFIED | DBセキュリティグループ修正 |
 | DB_SECURITY_GROUP | DB_SECURITY_GROUP_DELETED | DBセキュリティグループ削除 |
+| NOTIFICATION_GROUP | NOTIFICATION_GROUP_EVENT_CREATED | DBインスタンスイベント発生 |
 
 ### イベント購読
 
