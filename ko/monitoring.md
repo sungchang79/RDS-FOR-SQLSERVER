@@ -114,9 +114,9 @@ DB 인스턴스의 각종 성능 지표를 차트 형태로 볼 수 있습니다
 | DB_INSTANCE | DB_INSTANCE_BACKUP_START | DB 인스턴스 백업 시작 |
 | DB_INSTANCE | DB_INSTANCE_BACKUP_END | DB 인스턴스 백업 완료 |
 | DB_INSTANCE | DB_INSTANCE_BACKUP_FAIL | DB 인스턴스 백업 실패 |
-| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_START | DB 인스턴스 오브젝트 스토리지에 백업 시작 |
-| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_END | DB 인스턴스 오브젝트 스토리지에 백업 종료 |
-| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_FAIL | DB 인스턴스 오브젝트 스토리지에 백업 완료 |
+| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_START | 오브젝트 스토리지에 DB 인스턴스 백업 시작 |
+| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_END | 오브젝트 스토리지에 DB 인스턴스 백업 종료 |
+| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_FAIL | 오브젝트 스토리지에 DB 인스턴스 백업 완료 |
 | DB_INSTANCE | DB_INSTANCE_LOG_BACKUP_FAIL | DB 인스턴스 로그 백업 실패 |
 | DB_INSTANCE | DB_INSTANCE_DELETED | DB 인스턴스 삭제 |
 | DB_INSTANCE | DB_INSTANCE_DELETED_FAIL | DB 인스턴스 삭제 실패 |
