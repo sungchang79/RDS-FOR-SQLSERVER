@@ -101,7 +101,7 @@ If the users in the user group are excluded from the project members, they will 
 
 ## Event
 
-An event is an important event caused by RDS for MS-SQL or by a user. An event consists of the event category, date and time of occurrence, original source, and message. Events can be viewed on the web console, and you can receive notification of event occurrences by email, SMS, or webhook through subscription. The event categories and possible events are as follows.
+An event refers to an important event caused by RDS for MS-SQL or by a user. An event consists of the event category, date and time of occurrence, original source, and message. Events can be viewed on the web console, and you can receive notification of event occurrences by email, SMS, or webhook through subscription. The event categories and possible events are as follows.
 
 | Event Category | Event Code | Event Message |
 | - | - | - |
