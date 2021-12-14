@@ -116,7 +116,7 @@ DBインスタンスの各種性能指標をチャート形式で確認できま
 | DB_INSTANCE | DB_INSTANCE_BACKUP_FAIL | DBインスタンスバックアップ失敗 |
 | DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_START | オブジェクトストレージにDBインスタンスのバックアップ開始 |
 | DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_END | オブジェクトストレージにDBインスタンスのバックアップ終了 |
-| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_FAIL | オブジェクトストレージにDBインスタンスのバックアップ完了 |
+| DB_INSTANCE | DB_INSTANCE_BACKUP_TO_OBS_FAIL | オブジェクトストレージにDBインスタンスのバックアップ失敗 |
 | DB_INSTANCE | DB_INSTANCE_LOG_BACKUP_FAIL | DBインスタンスログのバックアップ失敗 |
 | DB_INSTANCE | DB_INSTANCE_DELETED | DBインスタンスの削除 |
 | DB_INSTANCE | DB_INSTANCE_DELETED_FAIL | DBインスタンスの削除失敗 |
