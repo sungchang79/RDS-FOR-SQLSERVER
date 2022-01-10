@@ -1,5 +1,11 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### January 11, 2022
+
+#### Bug Fixes
+
+* Fixed an issue where DB instance creation fails intermittently
+
 ### December 14, 2021
 
 #### Feature Improvements
