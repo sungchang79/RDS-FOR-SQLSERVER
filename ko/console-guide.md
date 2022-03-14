@@ -9,7 +9,7 @@ DB 인스턴스 탭에서는 DB 인스턴스의 생성, 수정, 삭제 등의 �
 DB 인스턴스를 생성하려면 먼저 DB 인스턴스 리스트 화면 좌측 상단의 [DB 인스턴스 생성] 버튼을 클릭하여 DB 인스턴스 생성 화면으로 이동합니다.
 생성하고자 하는 DB 인스턴스의 사양, 정보, 네트워크, 플로팅 IP, DB 보안 그룹, 백업 설정을 입력한 후 [DB 인스턴스 생성] 버튼을 클릭하여 DB 인스턴스 생성 요청을 합니다.
 
-![DB 인스턴스 생성 001](https://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_create_001_kr.png)
+![DB 인스턴스 생성 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_create_001_kr.png)
 
 * ❶ Compute & Network 서비스에서 생성한 VPC 서브넷을 선택할 수 있습니다.
 * ❷ DB 보안 그룹이 없을 경우, [DB 보안 그룹 생성] 버튼을 클릭하여 즉시 생성, 적용할 수 있습니다.
@@ -27,7 +27,7 @@ DB 인스턴스의 간략한 정보 목록을 조회할 수 있습니다.
 * ❶ DB 인스턴스 이름 및 UUID 로 검색할 수 있습니다.
 * ❷ 조건 버튼 클릭 시, 가용성 영역과 DB 인스턴스 상태로 검색 결과를 필터링할 수 있습니다.
 
-![DB 인스턴스 리스트 > 조건 001](https://static.toastoven.net/prod_rds_mssql/20200112/output/db_instance_list_cond_001_kr.png)
+![DB 인스턴스 리스트 > 조건 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_list_cond_001_kr.png)
 
 * ❸ 빈번하게 사용되는 작업을 수행할 수 있습니다.
 * ❹ 빈번하게 사용되지 않는 추가 작업을 수행할 수 있습니다.
@@ -64,24 +64,30 @@ DB 인스턴스의 상태가 비정상이라고 판단되면, 현재 진행 중�
 
 사용 가능 상태의 DB 인스턴스는 웹콘솔을 통해 손쉽게 주요 설정을 변경할 수 있습니다.
 
-![DB 인스턴스 리스트 002](https://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_list_002_kr.png)
+![DB 인스턴스 리스트 002](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_list_002_kr.png)
 
 * ❶ 수정하고자 하는 DB 인스턴스를 목록에서 선택 후, 우측 상단의 수정 버튼을 클릭합니다.
 
 변경하고자 하는 설정을 변경 후, 페이지 하단의 [수정] 버튼을 클릭하여 DB 인스턴스를 수정합니다.
 DB 인스턴스 수정 요청에 성공하면, 자동으로 DB 인스턴스 리스트로 이동합니다. DB 인스턴스 수정에는 몇 분에서 몇십 분이 소요됩니다.
 
-![DB 인스턴스 수정 001](https://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_modify_001_kr.png)
+![DB 인스턴스 수정 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_modify_001_kr.png)
 
 * ❶ 가용성 영역은 변경할 수 업습니다.
 * ❷ DB 인스턴스 타입 변경 시, 데이터베이스가 재시작됩니다.
 * ❸ 스토리지 타입은 변경할 수 업습니다.
 * ❹ 한번 증가시킨 스토리지 크기는 다시 줄일 수 없습니다.
 * ❺ 백업 보관 기간이 1일 이상이어야 고가용성 기능을 사용할 수 있습니다.
-* ❻ 사용자 ID 는 변경할 수 없습니다.
-* ❼ 비밀번호를 입력하지 않으면, 변경되지 않습니다.
-* ❽ 포트 변경 시, 데이터베이스가 재시작됩니다.
-* ❾ VPC 는 변경할 수 없습니다.
+* ❻ 고가용성 자동 복구를 사용하시면 자동 장애 조치 한시간 후 동작하는 고가용성 복구 예약 작업이 생성됩니다.
+* ❼ 사용자 ID 는 변경할 수 없습니다.
+* ❽ 비밀번호를 입력하지 않으면, 변경되지 않습니다.
+* ❾ 포트 변경 시, 데이터베이스가 재시작됩니다.
+* ❿ VPC 는 변경할 수 없습니다.
+* ⓫ 작업 예약 시간을 수정하면 이미 생성된 예약 작업의 예약 시간도 변경됩니다.
+* ⓬ **DB 인스턴스 수정** 버튼을 클릭하시면 DB 인스턴스 수정 확인 창이 나타납니다.
+![DB 인스턴스 수정 > 확인 모달](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_modify_modal_001_kr.png)
+  * **즉시 실행** 버튼을 클릭하시면 즉시 변경됩니다.
+  * **작업 예약** 버튼을 클릭하시면 DB 인스턴스 작업 예약 시간으로 작업이 예약됩니다.
 
 ### DB 인스턴스 상세
 
@@ -92,7 +98,7 @@ DB 인스턴스를 선택하면 화면 하단에 상세 보기 패널이 노출�
 
 선택한 DB 인스턴스의 기본정보를 확인할 수 있습니다.
 
-![DB 인스턴스 상세 > 기본 정보 001](https://static.toastoven.net/prod_rds_mssql/20200112/output/db_instance_detail_inst_001_kr.png)
+![DB 인스턴스 상세 > 기본 정보 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_inst_001_kr.png)
 
 * ❶ [변경] 버튼 클릭 시, DB 인스턴스의 이름을 변경할 수 있습니다.
 * ❷ [복사] 버튼 클릭 시, DB 인스턴스의 아이디를 클립보드로 복사합니다.
@@ -112,20 +118,20 @@ DB 인스턴스를 선택하면 화면 하단에 상세 보기 패널이 노출�
 
 선택한 DB 인스턴스와 연관된 지표를 차트를 통해 확인할 수 있습니다. 자세한 사용법은 [서버 대시보드](./console-guide#_20) 를 참고합니다.
 
-![DB 인스턴스 상세 > 모니터링 001](https://static.toastoven.net/prod_rds_mssql/db_instance_detail_mon_001.png)
+![DB 인스턴스 상세 > 모니터링 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_mon_001.png)
 
 #### 이벤트
 
 선택한 DB 인스턴스와 연관된 이벤트를 확인할 수 있습니다. 자세한 사용법은 [이벤트](./console-guide#_12) 를 참고합니다.
 
-![DB 인스턴스 상세 > 이벤트 001](https://static.toastoven.net/prod_rds_mssql/db_instance_detail_event_001.png)
+![DB 인스턴스 상세 > 이벤트 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_event_001.png)
 
 #### 로그
 
 선택한 DB 인스턴스에서 발생한 Microsoft SQL Server 의 에러로그를 확인할 수 있습니다. 
 에러로그 내용을 최신 순으로 정렬하며, 한화면에 최대 10줄의 에러로그를 확인할 수 있습니다.
 
-![DB 인스턴스 상세 > 로그 001](https://static.toastoven.net/prod_rds_mssql/db_instance_detail_log_001.png)
+![DB 인스턴스 상세 > 로그 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_log_001.png)
 
 * ❶ 조회 기간을 선택합니다. 별도로 지정하지 않으면 최근 일주일간의 에러로그를 조회합니다.
 * ❷ 조회 기간을 기본값으로 초기화합니다.
@@ -136,7 +142,7 @@ DB 인스턴스를 선택하면 화면 하단에 상세 보기 패널이 노출�
 선택한 DB 인스턴스의 백업 관련 설정 정보 및 백업 파일에 대한 정보를 확인할 수 있습니다.
 한 화면에 최대 50개의 백업 목록이 노출됩니다. 
 
-![DB 인스턴스 상세 > 백업 001](https://static.toastoven.net/prod_rds_mssql/db_instance_detail_backup_001.png)
+![DB 인스턴스 상세 > 백업 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_backup_001.png)
 
 * ❶ 백업 수행 시간이 노출됩니다. 백업 수행 시간을 지정하지 않았을 경우 시스템에서 지정한 시간이 노출됩니다.
 * ❷ 가장 최근 수행된 백업의 생성 시각이 노출됩니다.
@@ -145,6 +151,21 @@ DB 인스턴스를 선택하면 화면 하단에 상세 보기 패널이 노출�
 * ❺ 선택된 백업을 삭제합니다. 수동 백업만 삭제할 수 있습니다.
 * ❻ 수동 백업 파일을 생성합니다.
 * ❼ 현재 목록을 갱신하거나 50개 이상의 백업 파일이 있을 경우, 페이지 이동을 할 수 있습니다. 
+
+#### 예약 작업
+
+선택한 DB 인스턴스의 예약 작업을 확인할 수 있습니다.
+한 화면에 최대 50개의 예약 작업 목록이 노출됩니다.
+
+![DB 인스턴스 상세 > 예약 작업 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_reserved_process_001.png)
+
+* ❶ 조건 버튼 클릭 시, 예약 작업 상태로 결과를 필터링할 수 있습니다.
+  * 전체는 삭제됨 이외의 모든 상태값을 조회합니다.
+* ❷ 편집 버튼 클릭 시, 예약 작업이 설정된 시간을 변경할 수 있습니다.
+* ❸ 즉시 실행 버튼 클릭 시, 예약 작업을 현재 시간으로 변경할 수 있습니다.
+* ❹ 삭제 버튼 클릭 시, 예약 작업을 삭제할 수 있습니다.
+  * 예약됨, 등록됨, 취소됨, 오류, 검증 실패 상태의 예약 작업을 삭제할 수 있습니다.
+  * 예약됨, 등록됨 상태의 예약 작업을 삭제하면 해당 작업은 실행되지 않습니다.
 
 ### 오브젝트 스토리지에 백업
 
@@ -248,7 +269,7 @@ RDS for MS-SQL에서는 백업을 이용한 복원과 시점 복원을 지원합
 복원에 사용할 백업을 목록에서 선택 한 후, [복원] 버튼을 클릭하면 복원 화면으로 이동합니다.
 
 ![복원 001](https://static.toastoven.net/prod_rds_mssql/restore_001.png)
-![복원 002](https://static.toastoven.net/prod_rds_mssql/restore_002.png)
+![복원 002](https://static.toastoven.net/prod_rds_mssql/20220315/restore_002.png)
 
 복원 화면에서 신규로 생성되는 DB 인스턴스의 타입 및 각종 설정을 한 후, 화면 하단의 [DB 인스턴스 복원] 버튼을 눌러 DB 인스턴스를 복원합니다.
 백업이 수행된 시점의 DB 인스턴스 타입, 스토리지 타입, 스토리지 크기, 포트, 파라미터 그룹 및 DB 보안 그룹이 자동으로 선택됩니다.
@@ -257,7 +278,7 @@ RDS for MS-SQL에서는 백업을 이용한 복원과 시점 복원을 지원합
 > 백업 당시의 파라미터 그룹이 존재하지 않으면 기본 파라미터 그룹이 선택됩니다.
 > 백업 당시에 존재하는 DB 보안 그룹만 자동으로 선택됩니다.
 
-![복원 003](https://static.toastoven.net/prod_rds_mssql/restore_003.png)
+![복원 003](https://static.toastoven.net/prod_rds_mssql/20220315/restore_003.png)
 
 DB 인스턴스 복원에는 몇 분에서 몇십 분이 소요됩니다.
 
@@ -524,6 +545,51 @@ RDS for MS-SQL 는 기본 시스템 지표 및 기본 SQL 서버 지표, 2개의
 ![사용자 그룹 수정 001](https://static.toastoven.net/prod_rds_mssql/user_group_modify_001.png)
 
 * 사용자 그룹 생성과 동일하게 이름, 통보 대상을 수정할 수 있습니다.
+
+## 예약 작업
+
+DB 인스턴스 수정 시, 파라미터 그룹 변경 시, 자동 고가용성 복구 사용 시 예약 작업을 등록할 수 있습니다.
+
+### 예약 작업 목록
+선택한 DB 인스턴스의 예약 작업을 확인할 수 있습니다.
+한 화면에 최대 50개의 예약 작업 목록이 노출됩니다.
+
+![DB 인스턴스 상세 > 예약 작업 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_list_001_kr.png)
+
+* ❶ 조건 버튼 클릭 시, 예약 작업 상태로 결과를 필터링할 수 있습니다.
+  * 전체는 삭제됨 이외의 모든 상태값을 조회합니다.
+* ❷ 편집 버튼 클릭 시, 예약 작업이 설정된 시간을 변경할 수 있습니다.
+* ❸ 즉시 실행 버튼 클릭 시, 예약 작업을 현재 시간으로 변경할 수 있습니다.
+* ❹ 삭제 버튼 클릭 시, 예약 작업을 삭제할 수 있습니다.
+  * 예약됨, 등록됨, 취소됨, 오류, 검증 실패 상태의 예약 작업을 삭제할 수 있습니다.
+  * 예약됨, 등록됨 상태의 예약 작업을 삭제하면 해당 작업은 실행되지 않습니다.
+
+### 예약 작업 편집
+예약 작업 목록에서 수정하고자 하는 예약 작업의 우측 [편집] 버튼을 클릭합니다.
+![예약 작업 목록 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_001_kr.png)
+* ❶ 예약 시간 타입을 설정할 수 있습니다.
+  * 매일 반복
+    * 매일 설정된 시간에 작업 시작을 시도합니다.
+    * 다른 작업이 진행중이라 시작을 못하면 다음날 다시 시도합니다.
+  * 특정 시간 이후
+    * 특정 시간 이후 작업 시작을 시도합니다.
+    * 동작 중인 작업이 있으면 해당 작업 완료 후 시작합니다.
+* ❷ 예약 시간을 설정합니다.
+  * 매일 반복
+    * ![예약 작업 수정 매일 반복 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_002_kr.png)
+    * 시간 간격을 30분 이상 설정해야 합니다.
+  * 특정 시간 이후
+    * ![예약 작업 수정 매일 반복 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_003_kr.png)
+
+### 예약 작업 즉시 실행
+예약 작업 목록에서 수행하고자 하는 예약 작업의 우측 [즉시 실행] 버튼을 클릭합니다.
+예약 작업 즉시 실행은 예약 시간을 현재 시간으로 변경합니다.
+현재 진행중인 작업이 있다면 완료 후 시작합니다.
+
+### 예약 작업 삭제
+예약 작업 목록에서 수행하고자 하는 예약 작업의 우측 [즉시 실행] 버튼을 클릭합니다.
+예약됨, 등록됨, 에러, 최소됨, 검증 오류 상태의 예약 작업을 삭제할 수 있습니다. 
+예약됨, 등록됨 상태에 삭제 시 예약 작업은 더이상 진행되지 않습니다.
 
 ## 부록1. 하이퍼바이저 점검을 위한 DB 인스턴스 마이그레이션 가이드
 
