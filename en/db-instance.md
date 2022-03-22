@@ -2,21 +2,21 @@
 
 ## Database Instance
 
-Database instance encompasses virtual equipment and installed Microsoft SQL Server, serving as the unit of Microsoft SQL Server provided by RDS for SQL Server. 
-Direct access to a database instance is not allowed, but access is enabled only through the port entered when creating the database instance. 
-Database instances can be identified by user-specified name or automatically assigned 32-bit ID. 
-A database instance must be named, considering the following constraints: 
+Database instance encompasses virtual equipment and installed Microsoft SQL Server, serving as the unit of Microsoft SQL Server provided by RDS for SQL Server.
+Direct access to a database instance is not allowed, but access is enabled only through the port entered when creating the database instance.
+Database instances can be identified by user-specified name or automatically assigned 32-bit ID.
+A database instance must be named, considering the following constraints:
 
-* Must be unique for each region. 
+* Must be unique for each region.
 * Must be comprised of alphabets, numbers, -, _ ,and .only, between 4 and 100 characters.
-* Must start with a letter. 
+* Must start with a letter.
 
-To create a database instance, user account and password setting is required, considering the following constraints: 
+To create a database instance, user account and password setting is required, considering the following constraints:
 
-* User account must be between 4 and 16 characters, comprised of alphabets and numbers only, starting with a letter. 
-* Password must be between 8 and 128, comprised of alphabets, numbers, !, $, #, and % only. 
-* Password cannot include user's account name. 
-* Password must include at least three categories out of capital letters, small-case letters, numbers, and special characters. 
+* User account must be between 4 and 16 characters, comprised of alphabets and numbers only, starting with a letter.
+* Password must be between 8 and 128, comprised of alphabets, numbers, !, $, #, and % only.
+* Password cannot include user's account name.
+* Password must include at least three categories out of capital letters, small-case letters, numbers, and special characters.
 
 ### Availability Zone
 
@@ -37,8 +37,8 @@ The following versions are supported.
 
 ### Database Instance Type
 
-Each type of database instance has different CPU core count and memory volume. 
-To create a database instance, an appropriate type must be selected depending on the database workload. 
+Each type of database instance has different CPU core count and memory volume.
+To create a database instance, an appropriate type must be selected depending on the database workload.
 
 | Type    | Description |
 | ------- | -------------------------------------------------|
@@ -77,9 +77,9 @@ DB instance status consists of the following values, and it may change depending
 
 ### Storage Type
 
-Database instances support two storage types: HDD or SSD. 
+Database instances support two storage types: HDD or SSD.
 Since each storage type provides different performance and pricing, an appropriate storage type must be selected depending on the database workload.  
-A storage type can be created from 20GB up to 2,000 GB. 
+A storage type can be created from 20GB up to 2,000 GB.
 You can use the web console to easily change the size of a storage that has already been created.
 
 > [Caution]
@@ -88,14 +88,14 @@ You can use the web console to easily change the size of a storage that has alre
 
 ## High Availability DB Instance
 
-A high availability DB instance increases availability and data durability, and provides fault-tolerant database. 
+A high availability DB instance increases availability and data durability, and provides fault-tolerant database.
 RDS for MS-SQL uses the mirroring function of the Microsoft SQL Server, consisting of a primary server, a secondary server, and an event monitor server, to offer high availability. The primary and secondary servers are created in different availability zones.
 
 ### Automatic Failover
 
-A failover automatically takes place when the primary server becomes unavailable due to an unexpected failure. The failed primary server is halted to prevent split brain and the secondary server takes over the role of primary server. Applications do not have to be adjusted for this change, as the A record of the internal and external domains that are used for connection is switched from the primary server to the secondary server. 
-When failover is complete, high availability DB instances will disappear and the rest of DB instances are separated into two groups: the failed DB instances and the DB instances promoted due to the failure. The promoted DB instances inherit all the configurations of existing DB instances except backups. The promoted DB instances do not perform automatic backup immediately after the promotion. This is to prevent any system load due to the failover. 
-The DB instances with failover completed can be restarted by pressing the [Restart] button.
+A failover automatically takes place when the primary server becomes unavailable due to an unexpected failure. The failed primary server is halted to prevent split brain and the secondary server takes over the role of primary server. Applications do not have to be adjusted for this change, as the A record of the internal and external domains that are used for connection is switched from the primary server to the secondary server.
+When failover is complete, high availability DB instances will disappear and the rest of DB instances are separated into two groups: the failed DB instances and the DB instances promoted due to the failure. The promoted DB instances inherit all the configurations of existing DB instances except backups. The promoted DB instances do not perform automatic backup immediately after the promotion. This is to prevent any system load due to the failover.
+The DB instances with failover completed can be restarted by pressing the **Restart** button.
 
 ### Manual Failover
 
