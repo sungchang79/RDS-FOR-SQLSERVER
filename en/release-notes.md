@@ -1,5 +1,15 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### March 15, 2022
+
+#### Added Features
+
+* Added maintenance management function
+
+#### Bug Fixes
+
+* Fixed a bug where `,` could be inserted into numeric parameters
+
 ### January 11, 2022
 
 #### Bug Fixes

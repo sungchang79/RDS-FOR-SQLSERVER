@@ -9,7 +9,7 @@ On Database Instances, you can create, modify, or delete database instances, or 
 To create a database instance, click **Create Database Instances** on top left of the list and go to page for database instance creation.
 Enter specifications, network, floating IP, database security group, and backup settings for the instance, click **Create Database Instances** and send a request for creation.
 
-![Create Database Instances 001](https://static.toastoven.net/prod_rds_mssql/db_instance_create_001.png)
+![Create Database Instances 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_create_001_kr.png)
 
 * ❶ From Compute & Network, select a created VPC subnet.
 * ❷ When a database security group is not available, click **Create Database Security Groups** to immediately create and apply a security group.
@@ -22,12 +22,12 @@ With a database instance successfully created, you're automatically moved to the
 Brief information of database instances can be listed.
 One page shows up to 50 database instances on the list.
 
-![List of Database Instances 001](https://static.toastoven.net/prod_rds_mssql/db_instance_list_001.png)
+![List of Database Instances 001](https://static.toastoven.net/prod_rds_mssql/20210713/output/db_instance_list_001.png)
 
 * ❶ Search is available by the name or UUID of a database instance.
 * ❷ With a click on the condition, search results can be filtered by availability zone or database instance status.
 
-![List of Database Instances > Conditions 001](https://static.toastoven.net/prod_rds_mssql/20200112/output/db_instance_list_cond_001_kr.png)
+![List of Database Instances > Conditions 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_list_cond_001_kr.png)
 
 * ❸ Frequently used tasks can be performed.
 * ❹ Not frequently used additional tasks can be performed.
@@ -64,24 +64,30 @@ If the status of the DB instance is determined to be abnormal, it may restart re
 
 Available database instances can be easily modified in the setting via web console.
 
-![List of Database Instances 002](https://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_list_002_kr.png)
+![List of Database Instances 002](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_list_002_kr.png)
 
 * ❶ Select a database instance to modify from the list and click Modify on top right.
 
 After setting is changed, click **Modify** at the bottom of the page to modify database instance.  
 Once request for modifying database instance is successfully made, you're moved to the list of database instances. It takes a few minutes, or up to a few dozens of minutes, to modify a database instance.
 
-![Modify Database Instances 001](https://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_modify_001_kr.png)
+![Modify Database Instances 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_modify_001_kr.png)
 
 * ❶ Unable to change the availability zone.
 * ❷ With the change of database instance type, database shall restart.
 * ❸ Unable to change storage type.
 * ❹ Unable to reduce storage size, once it is increased.
 * ❺ In order to use high availability, the storage backup period must be at least 1 day.
-* ❻ Unable to change user ID.
-* ❼ Without password, change is unavailable.
-* ❽ With the change of port, database shall restart.
-* ❾ Unable to change VPC.
+* ❻ If the high availability auto recovery is enabled, a scheduled task for high availability recovery that runs one hour after the completion of automatic failover is created.
+* ❼ Unable to change user ID.
+* ❽ Without password, change is unavailable.
+* ❾ With the change of port, database shall restart.
+* ❿ Unable to change VPC.
+* ⓫ If you modify the task schedule time, the schedule time of the already created scheduled task is also changed.
+* ⓬ If you click **Modify DB Instance**, a confirmation window for DB instance modification appears.
+![Modify Database Instances > Confirm Model](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_modify_modal_001_kr.png)
+    * If you click **Run Immediately**, it is changed immediately.
+    * If you click **Schedule Task**, a task is scheduled at the task schedule time of the DB instance.
 
 ### Database Instance Details
 
@@ -92,7 +98,7 @@ The View Details panel is comprised of five tabs, providing more data related to
 
 You may check basic information of a selected database instance.
 
-![DB Instance Details > Basic Information 001](https://static.toastoven.net/prod_rds_mssql/20200112/output/db_instance_detail_inst_001_kr.png)
+![DB Instance Details > Basic Information 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_inst_001_kr.png)
 
 * ❶ Click **Change** to change name of a database instance.
 * ❷ Click **Copy** to copy ID of database instance onto clipboard.
@@ -112,20 +118,20 @@ You may check basic information of a selected database instance.
 
 Find out relevant metrics of a selected database instance on a chart. For more detail usage, see [Server Dashboard](./console-guide#_20).
 
-![Database Instance Details > Monitoring 001](https://static.toastoven.net/prod_rds_mssql/db_instance_detail_mon_001.png)
+![Database Instance Details > Monitoring 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_mon_001.png)
 
 #### Events
 
 Check out relevant events of a selected database instance. For more details, see [Events](./console-guide#_12).
 
-![DB Instance Details > Events 001](https://static.toastoven.net/prod_rds_mssql/db_instance_detail_event_001.png)
+![DB Instance Details > Events 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_event_001.png)
 
 #### Logs
 
 Find out error logs of Microsoft SQL Server occurred at a selected database instance.
 Error logs are aligned in the latest time order, with 10 lines of logs on each page.
 
-![DB Instance Details > Logs 001](https://static.toastoven.net/prod_rds_mssql/db_instance_detail_log_001.png)
+![DB Instance Details > Logs 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_log_001.png)
 
 * ❶ Select a period to query. Without a period specified, the recent week's error logs show.
 * ❷ Initialize query period as default.
@@ -136,7 +142,7 @@ Error logs are aligned in the latest time order, with 10 lines of logs on each p
 Check out the setting related to backup of a selected database instance and backup file information.
 One page shows up to 50 backups on the list.
 
-![DB Instance Details > Backups 001](https://static.toastoven.net/prod_rds_mssql/db_instance_detail_backup_001.png)
+![DB Instance Details > Backups 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_backup_001.png)
 
 * ❶ Shows backup execution time. If time is not specified, time shows as the system defines.
 * ❷ Shows creation time of the most recently executed backup.
@@ -145,6 +151,21 @@ One page shows up to 50 backups on the list.
 * ❺ Delete selected backups: only manual backups can be deleted.
 * ❻ Create manual backup files.
 * ❼ Pagination is available when the current list is updated or if there are more than 50 backup files.
+
+#### Scheduled Task
+
+You can check the scheduled tasks for the selected DB instance.
+A list of up to 50 scheduled tasks appears on a screen.
+
+![DB Instance Details > Scheduled Task 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_reserved_process_001.png)
+
+* ❶ If you click the **Condition** button, you can filter the results by scheduled task status.
+    * 'All' searches for all status values ​​other than Deleted.
+* ❷ Click **Edit** to change the time set for the scheduled task.
+* ❸ Click **Run Immediately** to change the time for the scheduled task to the current time.
+* ❹ Click **Delete** to delete a scheduled task.
+    * You can delete scheduled tasks with status 'Scheduled', 'Registered', 'Canceled', 'Error', or 'Verification Failed'.
+    * If you delete a scheduled task with 'Scheduled' or 'Registered' status, the task will not be executed.
 
 ### Backing up to object storage
 
@@ -248,7 +269,7 @@ You may restore data by using backup, from the Backup tab or the backup tab of V
 Select a backup for restoration from the list, click **Restore**, and it goes to the restoration page.
 
 ![Restoration 001](https://static.toastoven.net/prod_rds_mssql/restore_001.png)
-![Restoration 002](https://static.toastoven.net/prod_rds_mssql/restore_002.png)
+![Restoration 002](https://static.toastoven.net/prod_rds_mssql/20220315/restore_002.png)
 
 Select type of a newly created database instance and set up, and press **Restore Database Instances** at the bottom to restore the database instance.
 Database instance type, storage type, storage size, port, parameter group, and database security group are automatically selected.
@@ -257,7 +278,7 @@ Database instance type, storage type, storage size, port, parameter group, and d
 > If the parameter group at the time of backup does not exist, default group is selected.  
 > Only database security group that exists during backup is automatically selected.
 
-![Restoration 003](https://static.toastoven.net/prod_rds_mssql/restore_003.png)
+![Restoration 003](https://static.toastoven.net/prod_rds_mssql/20220315/restore_003.png)
 
 It takes a few minutes, or up to a few dozens of minutes, to restore a database instance.
 
@@ -524,6 +545,51 @@ In the user group list, click the **Edit** button at the right of the user group
 ![modify user group 001](https://static.toastoven.net/prod_rds_mssql/user_group_modify_001.png)
 
 * Same as creating the user group, the name and notification target can be modified.
+
+## Scheduled Task
+
+You can register a scheduled task when modifying a DB instance, changing a parameter group, or using high availability auto recovery.
+
+### List of Scheduled Tasks
+You can check the scheduled tasks for the selected DB instance.
+A list of up to 50 scheduled tasks appears on a screen.
+
+![DB Instance Details > Scheduled Task 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_list_001_kr.png)
+
+* ❶ If you click the **Condition** button, you can filter the results by scheduled task status.
+    * 'All' searches for all status values ​​other than Deleted.
+* ❷ Click **Edit** to change the time set for the scheduled task.
+* ❸ Click **Run Immediately** to change the time for the scheduled task to the current time.
+* ❹ Click **Delete** to delete a scheduled task.
+    * You can delete scheduled tasks with status 'Scheduled', 'Registered', 'Canceled', 'Error', and 'Verification Failed'.
+    * If you delete a scheduled task with 'Scheduled' or 'Registered' status, the task will not be executed.
+
+### Edit a Scheduled Task
+In the list of scheduled tasks, click the **Edit** button on the right of the scheduled task you want to modify.
+![Scheduled Task List 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_001_en.png)
+* ❶ You can set the schedule time type.
+    * Repeated Daily
+        * The system tries starting a scheduled task every day at the set time.
+        * If the task fails to start because another task is in progress, the task is tried again the next day.
+    * After Specific Time
+        * The system attempts to start the task after a specific time.
+        * If there is another task in progress, the task starts after the running task is completed.
+* ❷ Set the reservation time.
+    * Repeated Daily
+        ![modify scheduled task daily repeat 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_002_kr.png)
+        * The time interval must be set to at least 30 minutes.
+    * After Specific Time
+        ![modify scheduled task daily repeat 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_003_kr.png)
+
+### Run a Scheduled Task Immediately
+In the list of scheduled tasks, click **Run Immediately** on the right of the scheduled task you want to run.
+Running the scheduled task immediately changes the schedule time to the current time.
+If there is a task currently in progress, it will start after completion of the task.
+
+### Delete a Scheduled Task
+In the list of scheduled tasks, click **Delete** on the right of the scheduled task you want to delete.
+You can delete scheduled jobs with status 'Scheduled', 'Registered', 'Error', 'Canceled' or 'Verification Error'.
+If you delete a scheduled task with 'Scheduled' or 'Registered' status, the task will proceed.
 
 ## Appendix 1. DB Instance Migration Guide for Hypervisor Maintenance
 
