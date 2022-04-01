@@ -1,4 +1,4 @@
-## Database > RDS for MS-SQL > 파라미터 그룹
+## Database > RDS for MS-SQL > 예약 작업
 
 생성된 예약 작업을 확인, 수정, 삭제할 수 있습니다.
 

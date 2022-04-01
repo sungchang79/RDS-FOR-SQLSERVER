@@ -86,6 +86,14 @@ You can use the web console to easily change the size of a storage that has alre
 > When the size of an already created storage is changed, the DB instance is terminated, resulting in several minutes of downtime.
 > You cannot change the type of a storage that has already been created.
 
+### Task Schedule Time
+
+The time during which a scheduled task is scheduled. A scheduled task can be DB instance modification, or DB instance restart that is registered when a parameter group is changed.
+
+> [Caution]
+> The task may not be completed within the set time.
+> If another task is running at the set time, the scheduled task will be retried at the scheduled time the next day.
+
 ## High Availability DB Instance
 
 A high availability DB instance increases availability and data durability, and provides fault-tolerant database.
@@ -100,6 +108,10 @@ The DB instances with failover completed can be restarted by pressing the **Rest
 ### Manual Failover
 
 A high availability DB instance can be failed over manually through restart using failover. When restarting a DB instance using failover, manual failover is performed and the roles of the primary and secondary servers are switched. During failover, both primary and secondary servers will restart their Microsoft SQL Server process and their internal and external domain IPs will be changed. Connection to those servers may fail from several seconds to several minutes until the domain change is completed. Backup is performed automatically when failover is complete.
+
+### High Availability Auto Recovery
+
+The high availability auto recovery feature schedules a high availability reconfiguration task that runs one hour after the completion of automatic failover. The created scheduled task can be adjusted to the desired time or deleted in the **Scheduled Task** tab.
 
 ### Cautions and constraints
 

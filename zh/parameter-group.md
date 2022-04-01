@@ -53,4 +53,8 @@ ramSizeByte * 3 / 4 / 1048576
 
 Only a parameter group created by users can be changed, and new one can be created by copying one from the existing parameter groups.
 If parameters inside a parameter group are changed, the changes are applied simultaneously to all DB instances that are using the parameter group. If any of the DB instances using the parameter group is in the middle of processing some other tasks, the parameter won't be changed.
-If the applied type of the changed parameter is `Static,` the DB instance will restart.
+
+There are two types of methods for applying parameters: `Dynamic` and `Static`.
+A `Dynamic` parameter is applied immediately without restart when the parameter is changed.
+A `Static` parameter is applied after a restart, and if any of the `Static` parameters are changed, the DB instance restart task is scheduled.
+If the parameter is applied before the scheduled DB instance restart task, the scheduled restart is deleted. 

@@ -1,4 +1,4 @@
-## Database > RDS for MS-SQL > パラメータグループ
+## Database > RDS for MS-SQL > 予約タスク
 
 作成された予約タスクを確認、修正、削除できます。
 

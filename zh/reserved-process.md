@@ -1,34 +1,34 @@
-## Database > RDS for MS-SQL > 파라미터 그룹
+## Database > RDS for MS-SQL > Scheduled Task
 
-생성된 예약 작업을 확인, 수정, 삭제할 수 있습니다.
+You can view, modify, or delete the created scheduled tasks.
 
-## 예약 작업
+## Scheduled Task
 
-특정 작업을 원하는 시간에 시작할 수 있도록 예약 작업 기능을 제공합니다. 예약된 작업은 작업 예약 시간에 실행되지만 작업 예약 시간 안에 완료되는걸 보장하지는 않습니다.
+A scheduled task function is provided so that a specific task can be started at a desired time. The scheduled task runs at the task schedule time, but is not guaranteed to be completed within the task schedule time.
 
-### 예약 작업 상태
+### Scheduled Task Status
 
-예약 작업의 상태는 아래와 같은 값들로 구성되며, 사용자의 행위와 현재 상태에 따라 변경됩니다.
+The status types of scheduled tasks are as follows:
 
-| 상태         | 설명                                      |
+| Status         | Description                                      |
 |------------|-----------------------------------------|
-| 예약됨        | 작업 예약 시간이 되기 전 예약된 상태                   |
-| 등록됨        | 작업 예약 시간이 되어 시작하기 전 상태                  |
-| 진행 중       | 예약 작업 진행                                |
-| 완료됨        | 예약 작업이 정상적으로 완료된 상태                     |
-| 삭제됨        | 예약 작업이 삭제 된 상태                          |
-| 취소 요청 됨    | 예약 작업이 진행 중일 때 취소 요청된 상태                |
-| 강제 취소 요청 됨 | 예약 작업이 진행 중일 때 강제 취소 요청된 상태             |
-| 취소 중       | 예약 작업이 취소 되어 취소에 필요한 작업이 진행되고 있는 상태     |
-| 취소 됨       | 정상적으로 취소된 상태                            |
-| 오류         | 알 수 없는 이유로 예약 작업이 실패한 상태                |
-| 검증 실패 | 예약 작업이 생성 된 이후 DB 인스턴스가 변경되어 검증에 실패한 상태 |
+| Scheduled        | The task has been scheduled, before it is task schedule time.                   |
+| Registered        | The state before the task starts, when it is task schedule time.                  |
+| Running       | The scheduled task is in progress.                                |
+| Done        | The scheduled task has been completed normally.                     |
+| Deleted        | The scheduled task has been deleted.                          |
+| Cancellation Requested    | Cancellation has been requested while the scheduled task is in progress.                |
+| Force Cancellation Requested | Forced cancellation has been requested when the scheduled task is in progress.             |
+| Canceling       | The scheduled task has been canceled and the task required for cancellation is in progress.     |
+| Canceled       | The scheduled task has been canceled normally.                            |
+| Error         | The scheduled task failed for an unknown reason.                |
+| Validation Failed | Validation failed because the DB instance has changed since the scheduled task was created. |
 
-### 예약 시간 타입
+### Schedule Time Type
 
-예약 작업 편집 시 선택할 수 있는 예약 시간 타입입니다.
+The following are the types of schedule time that can be selected when editing a scheduled task.
 
-| 예약 시간 타입 | 설명                               |
+| Schedule Time Type | Description                               |
 |----------|----------------------------------|
-| 매일 반복    | 설정한 시간에 매일 반복해서 예약 작업 시작을 시도합니다. |
-| 특정 시간 이후 | 특정 시간이후 예약 작업을 시작합니다.            |
+| Repeated Daily    | The system tries starting a scheduled task repeatedly every day at the set time. |
+| After Specific Time | The system starts a scheduled task after a specific time.            |
