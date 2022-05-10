@@ -1,5 +1,11 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### May 10, 2022
+
+#### Bug Fixes
+
+* Fixed an issue where log backup fails intermittently
+
 ### March 15, 2022
 
 #### Added Features
