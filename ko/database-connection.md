@@ -5,7 +5,11 @@ DB 인스턴스의 운영체제에 직접 접근할 수 없으며, 오직 DB 인
 ## 도메인
 
 DB 인스턴스를 생성하면 VPC 서브넷을 통해 접속 할 수 있는 내부 도메인이 발급됩니다. 플로팅 IP를 사용하면 외부에서 접속 할 수 있는 외부 도메인이 추가로 발급됩니다.
-도메인은 `xxxx.yyyy.sqlserver.rds.cloud.toast.com` 으로 구성됩니다. `xxxx` 자리에는 32자의 임의의 문자열이 위치하고, `yyyy` 자리에는 도메인 타입에 따라 내부 도메인이면 `internal`, 외부 도메인이면 `external` 이 위치합니다. 
+도메인은 `xxxx.yyyy.kr1.mssql.rds.nhncloudservice.com`으로 구성됩니다. `xxxx` 자리에는 32자의 임의의 문자열이 들어가고, `yyyy` 자리에는 도메인 타입에 따라 내부 도메인이면 `internal`, 외부 도메인이면 `external`이 들어갑니다.
+
+> [주의]
+> 기존에 사용하던 `xxxx.yyyy.sqlserver.rds.cloud.toast.com` 도메인은 2022년 8월 31일에 삭제될 예정입니다.
+> 사용 중인 도메인을 `xxxx.yyyy.kr1.mssql.rds.nhncloudservice.com`으로 변경해 주세요.
 
 ## 데이터베이스 포트
 
