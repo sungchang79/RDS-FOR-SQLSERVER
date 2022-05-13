@@ -5,7 +5,12 @@ DBインスタンスのOSに直接アクセスできません。DBインスタ�
 ## ドメイン
 
 DBインスタンスを作成すると、VPCサブネットを通して接続できる内部ドメインが発行されます。Floating IPを使用すると外部から接続できる外部ドメインが追加で発行されます。
-ドメインは`xxxx.yyyy.sqlserver.rds.cloud.toast.com`で構成されます。`xxxx`には32文字の任意の文字列が入り、`yyyy`にはドメインタイプに応じて内部ドメインの場合は`internal`、外部ドメインの場合は`external`が入ります。
+ドメインは`xxxx.yyyy.kr1.mssql.rds.nhncloudservice.com`で構成されます。 `xxxx`には32文字の任意の文字列が入り、`yyyy`にはドメインタイプに応じて内部ドメインの場合は`internal`、外部ドメインの場合は`external`が入ります。
+
+> [注意]
+> これまで使用していた`xxxx.yyyy.sqlserver.rds.cloud.toast.com`ドメインは2022年8月31日に削除される予定です。
+> 使用中のドメインを`xxxx.yyyy.kr1.mssql.rds.nhncloudservice.com`に変更してください。
+
 
 ## データベースポート
 
