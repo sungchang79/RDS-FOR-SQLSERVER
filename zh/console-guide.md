@@ -9,7 +9,7 @@ On the Database Instances tab, you can create, modify, or delete database (DB) i
 To create a DB instance, click **Create DB Instance** on top left of the list to go to page for DB instance creation.
 Enter specifications, information, network, floating IP, DB security group, and backup settings for the instance, click **Create DB Instance** and send a request for creation.
 
-![Create DB Instance 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_create_001_kr.png)
+![Create DB Instance 001](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_create_001_kr.png)
 
 * ❶ From Compute & Network, select a created VPC subnet.
 * ❷ When a DB security group is not available, click **Create DB Security Group** to immediately create and apply a security group.
@@ -22,7 +22,7 @@ With a DB instance successfully created, you're automatically moved to the list 
 Brief information of DB instances can be listed.
 One page shows up to 50 DB instances on the list.
 
-![List of DB Instances 001](https://static.toastoven.net/prod_rds_mssql/20210713/output/db_instance_list_001.png)
+![List of DB Instances 001](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_list_001.png)
 
 * ❶ Search is available by the name or UUID of a DB instance.
 * ❷ With a click on the condition, search results can be filtered by availability zone or DB instance status.
@@ -71,7 +71,7 @@ Available DB instances can be easily modified in the setting via web console.
 After setting is changed, click **Modify** at the bottom of the page to modify a DB instance.
 Once request for modifying a DB instance is successfully made, you're moved to the list of DB instances. It takes a few minutes, or up to a few dozens of minutes, to modify a DB instance.
 
-![Modify DB Instances 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_modify_001_kr.png)
+![Modify DB Instances 001](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_modify_001_kr.png)
 
 * ❶ The availability zone cannot be changed.
 * ❷ When the DB instance type is changed, database is restarted.
@@ -112,7 +112,7 @@ You may check basic information of a selected DB instance.
     * Failover is not performed for databases of which status is not 'replicated'.
 * ❻ Shows the security group of the applied DB. Hover the cursor over a DB security group name to see its security group rules.
 
-![DB Instance Details > Basic Information 001 Security Rules](https://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_dsg_kr.png)
+![DB Instance Details > Basic Information 001 Security Rules](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_detail_inst_001_dsg_kr.png)
 
 #### Monitoring
 
@@ -278,7 +278,7 @@ DB instance type, storage type, storage size, port, parameter group, and DB secu
 > If the parameter group at the time of backup does not exist, default group is selected.
 > Only DB security group that exists during backup is automatically selected.
 
-![Restoration 003](https://static.toastoven.net/prod_rds_mssql/20220315/restore_003.png)
+![Restoration 003](https://static.toastoven.net/prod_rds_mssql/20220614/restore_003.png)
 
 It takes a few minutes, or up to a few dozens of minutes, to restore a DB instance.
 
@@ -358,17 +358,17 @@ On Parameters, create a parameter group to be applied to a DB instance, or modif
 To create a parameter group, default value must be copied from an existing parameter group.
 Select a target from the list of parameter groups, and click **Copy Parameter Groups**.
 
-![List of Parameter Groups 001](https://static.toastoven.net/prod_rds_mssql/parameter_group_list_001.png)
+![List of Parameter Groups 001](https://static.toastoven.net/prod_rds_mssql/20220614/parameter_group_list_001.png)
 
 Enter name and description of a parameter group to newly create, and click **Copy** to create a parameter group.
 
-![Copy Parameter Groups 001](https://static.toastoven.net/prod_rds_mssql/parameter_group_copy_001.png)
+![Copy Parameter Groups 001](https://static.toastoven.net/prod_rds_mssql/20220614/parameter_group_copy_001.png)
 
 ### Modify a Parameter Group
 
 Click name of a target to modify from the list of parameter groups, and it goes to the parameter details.
 
-![List of Parameter Groups 002](https://static.toastoven.net/prod_rds_mssql/parameter_group_list_002.png)
+![List of Parameter Groups 002](https://static.toastoven.net/prod_rds_mssql/20220614/parameter_group_list_002.png)
 
 Click **Edit Parameters** on top of the parameter details to enter into the edit mode.
 
@@ -392,7 +392,7 @@ Modify the parameter, click **Save Changes** to modify parameters of the paramet
 Compare two different parameter groups to find different parameters.
 Select two parameter groups to compare from the list.
 
-![List of Parameter Groups 003](https://static.toastoven.net/prod_rds_mssql/parameter_group_list_003.png)
+![List of Parameter Groups 003](https://static.toastoven.net/prod_rds_mssql/20220614/parameter_group_list_003.png)
 
 Click **Compare Parameter Groups** on top to check different parameters.
 
@@ -408,7 +408,7 @@ For more details on DB security groups, see [Database Access](./database-connect
 On top of the list of DB security groups, click **Create DB Security Group**, and a pop-up to create a DB security group shows up.
 
 ![List of DB Security Groups 001](https://static.toastoven.net/prod_rds_mssql/db_security_group_list_001.png)
-![Create DB Security Group 001](https://static.toastoven.net/prod_rds_mssql/db_security_group_create_001.png)
+![Create DB Security Group 001](https://static.toastoven.net/prod_rds_mssql/20220614/db_security_group_create_001.png)
 
 * ❶ Click **+** to add security policy.
 
@@ -426,11 +426,11 @@ You may modify name and description of a DB security group, although security po
 
 Select a DB security group from the list, and details view panel show up at the bottom of the page where you can check and modify security policies.
 
-![DB Security Group Details 001](https://static.toastoven.net/prod_rds_mssql/db_security_group_detail_001.png)
+![DB Security Group Details 001](https://static.toastoven.net/prod_rds_mssql/20220614/db_security_group_detail_001.png)
 
 Click **Create Security Policy** from the panel, and a pop-up to create a security policy shows up.
 
-![DB Security Group Details 002](https://static.toastoven.net/prod_rds_mssql/db_security_group_detail_002.png)
+![DB Security Group Details 002](https://static.toastoven.net/prod_rds_mssql/20220614/db_security_group_detail_002.png)
 
 Select a DB security group policy from the details view panel to change or delete policy.
 
