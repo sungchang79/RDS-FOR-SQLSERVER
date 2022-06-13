@@ -9,7 +9,7 @@ DBインスタンスタブではDBインスタンスの作成、修正、削除�
 DBインスタンスを作成するには、先にDBインスタンスリスト画面左上の**DBインスタンス作成**ボタンを押して、DBインスタンス作成画面へ移動します。
 作成したいDBインスタンスの仕様、情報、ネットワーク、Floating IP、DBセキュリティグループ、バックアップ設定を入力した後、**DBインスタンス作成**ボタンを押してDBインスタンス作成リクエストを行います。
 
-![DBインスタンス作成001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_create_001_kr.png)
+![DBインスタンス作成001](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_create_001_kr.png)
 
 * ❶ Compute & Networkサービスで作成したVPCサブネットを選択できます。
 * ❷ DBセキュリティグループがない場合、**DBセキュリティグループ作成**ボタンを押して即時に作成し、適用できます。
@@ -22,7 +22,7 @@ DBインスタンス作成リクエストが成功すると、自動的にDBイ�
 DBインスタンスの簡略な情報リストを照会できます。
 1画面に最大50個のDBインスタンスリストが表示されます。
 
-![DBインスタンスリスト001](https://static.toastoven.net/prod_rds_mssql/db_instance_list_001.png)
+![DBインスタンスリスト001](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_list_001.png)
 
 * ❶ DBインスタンス名およびUUIDで検索できます。
 * ❷条件ボタンを押すと、アベイラビリティゾーンとDBインスタンス状態で検索結果をフィルタリングできます。
@@ -71,7 +71,7 @@ DBインスタンスの状態が異常と判断された場合、現在進行中
 変更したい設定を変更後、ページ下の**修正**ボタンを押してDBインスタンスを修正します。
 DBインスタンス修正リクエストが成功すると、自動的にDBインスタンスリストへ移動します。DBインスタンスの修正は数分から数十分かかります。
 
-![DBインスタンス修正001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_modify_001_kr.png)
+![DBインスタンス修正001](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_modify_001_kr.png)
 
 * ❶アベイラビリティゾーンは変更できません。
 * ❷ DBインスタンスタイプ変更時、データベースが再起動します。
@@ -98,13 +98,13 @@ DBインスタンスを選択すると、画面下に詳細表示パネルが表
 
 選択したDBインスタンスの基本情報を確認できます。
 
-![DBインスタンス詳細 > 基本情報001](https://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_kr.png)
+![DBインスタンス詳細 > 基本情報001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_inst_001_kr.png)
 
 * ❶ **変更**ボタンを押すと、DBインスタンスの名前を変更できます。
 * ❷ **コピー**ボタンを押すと、DBインスタンスのIDをクリップボードにコピーします。
 * ❸ DBインスタンスに接続できるドメインが表示されます。ドメインをクリックすると、ドメインのタイプとIP情報が表示されます。
 
-![DBインスタンス詳細 > 基本情報001ドメイン](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_inst_001_kr.png)
+![DBインスタンス詳細 > 基本情報001ドメイン](https://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_domain_kr.png)
 
 * ❹ **コピー**ボタンを押すと、ドメイン情報をクリップボードにコピーします。
 * ❺高可用性DBインスタンスのデータベース複製状態を表示します。
@@ -112,7 +112,7 @@ DBインスタンスを選択すると、画面下に詳細表示パネルが表
     * `複製済`状態ではないデータベースは自動フェイルオーバーが行われません。
 * ❻適用されたDBセキュリティグループを確認できます。DBセキュリティグループ名の上にマウスオーバーすると、セキュリティグループルールが表示されます。
 
-![DBインスタンス詳細 > 基本情報001セキュリティルール](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_detail_mon_001.png)
+![DBインスタンス詳細 > 基本情報001セキュリティルール](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_detail_inst_001_dsg_kr.png)
 
 #### モニタリング
 
@@ -278,7 +278,7 @@ RDS for MS-SQLではバックアップを利用した復元と時点復元をサ
 > バックアップ時点のパラメータグループが存在しない場合、基本パラメータグループが選択されます。
 > バックアップ時点に存在するDBセキュリティグループのみ自動的に選択されます。
 
-![復元003](https://static.toastoven.net/prod_rds_mssql/20220315/restore_003.png)
+![復元003](https://static.toastoven.net/prod_rds_mssql/20220614/restore_003.png)
 
 DBインスタンスの復元には数分から数十分かかります。
 
@@ -358,17 +358,17 @@ DBインスタンスの復元には数分から数十分かかります。
 パラメータグループを作成するには、既存パラメータグループからデフォルト値をコピーする必要があります。
 パラメータグループリストからコピーしたい対象を先に選択した後、**パラメータグループコピー**ボタンを押します。
 
-![パラメータグループリスト001](https://static.toastoven.net/prod_rds_mssql/parameter_group_list_001.png)
+![パラメータグループリスト001](https://static.toastoven.net/prod_rds_mssql/20220614/parameter_group_list_001.png)
 
 新たに作成するパラメータグループの名前および説明を入力した後、**コピー**ボタンを押して新しいパラメータグループを作成できます。
 
-![パラメータグループコピー001](https://static.toastoven.net/prod_rds_mssql/parameter_group_copy_001.png)
+![パラメータグループコピー001](https://static.toastoven.net/prod_rds_mssql/20220614/parameter_group_copy_001.png)
 
 ### パラメータグループ修正
 
 パラメータグループリストから修正したい対象の名前を押して、パラメータ詳細画面に移動します。
 
-![パラメータグループリスト002](https://static.toastoven.net/prod_rds_mssql/parameter_group_list_002.png)
+![パラメータグループリスト002](https://static.toastoven.net/prod_rds_mssql/20220614/parameter_group_list_002.png)
 
 パラメータ詳細画面の上部にある**パラメータ編集**ボタンを押して編集モードへ移行します。
 
@@ -392,7 +392,7 @@ DBインスタンスの復元には数分から数十分かかります。
 異なる2個のパラメータグループを比較して、異なるパラメータ値が何かを確認できます。
 パラメータリストから比較したいパラメータグループ2個を選択します。
 
-![パラメータグループリスト003](https://static.toastoven.net/prod_rds_mssql/parameter_group_list_003.png)
+![パラメータグループリスト003](https://static.toastoven.net/prod_rds_mssql/20220614/parameter_group_list_003.png)
 
 上部の**パラメータグループ比較**ボタンを押して、異なるパラメータの値を確認します。
 
@@ -408,7 +408,7 @@ DBセキュリティグループの詳細については[データベース接�
 DBセキュリティグループリスト上部の**DBセキュリティグループ作成**ボタンを押すと、DBセキュリティグループを作成することができるポップアップが表示されます。
 
 ![DBセキュリティグループリスト001](https://static.toastoven.net/prod_rds_mssql/db_security_group_list_001.png)
-![DBセキュリティグループ作成001](https://static.toastoven.net/prod_rds_mssql/db_security_group_create_001.png)
+![DBセキュリティグループ作成001](https://static.toastoven.net/prod_rds_mssql/20220614/db_security_group_create_001.png)
 
 * ❶ **+**ボタンを押してセキュリティポリシーを追加します。
 
@@ -426,11 +426,11 @@ DBセキュリティグループの名前と説明を修正できます。セキ
 
 DBセキュリティグループリストからDBセキュリティグループを選択すると、画面下部にセキュリティポリシーを確認、修正することができる詳細表示パネルが表示されます。
 
-![DBセキュリティグループ詳細001](https://static.toastoven.net/prod_rds_mssql/db_security_group_detail_001.png)
+![DBセキュリティグループ詳細001](https://static.toastoven.net/prod_rds_mssql/20220614/db_security_group_detail_001.png)
 
 詳細表示パネルの**セキュリティポリシー作成**ボタンを押すと、セキュリティポリシーを作成することができるポップアップが表示されます。
 
-![DBセキュリティグループ詳細002](https://static.toastoven.net/prod_rds_mssql/db_security_group_detail_002.png)
+![DBセキュリティグループ詳細002](https://static.toastoven.net/prod_rds_mssql/20220614/db_security_group_detail_002.png)
 
 詳細表示パネルでDBセキュリティグループポリシーを選択すると、ポリシーを変更、削除できます。
 

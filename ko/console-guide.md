@@ -9,7 +9,7 @@ DB 인스턴스 탭에서는 DB 인스턴스의 생성, 수정, 삭제 등의 �
 DB 인스턴스를 생성하려면 먼저 DB 인스턴스 리스트 화면 좌측 상단의 **DB 인스턴스 생성** 버튼을 클릭하여 DB 인스턴스 생성 화면으로 이동합니다.
 생성하고자 하는 DB 인스턴스의 사양, 정보, 네트워크, 플로팅 IP, DB 보안 그룹, 백업 설정을 입력한 후 **DB 인스턴스 생성** 버튼을 클릭하여 DB 인스턴스 생성 요청을 합니다.
 
-![DB 인스턴스 생성 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_create_001_kr.png)
+![DB 인스턴스 생성 001](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_create_001_kr.png)
 
 * ❶ Compute & Network 서비스에서 생성한 VPC 서브넷을 선택할 수 있습니다.
 * ❷ DB 보안 그룹이 없을 경우, **DB 보안 그룹 생성** 버튼을 클릭하여 즉시 생성, 적용할 수 있습니다.
@@ -22,7 +22,7 @@ DB 인스턴스 생성 요청에 성공하면, 자동으로 DB 인스턴스 리�
 DB 인스턴스의 간략한 정보 목록을 조회할 수 있습니다.
 한 화면에 최대 50개의 DB 인스턴스 목록이 노출됩니다.
 
-![DB 인스턴스 목록 001](https://static.toastoven.net/prod_rds_mssql/20210713/output/db_instance_list_001.png)
+![DB 인스턴스 목록 001](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_list_001.png)
 
 * ❶ DB 인스턴스 이름 및 UUID 로 검색할 수 있습니다.
 * ❷ 조건 버튼 클릭 시, 가용성 영역과 DB 인스턴스 상태로 검색 결과를 필터링할 수 있습니다.
@@ -32,8 +32,10 @@ DB 인스턴스의 간략한 정보 목록을 조회할 수 있습니다.
 * ❸ 빈번하게 사용되는 작업을 수행할 수 있습니다.
 * ❹ 빈번하게 사용되지 않는 추가 작업을 수행할 수 있습니다.
 * ❺ 현재 목록을 갱신하거나, 50개 이상의 DB 인스턴스가 있을 경우, 페이지 이동을 할 수 있습니다.
-* ❻ 현재 CPU 사용량과 활성 세션 개수를 나타냅니다. 값은 1분마다 갱신됩니다.
-* ❼ DB 인스턴스의 상태를 나타냅니다. 상태에 따라 서로 다른 상탯값 및 색상이 나타납니다. DB 인스턴스가 작업 중이면 스피너가 나타납니다.
+* ❻ 하이퍼바이저 점검 대상일 때 버튼이 노출됩니다. 마이그레이션 방법은 부록1을 확인해주세요.
+* ❼ 파라미터 그룹이 변경되었으나 적용되지 않았을 때 버튼이 노출됩니다. 버튼을 클릭해서 파라미터를 적용할 수 있습니다.
+* ❽ 현재 CPU 사용량과 활성 세션 개수를 나타냅니다. 값은 1분마다 갱신됩니다.
+* ❾ DB 인스턴스의 상태를 나타냅니다. 상태에 따라 서로 다른 상탯값 및 색상이 나타납니다. DB 인스턴스가 작업 중이면 스피너가 나타납니다.
 
 ### DB 인스턴스 재시작
 
@@ -71,7 +73,7 @@ DB 인스턴스의 상태가 비정상이라고 판단되면, 현재 진행 중�
 변경하고자 하는 설정을 변경 후, 페이지 하단의 **수정** 버튼을 클릭하여 DB 인스턴스를 수정합니다.
 DB 인스턴스 수정 요청에 성공하면, 자동으로 DB 인스턴스 리스트로 이동합니다. DB 인스턴스 수정에는 몇 분에서 몇십 분이 소요됩니다.
 
-![DB 인스턴스 수정 001](https://static.toastoven.net/prod_rds_mssql/20220315/db_instance_modify_001_kr.png)
+![DB 인스턴스 수정 001](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_modify_001_kr.png)
 
 * ❶ 가용성 영역은 변경할 수 업습니다.
 * ❷ DB 인스턴스 타입 변경 시, 데이터베이스가 재시작됩니다.
@@ -112,7 +114,7 @@ DB 인스턴스를 선택하면 화면 하단에 상세 보기 패널이 노출�
     * '복제됨' 상태가 아닌 데이터베이스는 자동 장애 조치가 되지 않습니다.
 * ❻ 적용된 DB 보안 그룹을 확인할 수 있습니다. DB 보안 그룹 이름 위에 마우스 커서를 올려놓으면, 보안 그룹 규칙을 볼 수 있습니다.
 
-![DB 인스턴스 상세 > 기본 정보 001 보안 규칙](https://static.toastoven.net/prod_rds_mssql/20201215/bordered/db_instance_detail_inst_001_dsg_kr.png)
+![DB 인스턴스 상세 > 기본 정보 001 보안 규칙](https://static.toastoven.net/prod_rds_mssql/20220614/db_instance_detail_inst_001_dsg_kr.png)
 
 #### 모니터링
 
@@ -278,7 +280,7 @@ RDS for MS-SQL에서는 백업을 이용한 복원과 시점 복원을 지원합
 > 백업 당시의 파라미터 그룹이 존재하지 않으면 기본 파라미터 그룹이 선택됩니다.
 > 백업 당시에 존재하는 DB 보안 그룹만 자동으로 선택됩니다.
 
-![복원 003](https://static.toastoven.net/prod_rds_mssql/20220315/restore_003.png)
+![복원 003](https://static.toastoven.net/prod_rds_mssql/20220614/restore_003.png)
 
 DB 인스턴스 복원에는 몇 분에서 몇십 분이 소요됩니다.
 
@@ -358,17 +360,17 @@ DB 인스턴스 복원에는 몇 분에서 몇십 분이 소요됩니다.
 파라미터 그룹을 생성하기 위해서는 기존 파라미터 그룹으로부터 기본값을 복사해야 합니다.
 파라미터 그룹 목록에서 복사하고자 하는 대상을 먼저 선택한 이후, **파라미터 그룹 복사** 버튼을 클릭합니다.
 
-![파라미터 그룹 리스트 001](https://static.toastoven.net/prod_rds_mssql/parameter_group_list_001.png)
+![파라미터 그룹 리스트 001](https://static.toastoven.net/prod_rds_mssql/20220614/parameter_group_list_001.png)
 
 새로 생성할 파라미터 그룹의 이름 및 설명을 입력한 후 **복사** 버튼을 클릭하여 새로운 파라미터 그룹을 생성할 수 있습니다.
 
-![파라미터 그룹 복사 001](https://static.toastoven.net/prod_rds_mssql/parameter_group_copy_001.png)
+![파라미터 그룹 복사 001](https://static.toastoven.net/prod_rds_mssql/20220614/parameter_group_copy_001.png)
 
 ### 파라미터 그룹 수정
 
 파라미터 그룹 목록에서 수정하고자 하는 대상의 이름을 클릭하여, 파라미터 상세 화면으로 이동합니다.
 
-![파라미터 그룹 리스트 002](https://static.toastoven.net/prod_rds_mssql/parameter_group_list_002.png)
+![파라미터 그룹 리스트 002](https://static.toastoven.net/prod_rds_mssql/20220614/parameter_group_list_002.png)
 
 파라미터 상세 화면의 상단에 있는 **파라미터 편집** 버튼을 클릭하여 편집 모드로 진입합니다.
 
@@ -392,7 +394,7 @@ DB 인스턴스 복원에는 몇 분에서 몇십 분이 소요됩니다.
 서로 다른 2개의 파라미터 그룹을 비교하여 다른 파라미터 값이 무엇이 있는지 확인할 수 있습니다.
 파라미터 목록에서 비교하고자 하는 파라미터 그룹 2개를 선택합니다.
 
-![파라미터 그룹 리스트 003](https://static.toastoven.net/prod_rds_mssql/parameter_group_list_003.png)
+![파라미터 그룹 리스트 003](https://static.toastoven.net/prod_rds_mssql/20220614/parameter_group_list_003.png)
 
 상단의 **파라미터 그룹 비교** 버튼을 클릭하여 서로 다른 파라미터의 값을 확인합니다.
 
@@ -408,7 +410,7 @@ DB 보안 그룹에 대한 자세한 설명은 [데이터베이스 접속](./dat
 DB 보안 그룹 목록 상단의 **DB 보안 그룹 생성** 버튼을 클릭하면, DB 보안 그룹을 생성할 수 있는 팝업이 노출됩니다.
 
 ![DB 보안 그룹 목록 001](https://static.toastoven.net/prod_rds_mssql/db_security_group_list_001.png)
-![DB 보안 그룹 생성 001](https://static.toastoven.net/prod_rds_mssql/db_security_group_create_001.png)
+![DB 보안 그룹 생성 001](https://static.toastoven.net/prod_rds_mssql/20220614/db_security_group_create_001.png)
 
 * ❶ **+** 버튼을 클릭하여 보안 정책을 추가합니다.
 
@@ -426,11 +428,11 @@ DB 보안 그룹의 이름과 설명을 수정할 수 있으며, 보안 정책�
 
 DB 보안 그룹 목록에서 DB 보안 그룹을 선택하면 화면 하단에 보안 정책을 확인, 수정할 수 있는 상세 보기 패널이 노출됩니다.
 
-![DB 보안 그룹 상세 001](https://static.toastoven.net/prod_rds_mssql/db_security_group_detail_001.png)
+![DB 보안 그룹 상세 001](https://static.toastoven.net/prod_rds_mssql/20220614/db_security_group_detail_001.png)
 
 상세 보기 패널의 **보안 정책 생성** 버튼을 클릭하면, 보안 정책을 생성할 수 있는 팝업이 노출됩니다.
 
-![DB 보안 그룹 상세 002](https://static.toastoven.net/prod_rds_mssql/db_security_group_detail_002.png)
+![DB 보안 그룹 상세 002](https://static.toastoven.net/prod_rds_mssql/20220614/db_security_group_detail_002.png)
 
 상세 보기 패널에서 DB 보안 그룹 정책을 선택하면 정책을 변경, 삭제할 수 있습니다.
 
