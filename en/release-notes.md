@@ -1,5 +1,19 @@
 ## Database > RDS for MS-SQL > Release Notes
 
+### June 14, 2022
+
+#### Feature Improvements
+
+* Made improvements so that the outbound direction can be added to security group rules
+* Made improvements so that the port can be added to security group rules
+* Added SQL Server 2019 Standard (15.0.4223.1) version
+* Made improvements so that the parameter group can be applied even when the version of the parameter group applied to the DB instance is low
+
+#### Bug Fixes
+
+* Fixed an issue where it fails when changing only the name of the DB security group
+* Fixed an issue where it fails intermittently when deactivating the product
+
 ### May 10, 2022
 
 #### Bug Fixes
@@ -26,7 +40,7 @@
 
 #### Feature Improvements
 
-* Improved to display the name in addition to CIDR when selecting a subnet while creating an instance
+* Made improvements so that display the name in addition to CIDR when selecting a subnet while creating an instance
 * Changed the data path of the master database to the data volume
 
 #### Bug Fixes
