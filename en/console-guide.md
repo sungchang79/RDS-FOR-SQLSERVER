@@ -32,8 +32,10 @@ One page shows up to 50 DB instances on the list.
 * ❸ Frequently used tasks can be performed.
 * ❹ Not frequently used additional tasks can be performed.
 * ❺ Pages can be navigated when the current list is refreshed or there are 50 DB instances or more.
-* ❻ Current CPU usage and number of active sessions. The value is updated every minute.
-* ❼ The DB instance status. Different status values and colors appear depending on the status. A spinner appears if the DB instance is in operation.
+* ❻ The button is exposed when the instance is a target for hypervisor maintenance. Refer to Appendix 1 for how to perform migration.
+* ❼ The button is exposed when the parameter group has been changed but not applied yet. You can apply the parameters by clicking the button.
+* ❽ Current CPU usage and number of active sessions. The value is updated every minute.
+* ❾ The DB instance status. Different status values and colors appear depending on the status. A spinner appears if the DB instance is in operation.
 
 ### Restart a DB Instance
 
