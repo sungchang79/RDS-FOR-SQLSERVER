@@ -1,8 +1,8 @@
-## Database > RDS for SQL Server > Console User Guide
+## Database > RDS for MS-SQL > Console User Guide
 
-## Database Instances
+## DB Instances
 
-On the Database Instances tab, you can create, modify, or delete database (DB) instances, or query status information of created DB instances.
+On the DB Instances tab, you can create, modify, or delete database (DB) instances, or query status information of created DB instances.
 
 ### Create a DB Instance
 
@@ -13,7 +13,7 @@ Enter specifications, information, network, floating IP, DB security group, and 
 
 * ❶ From Compute & Network, select a created VPC subnet.
 * ❷ When a DB security group is not available, click **Create DB Security Group** to immediately create and apply a security group.
-* For more details, see [Database Instance](./db-instance) and [Database Access](./database-connection).
+* For more details, see [DB Instance](./db-instance) and [Database Access](./database-connection).
 
 With a DB instance successfully created, you're automatically moved to the list of DB instances. It takes a few minutes, or up to a few dozens of minutes, to create a DB instance.
 
@@ -262,7 +262,7 @@ Select the backup to be sent to object storage from the list and click the **Exp
 
 ## Restoration
 
-RDS for SQL Server supports Restoration with Backup and Point-in-time Restoration.
+RDS for MS-SQL supports Restoration with Backup and Point-in-time Restoration.
 For more details, see [Backup and Restoration](./backup-restore).
 
 ### Restore using Backup
@@ -439,7 +439,7 @@ Select a DB security group policy from the details view panel to change or delet
 ## Server Dashboard
 
 On the Server Dashboard tab, check out performance metrics of a DB instance on a chart.
-RDS for SQL Server, by default, provides two layouts, such as basic system metrics and basic SQL server metrics.
+RDS for MS-SQL, by default, provides two layouts, such as basic system metrics and basic SQL server metrics.
 Default layout cannot be deleted or changed.
 
 ![Server Dashboard 001](https://static.toastoven.net/prod_rds_mssql/server_dashboard_list_001.png)

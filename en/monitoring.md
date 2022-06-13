@@ -1,6 +1,6 @@
-## Database > RDS for SQL Server > Monitoring
+## Database > RDS for MS-SQL > Monitoring
 
-Performance metrics of a database instance, as well as events occurred at each database instance, backup, parameter group or security group can be monitored.
+You can monitor performance metrics of a DB instance, as well as various events that occurred in each DB instance, backup, parameter group, or security group.
 
 ## Server Dashboard
 

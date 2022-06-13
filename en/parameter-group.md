@@ -74,3 +74,4 @@ If the parameter is applied before the scheduled DB instance restart task, the s
 
 You can update parameters for a DB instance to which the parameter group change has not been applied.
 The procedure is performed in the same way as changing parameters, but it is applied only to the DB instance for which the user clicked Apply Updated Parameters.
+
