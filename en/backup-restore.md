@@ -72,7 +72,7 @@ If the backup file exceeds 1GB in side, it is uploaded in multiple parts.
 For only compatible Microsoft SQL Server backup files, object storage can be used to recover to the DB instance of RDS for MS-SQL.
 This can be done by uploading an external backup to the object storage of NHN Cloud set up to use REST API and using the web console's [Recover from backup in object storage] function.
 
-If the backup for recovery exceeds 5GB, it must be uploaded in multiple parts. For detailed instructions please refer to [Multi-part upload] (https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_53).
+If the backup for recovery exceeds 5GB, it must be uploaded in multiple parts. For detailed instructions please refer to [Multi-part upload](https://docs.toast.com/ko/Storage/Object%20Storage/ko/api-guide/#_53).
 Recovery is performed for each individual database, and can be performed onto an existing DB instance. If there is not enough space in the DB instance's storage, recovery may fail.
 
 > [Caution]
