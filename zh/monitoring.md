@@ -7,7 +7,7 @@ Performance metrics of a database instance, as well as events occurred at each d
 Server Dashboard helps to visualize performance metrics on a chart. Metrics are collected at every minute and retained for up to 5 years. Metric data are collected by the average of 5 minutes, 30 minutes, 2 hours, or 1 day. Each collecting unit provides different retention period like below:
 
 | Collecting Unit | Retention Period |
-| - | - |
+| --- | --- |
 | 1 minute | 7 days |
 | 5 minutes | 1 month |
 | 30 minutes | 6 months |
@@ -104,7 +104,7 @@ If the users in the user group are excluded from the project members, they will 
 An event refers to an important event caused by RDS for MS-SQL or by a user. An event consists of the event category, date and time of occurrence, original source, and message. Events can be viewed on the web console, and you can receive notification of event occurrences by email, SMS, or webhook through subscription. The event categories and possible events are as follows.
 
 | Event Category | Event Code | Event Message |
-| - | - | - |
+| --- | --- | --- |
 | DB_INSTANCE | DB_INSTANCE_CREATE_START | Creating DB instance started |
 | DB_INSTANCE | DB_INSTANCE_CREATE_END | Creating DB instance completed |
 | DB_INSTANCE | DB_INSTANCE_CREATE_FAIL | Creating DB instance failed |

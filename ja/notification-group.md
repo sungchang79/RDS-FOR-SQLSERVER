@@ -4,7 +4,7 @@
 
 ## 監視設定指標
 | 指標タイプ | 指標 |
-| - | - | 
+| --- | --- | 
 | CPU | CPU使用率 | 
 | CPU | CPU System | 
 | CPU | CPU User |

@@ -4,7 +4,7 @@
 
 ## 감시 설정 지표
 | 지표 유형 | 지표 |
-| - | - | 
+| --- | --- | 
 | CPU | CPU 사용률 | 
 | CPU | CPU System | 
 | CPU | CPU User |

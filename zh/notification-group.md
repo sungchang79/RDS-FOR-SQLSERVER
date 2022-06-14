@@ -4,7 +4,7 @@
 
 ## Monitoring Configuration Metrics
 | Metric Type | Metrics |
-| - | - | 
+| --- | --- | 
 | CPU | CPU Usage | 
 | CPU | CPU System | 
 | CPU | CPU User |
