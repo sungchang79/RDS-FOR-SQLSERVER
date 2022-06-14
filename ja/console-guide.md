@@ -485,6 +485,7 @@ RDS for MS-SQLは、基本システム指標および基本SQLサーバー指標
 
 ![通知グループリスト001](https://static.toastoven.net/prod_rds_mssql/notification_group_list_001.png)
 ![通知グループ作成001](https://static.toastoven.net/prod_rds_mssql/notification_group_create_001.png)
+
 * ❶通知グループの有効/無効を選択できます。
     * 使用しないを選択すると通知が届きません。
 * ❷監視するDBインスタンスを選択できます。
@@ -530,6 +531,7 @@ RDS for MS-SQLは、基本システム指標および基本SQLサーバー指標
 
 ![ユーザーグループリスト001](https://static.toastoven.net/prod_rds_mssql/user_group_list_001.png)
 ![ユーザーグループ作成001](https://static.toastoven.net/prod_rds_mssql/user_group_create_001.png)
+
 * ❶通知対象を追加、削除できます。
     * ![ユーザーグループ作成001](https://static.toastoven.net/prod_rds_mssql/user_group_user_list_001.png)
     * 追加したいユーザーの右にある**追加**ボタンをクリックすると、通知対象に追加できます。
@@ -567,6 +569,7 @@ DBインスタンス修正時、パラメータグループ変更時、自動高
 ### 予約タスク編集
 予約タスクリストから修正したい予約タスクの右側**編集**ボタンをクリックします。
 ![予約タスクリスト001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_001_kr.png)
+
 * ❶予約時間タイプを設定できます。
     * 毎日繰り返し
         * 毎日設定された時間にタスク開始を試みます。

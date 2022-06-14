@@ -485,6 +485,7 @@ Click the **+ Create Group** button at the top of the notification group list an
 
 ![notification group list 001](https://static.toastoven.net/prod_rds_mssql/notification_group_list_001.png)
 ![create notification group 001](https://static.toastoven.net/prod_rds_mssql/notification_group_create_001.png)
+
 * ❶ Choose whether to enable or disable the notification group.
     * Notifications will not be received when disabled.
 * ❷ Select the DB instance to monitor.
@@ -530,6 +531,7 @@ Click the **+ Create User Group** at the top of the user group list and a pop-up
 
 ![user group list 001](https://static.toastoven.net/prod_rds_mssql/user_group_list_001.png)
 ![create user group 001](https://static.toastoven.net/prod_rds_mssql/user_group_create_001.png)
+
 * ❶ Add and delete notification target.
     * ![create user group 001](https://static.toastoven.net/prod_rds_mssql/user_group_user_list_001.png)
     * Click the **Add** button on the right of the user to add as a notification target.
@@ -567,6 +569,7 @@ A list of up to 50 scheduled tasks appears on a screen.
 ### Edit a Scheduled Task
 In the list of scheduled tasks, click the **Edit** button on the right of the scheduled task you want to modify.
 ![Scheduled Task List 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_001_en.png)
+
 * ❶ You can set the schedule time type.
     * Repeated Daily
         * The system tries starting a scheduled task every day at the set time.

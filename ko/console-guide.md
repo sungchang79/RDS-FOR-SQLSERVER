@@ -487,6 +487,7 @@ RDS for MS-SQL 는 기본 시스템 지표 및 기본 SQL 서버 지표, 2개의
 
 ![알림 그룹 목록 001](https://static.toastoven.net/prod_rds_mssql/notification_group_list_001.png)
 ![알림 그룹 생성 001](https://static.toastoven.net/prod_rds_mssql/notification_group_create_001.png)
+
 * ❶ 알림 그룹의 활성화 여부를 선택할 수 있습니다.
     * 사용 안 함 선택시 알림이 오지 않습니다.
 * ❷ 감시할 DB 인스턴스를 선택할 수 있습니다.
@@ -532,6 +533,7 @@ RDS for MS-SQL 는 기본 시스템 지표 및 기본 SQL 서버 지표, 2개의
 
 ![사용자 그룹 목록 001](https://static.toastoven.net/prod_rds_mssql/user_group_list_001.png)
 ![사용자 그룹 생성 001](https://static.toastoven.net/prod_rds_mssql/user_group_create_001.png)
+
 * ❶ 통보 대상을 추가, 삭제할 수 있습니다.
   ![사용자 그룹 생성 001](https://static.toastoven.net/prod_rds_mssql/user_group_user_list_001.png)
     * 추가하고자 하는 사용자 우측 **추가** 버튼을 클릭하면 통보 대상에 추가할 수 있습니다.
@@ -569,6 +571,7 @@ DB 인스턴스 수정 시, 파라미터 그룹 변경 시, 자동 고가용성 
 ### 예약 작업 편집
 예약 작업 목록에서 수정하고자 하는 예약 작업의 우측 **편집** 버튼을 클릭합니다.
 ![예약 작업 목록 001](https://static.toastoven.net/prod_rds_mssql/20220315/reserved_process_modify_modal_001_kr.png)
+
 * ❶ 예약 시간 타입을 설정할 수 있습니다.
     * 매일 반복
         * 매일 설정된 시간에 작업 시작을 시도합니다.
