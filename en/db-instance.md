@@ -79,7 +79,7 @@ DB instance status consists of the following values, and it may change depending
 ### Storage Type
 
 DB instances support two storage types: HDD or SSD.
-Since each storage type provides different performance and pricing, an appropriate storage type must be selected depending on the database workload.  
+Since each storage type provides different performance and pricing, an appropriate storage type must be selected depending on the database workload.
 A storage type can be created from 20GB up to 2,000 GB.
 You can use the web console to easily change the size of a storage that has already been created.
 
